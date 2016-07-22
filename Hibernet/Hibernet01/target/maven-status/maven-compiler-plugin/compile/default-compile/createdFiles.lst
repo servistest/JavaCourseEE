@@ -1,0 +1,10 @@
+edu\javacourse\hibernate\Region.class
+edu\javacourse\hibernate\HibernateConfigXMLMappingAnnotations.class
+edu\javacourse\hibernate\servicebook\Author.class
+edu\javacourse\hibernate\servicebook\Book.class
+edu\javacourse\hibernate\servicebook\HibernetAnnotationsBook.class
+edu\javacourse\hibernate\servicebook\onetoone\HibernetAnnotationsBook.class
+edu\javacourse\hibernate\servicebook\onetoone\HibernetLoadDeleteUpdateBook.class
+edu\javacourse\hibernate\servicebook\HibernetLoadDeleteUpdateBook.class
+edu\javacourse\hibernate\servicebook\onetoone\Book.class
+edu\javacourse\hibernate\servicebook\onetoone\Author.class

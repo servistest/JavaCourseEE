@@ -1,0 +1,5 @@
+<hibernate-mapping>
+    <class name="edu.javacourse.hibernate.Region" table="jc_region" >
+
+    </class>
+</hibernate-mapping>
