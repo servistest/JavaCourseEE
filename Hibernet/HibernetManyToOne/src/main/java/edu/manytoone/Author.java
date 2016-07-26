@@ -1,6 +1,7 @@
 package edu.manytoone;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Admin on 19.07.2016.
@@ -15,7 +16,9 @@ public class Author {
 
     @Column(name="author_name")
     private String author;
-
+    @OrderBy(value = "name")
+    @OneToMany(cascade = CascadeType.MERGE,fetch = FetchType.LAZY,mappedBy = "author")
+    private List<Book> bookList;
 
     public  Author(){
     }
