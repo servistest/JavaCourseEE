@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Hibernet/Hibernet01/create_BooksManyToOne.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Hibernet/Hibernet01/create_BooksOneToOne.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Hibernet/Hibernet01/create_book_raboraet.sql" dialect="PostgreSQL" />
+  </component>
+</project>

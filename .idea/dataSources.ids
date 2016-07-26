@@ -23,9 +23,9 @@
         <introspection-timestamp>2016-07-19.09:24:22.268</introspection-timestamp>
       </schema>
       <schema id="5" parent="1" name="books">
-        <object-id>16902</object-id>
-        <introspection-state-number>1128</introspection-state-number>
-        <introspection-timestamp>2016-07-20.15:42:33.063</introspection-timestamp>
+        <object-id>16935</object-id>
+        <introspection-state-number>1324</introspection-state-number>
+        <introspection-timestamp>2016-07-26.08:48:16.199</introspection-timestamp>
       </schema>
       <table id="6" parent="3" name="jc_company">
         <object-id>16414</object-id>
@@ -48,20 +48,20 @@
         <state-number>765</state-number>
       </table>
       <sequence id="11" parent="5" name="jc_author_author_id_seq">
-        <object-id>16903</object-id>
-        <state-number>1127</state-number>
+        <object-id>16936</object-id>
+        <state-number>1323</state-number>
       </sequence>
       <sequence id="12" parent="5" name="jc_books_book_id_seq">
-        <object-id>16911</object-id>
-        <state-number>1128</state-number>
+        <object-id>16944</object-id>
+        <state-number>1324</state-number>
       </sequence>
       <table id="13" parent="5" name="jc_author">
-        <object-id>16905</object-id>
-        <state-number>1128</state-number>
+        <object-id>16938</object-id>
+        <state-number>1324</state-number>
       </table>
       <table id="14" parent="5" name="jc_books">
-        <object-id>16913</object-id>
-        <state-number>1128</state-number>
+        <object-id>16946</object-id>
+        <state-number>1324</state-number>
       </table>
       <column id="15" parent="6" name="order_id">
         <state-number>648</state-number>
@@ -151,17 +151,17 @@
         <primary>1</primary>
       </key>
       <column id="32" parent="13" name="author_id">
-        <state-number>1127</state-number>
+        <state-number>1323</state-number>
         <mandatory>1</mandatory>
         <data-type>bigint</data-type>
         <default-expression>nextval(&apos;books.jc_author_author_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="33" parent="13" name="author_name">
-        <state-number>1127</state-number>
+        <state-number>1323</state-number>
         <data-type>varchar(255)</data-type>
       </column>
       <index id="34" parent="13" name="jc_author_pkey">
-        <object-id>16909</object-id>
+        <object-id>16942</object-id>
         <columns>author_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -172,42 +172,32 @@
         <primary>1</primary>
       </key>
       <column id="36" parent="14" name="book_id">
-        <state-number>1128</state-number>
+        <state-number>1324</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;books.jc_books_book_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="37" parent="14" name="book_name">
-        <state-number>1128</state-number>
+        <state-number>1324</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
       <column id="38" parent="14" name="author_id">
-        <state-number>1128</state-number>
+        <state-number>1324</state-number>
         <data-type>integer</data-type>
       </column>
       <index id="39" parent="14" name="jc_books_pkey">
-        <object-id>16917</object-id>
+        <object-id>16950</object-id>
         <columns>book_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <index id="40" parent="14" name="jc_books_author_id_key">
-        <object-id>16919</object-id>
-        <columns>author_id</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="41" parent="14" name="jc_books_pkey">
+      <key id="40" parent="14" name="jc_books_pkey">
         <columns>book_id</columns>
         <underlying-index>jc_books_pkey</underlying-index>
         <primary>1</primary>
       </key>
-      <key id="42" parent="14" name="jc_books_author_id_key">
-        <columns>author_id</columns>
-        <underlying-index>jc_books_author_id_key</underlying-index>
-      </key>
-      <foreign-key id="43" parent="14" name="jc_books_author_id_fkey">
+      <foreign-key id="41" parent="14" name="jc_books_author_id_fkey">
         <columns>author_id</columns>
         <ref-key>~.jc_author.jc_author_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>

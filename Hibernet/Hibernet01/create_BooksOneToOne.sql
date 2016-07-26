@@ -32,6 +32,8 @@ insert into books.jc_author  (author_name) values ('Esenin');
 insert into books.jc_author  (author_name) values ('Pushkin');
 insert into books.jc_author  (author_name) values ('Rusov');
 
+insert into books.jc_author  (author_name) values ('Rusov',9);
+
 
 
 
@@ -41,4 +43,6 @@ insert into books.jc_books  (book_name,author_id) values ('Market',3);
 insert into books.jc_books  (book_name,author_id) values ('A Crime',4);
 insert into books.jc_books  (book_name,author_id) values ('Stichi',5);
 insert into books.jc_books  (book_name,author_id) values ('Groza',6);
+
+insert into books.jc_books  (book_name,author_id) values ('Groza',113);
 

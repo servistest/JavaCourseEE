@@ -29,6 +29,7 @@ insert into books.jc_author  (author_name) values ('Tolstoy');
 insert into books.jc_author  (author_name) values ('Dostoevsiy');
 insert into books.jc_author  (author_name) values ('Smirmov');
 insert into books.jc_author  (author_name) values ('Esenin');
+insert into books.jc_author  (author_name) values ('Pushkin');
 
 
 
