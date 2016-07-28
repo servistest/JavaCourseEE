@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="Hibernet01" />
         <module name="Hibernet02" />
+        <module name="HibernetManyToMany" />
         <module name="HibernetManyToOne" />
         <module name="HibernetOneToOne" />
       </profile>
@@ -34,6 +35,7 @@
       <module name="Hibernet01" target="1.8" />
       <module name="Hibernet02" target="1.8" />
       <module name="Hibernet03" target="1.8" />
+      <module name="HibernetManyToMany" target="1.8" />
       <module name="HibernetManyToOne" target="1.8" />
       <module name="HibernetOneToOne" target="1.8" />
       <module name="integration" target="1.5" />

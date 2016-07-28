@@ -4,9 +4,8 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Hibernet" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Hibernet/Hibernet01" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Hibernet/Hibernet03" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Hibernet/HibernetManyToMany" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Hibernet/HibernnetManyToOne" charset="UTF-8" />
   </component>
 </project>

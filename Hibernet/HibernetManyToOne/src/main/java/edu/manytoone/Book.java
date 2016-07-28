@@ -18,7 +18,7 @@ public class Book implements Serializable {
     private String name;
 
     //@ManyToOne(targetEntity = Author.class)
-    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, targetEntity = Author.class)
+    @ManyToOne( cascade = {CascadeType.REFRESH,CascadeType.MERGE,CascadeType.PERSIST},fetch = FetchType.LAZY )
     @JoinColumn(name = "author_id")
     private Author author;
 

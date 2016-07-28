@@ -17,7 +17,7 @@ public class Author {
     @Column(name="author_name")
     private String author;
     @OrderBy(value = "name")
-    @OneToMany(cascade = CascadeType.MERGE,fetch = FetchType.LAZY,mappedBy = "author")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "author")
     private List<Book> bookList;
 
     public  Author(){
@@ -25,6 +25,14 @@ public class Author {
 
     public Author(String author){
         this.author=author;
+    }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
     }
 
     public int getAuthorId() {

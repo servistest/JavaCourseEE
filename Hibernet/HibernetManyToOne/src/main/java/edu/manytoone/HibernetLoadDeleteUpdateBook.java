@@ -2,6 +2,7 @@ package edu.manytoone;
 
 
 import edu.manytoone.*;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -11,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Admin on 19.07.2016.
@@ -120,17 +122,74 @@ public class HibernetLoadDeleteUpdateBook {
         session.close();
     }
 
-    public static void dfs(){}
+    public static void createAuthorandBookList(){
+        log.info("=============createAuthorAndBookList=========");
+        Session session=sessionFactory.getCurrentSession();
+        session.beginTransaction();
+
+        Author author=new Author("Rokosovskij12");
+        session.save(author);
+        //log.info("Save  Author ={}",author);
+
+        Book book=new Book();
+        book.setName("Russia12");
+        book.setAuthor(author);
+        session.save(book);
+
+        Book book2=new Book();
+        book2.setName("Russia101");
+        book2.setAuthor(author);
+        session.save(book2);
+//
+//        Book book3=new Book();
+//        book3.setName("Russia102");
+//        book3.setAuthor(author);
+//        session.save(book3);
+
+        session.delete(book);
+        session.delete(book2);
+
+        //id=book.getId();
+
+        log.info("Save  Book = {}",book);
+
+//        List<Book> bookList=session.createQuery("from Book").list();
+//
+//        for (Book b: bookList){
+//            log.info("bookList {}",b);
+//        }
+//        List<Author> authorList=session.createQuery("from Author").list();
+//
+//        for (Author a: authorList){
+//            log.info("authorList {}",a);
+//        }
+
+        session.getTransaction().commit();
+        session.close();
+    }
+    public static void deleteAuthor(){
+        log.info("============deleteBook=========");
+        Session session=sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        Book book=session.get(Book.class,id);
+        session.delete(book);
+
+        session.getTransaction().commit();
+        session.close();
+
+
+    }
     public static void main(String[] args) {
         init();
-        dfs();
-        createAuthor();
-        getAuthor();
-        loadAuthor();
-        getVsLoad();
-        updateBook();
-        deleteBook();
+        createAuthorandBookList();
+      //  deleteAuthor();
 
+//        createAuthor();
+//        getAuthor();
+//        loadAuthor();
+//        getVsLoad();
+//        updateBook();
+//        deleteBook();
         destroy();
     }
 }
