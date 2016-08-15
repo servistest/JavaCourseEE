@@ -16,8 +16,10 @@
     <modules>
        <module>Hibernet01</module>
        <module>HibernetManyToOne</module>
-        <module>HibernetOneToOne</module>
-        <module>HibernetManyToMany</module>
+       <module>HibernetOneToOne</module>
+        <module>HibernManyToMany</module>
+
+
     </modules>
 
 

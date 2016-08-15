@@ -16,9 +16,6 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping class="edu.manytomany.Book"/>
         <mapping class="edu.manytomany.Author"/>
-
-
-
     </session-factory>
 
 </hibernate-configuration>

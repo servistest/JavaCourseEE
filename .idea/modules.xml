@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernManyToMany/HibernManyToMany.iml" filepath="$PROJECT_DIR$/Hibernet/HibernManyToMany/HibernManyToMany.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/Hibernet.iml" filepath="$PROJECT_DIR$/Hibernet/Hibernet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/Hibernet01/Hibernet01.iml" filepath="$PROJECT_DIR$/Hibernet/Hibernet01/Hibernet01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetManyToMany/HibernetManyToMany.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetManyToMany/HibernetManyToMany.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne/HibernetManyToOne.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetManyToOne/HibernetManyToOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne/HibernetOneToOne.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetOneToOne/HibernetOneToOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCourseEE.iml" filepath="$PROJECT_DIR$/JavaCourseEE.iml" />

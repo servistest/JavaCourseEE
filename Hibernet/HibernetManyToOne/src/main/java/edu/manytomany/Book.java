@@ -1,4 +1,4 @@
-package edu.manytoone;
+package edu.manytomany;
 
 import javax.persistence.*;
 import java.io.Serializable;

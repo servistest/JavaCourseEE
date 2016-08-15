@@ -1,8 +1,6 @@
-package edu.manytoone;
+package edu.manytomany;
 
 
-import edu.manytoone.*;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -12,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by Admin on 19.07.2016.
