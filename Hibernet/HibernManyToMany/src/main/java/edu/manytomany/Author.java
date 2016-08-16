@@ -19,7 +19,11 @@ public class Author {
     @Column(name="author_name")
     private String authorName;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "authorList")
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinTable(name = "jc_books_author",
+            joinColumns=@JoinColumn(name = "author_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id")
+    )
     private Set<Book> bookList;
 
     public  Author(){
