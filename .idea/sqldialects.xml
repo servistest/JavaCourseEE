@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/Hibernet/HibernManyToMany/create_BooksManyToMany.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/Hibernet01/create_book_raboraet.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Hibernet/HibernetInheritanceJoined/create_Payment.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne/create_BooksManyToOne.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne/create_BooksOneToOne.sql" dialect="PostgreSQL" />
   </component>

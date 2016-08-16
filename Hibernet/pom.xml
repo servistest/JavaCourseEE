@@ -18,6 +18,7 @@
        <module>HibernetManyToOne</module>
        <module>HibernetOneToOne</module>
         <module>HibernManyToMany</module>
+        <module>HibernetInheritanceJoined</module>
 
 
     </modules>
