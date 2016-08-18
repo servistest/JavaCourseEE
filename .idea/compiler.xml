@@ -25,8 +25,10 @@
         <module name="Hibernet01" />
         <module name="Hibernet02" />
         <module name="HibernetInheritanceJoined" />
+        <module name="HibernetInheritanceTablePerClass" />
         <module name="HibernetManyToOne" />
         <module name="HibernetOneToOne" />
+        <module name="HibernetSecondLevel" />
         <module name="HibernManyToMany" />
       </profile>
     </annotationProcessing>
@@ -38,9 +40,11 @@
       <module name="Hibernet02" target="1.8" />
       <module name="Hibernet03" target="1.8" />
       <module name="HibernetInheritanceJoined" target="1.8" />
+      <module name="HibernetInheritanceTablePerClass" target="1.8" />
       <module name="HibernetManyToMany" target="1.8" />
       <module name="HibernetManyToOne" target="1.8" />
       <module name="HibernetOneToOne" target="1.8" />
+      <module name="HibernetSecondLevel" target="1.8" />
       <module name="HibernManyToMany" target="1.8" />
       <module name="HiberTest" target="1.8" />
       <module name="HiberTest2" target="1.8" />

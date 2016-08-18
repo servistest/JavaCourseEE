@@ -19,6 +19,8 @@
        <module>HibernetOneToOne</module>
         <module>HibernManyToMany</module>
         <module>HibernetInheritanceJoined</module>
+        <module>HibernetInheritanceTablePerClass</module>
+        <module>HibernetSecondLevel</module>
 
 
     </modules>
