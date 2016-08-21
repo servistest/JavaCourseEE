@@ -10,7 +10,10 @@
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne/HibernetManyToOne.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetManyToOne/HibernetManyToOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne/HibernetOneToOne.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetOneToOne/HibernetOneToOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetSecondLevel/HibernetSecondLevel.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetSecondLevel/HibernetSecondLevel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernetSpring/HibernetSpring.iml" filepath="$PROJECT_DIR$/Hibernet/HibernetSpring/HibernetSpring.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCourseEE.iml" filepath="$PROJECT_DIR$/JavaCourseEE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Spring.iml" filepath="$PROJECT_DIR$/Spring/Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring/Spring01/Spring01.iml" />
     </modules>
   </component>
 </project>

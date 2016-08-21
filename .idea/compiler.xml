@@ -29,7 +29,9 @@
         <module name="HibernetManyToOne" />
         <module name="HibernetOneToOne" />
         <module name="HibernetSecondLevel" />
+        <module name="HibernetSpring" />
         <module name="HibernManyToMany" />
+        <module name="Spring01" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -45,13 +47,15 @@
       <module name="HibernetManyToOne" target="1.8" />
       <module name="HibernetOneToOne" target="1.8" />
       <module name="HibernetSecondLevel" target="1.8" />
+      <module name="HibernetSpring" target="1.8" />
       <module name="HibernManyToMany" target="1.8" />
       <module name="HiberTest" target="1.8" />
       <module name="HiberTest2" target="1.8" />
       <module name="HibManyToMany" target="1.8" />
       <module name="integration" target="1.5" />
       <module name="JavaCourseEE" target="1.8" />
-      <module name="Spring" target="1.5" />
+      <module name="Spring" target="1.8" />
+      <module name="Spring01" target="1.8" />
       <module name="SpringIo" target="1.5" />
       <module name="SpringIO" target="1.5" />
       <module name="SpringIO-1" target="1.5" />

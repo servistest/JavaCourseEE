@@ -21,6 +21,7 @@
         <module>HibernetInheritanceJoined</module>
         <module>HibernetInheritanceTablePerClass</module>
         <module>HibernetSecondLevel</module>
+        <module>HibernetSpring</module>
 
 
     </modules>

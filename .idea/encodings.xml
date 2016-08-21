@@ -10,5 +10,8 @@
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetSecondLevel" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Hibernet/HibernetSpring" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring/Spring01" charset="UTF-8" />
   </component>
 </project>
