@@ -10,7 +10,8 @@
 
 
     <!--<context:annotation-config/>-->
-    <context:component-scan base-package="edu.spring01.implement"/>
+    <!--<context:component-scan base-package="edu.spring01.singleton"/>-->
+
     <!--<context:component-scan base-package="edu.spring01.implement.*"/>-->
     <!--<bean id="a" class="edu.spring01.test.A">-->
     <!--<bean id="b" class="edu.spring01.test.B"/>-->

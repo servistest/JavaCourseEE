@@ -3,29 +3,31 @@ package edu.spring01.implement.robot;
 import edu.spring01.inrefaces.Hand;
 import edu.spring01.inrefaces.Head;
 import edu.spring01.inrefaces.Leg;
+import edu.spring01.inrefaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.inject.Inject;
 
 /**
- * Created by ALex on 21.08.2016.
+ * Created by Admin on 23.08.2016.
  */
-@Service("model1000")
-public class Model1000 implements edu.spring01.inrefaces.Robot {
+@Service("modelToshiba")
+public class ModelToshiba implements Robot {
     private Hand hand;
     private Head head;
     private Leg leg;
 
-    public Model1000() {
+    public ModelToshiba() {
     }
 
     public Hand getHand() {
         return hand;
     }
-
-
+    @Autowired
+    @Qualifier("toshibaHand")
     public void setHand(Hand hand) {
         this.hand = hand;
     }
@@ -34,7 +36,8 @@ public class Model1000 implements edu.spring01.inrefaces.Robot {
         return head;
     }
 
-
+    @Autowired(required = false)
+    @Qualifier("toshibaHead")
     public void setHead(Head head) {
         this.head = head;
     }
@@ -43,12 +46,15 @@ public class Model1000 implements edu.spring01.inrefaces.Robot {
         return leg;
     }
 
-
+//    @Autowired(required =false )
+//    @Qualifier("toshibaLeg")
+//    or
+    @Resource(name = "toshibaLeg")
     public void setLeg(Leg leg) {
         this.leg = leg;
     }
 
-    public Model1000(Hand hand, Head head, Leg leg) {
+    public ModelToshiba(Hand hand, Head head, Leg leg) {
         this.hand = hand;
         this.head = head;
         this.leg = leg;
@@ -64,13 +70,13 @@ public class Model1000 implements edu.spring01.inrefaces.Robot {
 
     @Override
     public void go() {
-        System.out.println("Model1000 is go");
+        System.out.println("ModelToshiba is go");
 
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("edu.spring01.implement.robot.Model1000{");
+        final StringBuilder sb = new StringBuilder("edu.spring01.implement.robot.ModelToshiba{");
         sb.append("hand=").append(hand);
         sb.append(", head=").append(head);
         sb.append(", leg=").append(leg);
