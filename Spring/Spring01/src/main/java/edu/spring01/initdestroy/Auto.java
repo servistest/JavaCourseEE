@@ -1,12 +1,7 @@
-package edu.spring01.singleton;
+package edu.spring01.initdestroy;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 /**
  * Created by Admin on 25.08.2016.
@@ -41,18 +36,6 @@ public class Auto {
 
     public void setPrice(Float price) {
         this.price = price;
-    }
-
-    @PostConstruct
-    public void init(){
-        System.out.println("Init  bean = " + this.getClass().getCanonicalName());
-    }
-
-
-    @PreDestroy
-    public void destroy(){
-        System.out.println("Destroy bean = " + this.getClass().getCanonicalName());
-
     }
 
     @Override

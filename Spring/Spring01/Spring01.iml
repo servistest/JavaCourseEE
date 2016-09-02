@@ -5,6 +5,15 @@
       <configuration process_explicitly_annotated="false">
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/springExample.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/edu/spring01/singleton/CaseAutoConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/edu/spring01/test/MainConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/resources/springSingleton.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/springSingleton.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/edu/spring01/singleton/CaseAutoConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/edu/spring01/test/MainConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/resources/springExample.xml</file>
         </fileset>
       </configuration>
     </facet>
