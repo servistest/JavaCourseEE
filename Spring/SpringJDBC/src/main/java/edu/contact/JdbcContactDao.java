@@ -118,15 +118,36 @@ public class JdbcContactDao implements ConatactDao,InitializingBean {
         @Override
         public List<Contact> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
             ArrayList<Contact> listContacts=new ArrayList<>();
+            Map<Long,Contact> map=new HashMap<>();
+
+            Contact contact=null;
             while (resultSet.next()){
-                Contact contact=new Contact();
-                contact.setId(resultSet.getLong("id"));
-                contact.setFirstName(resultSet.getString("first_name"));
-                contact.setLastName(resultSet.getString("last_name"));
-                contact.setBirthDate(resultSet.getDate("birth_date"));
-                listContacts.add(contact);
+                Long id=resultSet.getLong("id");
+                contact=map.get(id);
+                if (contact==null){
+                    contact=new Contact();
+                    contact.setId(resultSet.getLong("id"));
+                    contact.setFirstName(resultSet.getString("first_name"));
+                    contact.setLastName(resultSet.getString("last_name"));
+                    contact.setBirthDate(resultSet.getDate("birth_date"));
+                    contact.setContactTelDetails(new ArrayList<ContactTelDetail>());
+                    map.put(id,contact);
+
+                }
+
+
+                Long contactTelDetailId= resultSet.getLong("CONTACT_TEL_DETAIL.ID");
+                if (contactTelDetailId>0){
+                    ContactTelDetail contactTelDetail=new ContactTelDetail();
+                    contactTelDetail.setId(contactTelDetailId);
+                    contactTelDetail.setContactId(id);
+                    contactTelDetail.setTelType("CONTACT_TEL_DETAIL.TEL_TYPE");
+                    contactTelDetail.setTelNumber("CONTACT_TEL_DETAIL.TEL_NUMBER");
+                    contact.getContactTelDetails().add(contactTelDetail);
+                }
             }
-            return listContacts;
+
+            return new ArrayList<Contact>(map.values());
         }
     }
 

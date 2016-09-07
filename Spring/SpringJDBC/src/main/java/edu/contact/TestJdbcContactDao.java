@@ -30,6 +30,7 @@ public class TestJdbcContactDao {
         list.put(2L,"Test2");
         list.put(3L,"Test3");
         list.put(4L,"Test4");
+        log.info("list Map = {}",list.values());
     }
 
 }
