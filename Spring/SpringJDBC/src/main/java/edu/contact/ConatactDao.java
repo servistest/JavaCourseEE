@@ -8,6 +8,7 @@ import java.util.List;
 public interface ConatactDao {
     List<Contact> findAll();
     List<Contact> findByFirstName(String firstName);
+    List<Contact> findAllWithDetail();
     String findLastNameById(Long id);
     String findFirstNameById(Long id);
     void insert(Contact contact);

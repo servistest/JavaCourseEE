@@ -12,6 +12,118 @@
         <comment>standard public schema</comment>
         <introspection-timestamp>2016-09-06.09:23:10.371</introspection-timestamp>
       </schema>
+      <schema id="3" parent="1" name="contact">
+        <object-id>33430</object-id>
+        <introspection-state-number>1464</introspection-state-number>
+        <introspection-timestamp>2016-09-07.17:36:13.555</introspection-timestamp>
+      </schema>
+      <sequence id="4" parent="3" name="contact_id_seq">
+        <object-id>33431</object-id>
+        <state-number>1463</state-number>
+      </sequence>
+      <sequence id="5" parent="3" name="contact_tel_detail_id_seq">
+        <object-id>33441</object-id>
+        <state-number>1464</state-number>
+      </sequence>
+      <table id="6" parent="3" name="contact">
+        <object-id>33433</object-id>
+        <state-number>1464</state-number>
+      </table>
+      <table id="7" parent="3" name="contact_tel_detail">
+        <object-id>33443</object-id>
+        <state-number>1464</state-number>
+      </table>
+      <column id="8" parent="6" name="id">
+        <state-number>1463</state-number>
+        <mandatory>1</mandatory>
+        <data-type>bigint</data-type>
+        <default-expression>nextval(&apos;contact.contact_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="9" parent="6" name="first_name">
+        <state-number>1463</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="10" parent="6" name="last_name">
+        <state-number>1463</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="11" parent="6" name="birth_date">
+        <state-number>1463</state-number>
+        <data-type>date</data-type>
+      </column>
+      <index id="12" parent="6" name="contact_pkey">
+        <object-id>33437</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="13" parent="6" name="contact_first_name_last_name_key">
+        <object-id>33439</object-id>
+        <columns>first_name
+last_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="14" parent="6" name="contact_pkey">
+        <columns>id</columns>
+        <underlying-index>contact_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="15" parent="6" name="contact_first_name_last_name_key">
+        <columns>first_name
+last_name</columns>
+        <underlying-index>contact_first_name_last_name_key</underlying-index>
+      </key>
+      <column id="16" parent="7" name="id">
+        <state-number>1464</state-number>
+        <mandatory>1</mandatory>
+        <data-type>bigint</data-type>
+        <default-expression>nextval(&apos;contact.contact_tel_detail_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="17" parent="7" name="contact_id">
+        <state-number>1464</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="18" parent="7" name="tel_type">
+        <state-number>1464</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="19" parent="7" name="tel_number">
+        <state-number>1464</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="20" parent="7" name="contact_tel_detail_pkey">
+        <object-id>33447</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="21" parent="7" name="contact_tel_detail_contact_id_tel_type_key">
+        <object-id>33449</object-id>
+        <columns>contact_id
+tel_type</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="22" parent="7" name="contact_tel_detail_pkey">
+        <columns>id</columns>
+        <underlying-index>contact_tel_detail_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="23" parent="7" name="contact_tel_detail_contact_id_tel_type_key">
+        <columns>contact_id
+tel_type</columns>
+        <underlying-index>contact_tel_detail_contact_id_tel_type_key</underlying-index>
+      </key>
+      <foreign-key id="24" parent="7" name="contact_tel_detail_contact_id_fkey">
+        <columns>contact_id</columns>
+        <ref-key>~.contact.contact_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
     </database-model>
   </data-source>
 </component>
