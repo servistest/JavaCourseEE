@@ -32,6 +32,7 @@
         <module name="HibernetSpring" />
         <module name="HibernManyToMany" />
         <module name="Spring01" />
+        <module name="SpringJDBC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -59,6 +60,7 @@
       <module name="SpringIo" target="1.5" />
       <module name="SpringIO" target="1.5" />
       <module name="SpringIO-1" target="1.5" />
+      <module name="SpringJDBC" target="1.8" />
       <module name="test1" target="1.8" />
       <module name="test2" target="1.8" />
       <module name="untitled" target="1.8" />
