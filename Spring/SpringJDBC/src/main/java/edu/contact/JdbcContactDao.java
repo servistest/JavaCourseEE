@@ -3,7 +3,6 @@ package edu.contact;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,7 +19,7 @@ import java.util.Map;
 /**
  * Created by Admin on 06.09.2016.
  */
-public class JdbcContactDao implements ConatactDao,InitializingBean {
+public class JdbcContactDao implements ContactDao,InitializingBean {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -28,8 +27,8 @@ public class JdbcContactDao implements ConatactDao,InitializingBean {
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplate=new JdbcTemplate(dataSource);
-        NamedParameterJdbcTemplate namedParameterJdbcTemplate=new NamedParameterJdbcTemplate(dataSource);
-        this.namedParameterJdbcTemplate=namedParameterJdbcTemplate;
+        this.namedParameterJdbcTemplate=new NamedParameterJdbcTemplate(dataSource);
+
     }
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -43,7 +42,7 @@ public class JdbcContactDao implements ConatactDao,InitializingBean {
 
     @Override
     public List<Contact> findAllWithDetail() {
-        String sql="SELECT CONTACT.ID,FIRST_NAME,LAST_NAME,BIRTH_DATE,CONTACT_TEL_DETAIL.ID,CONTACT_TEL_DETAIL.TEL_TYPE,CONTACT_TEL_DETAIL.TEL_NUMBER\n" +
+        String sql="SELECT CONTACT.ID,FIRST_NAME,LAST_NAME,BIRTH_DATE,CONTACT_TEL_DETAIL.ID as contact_tel_id,CONTACT_TEL_DETAIL.TEL_TYPE,CONTACT_TEL_DETAIL.TEL_NUMBER\n" +
                 "from contact.CONTACT LEFT JOIN contact.CONTACT_TEL_DETAIL ON CONTACT.ID = CONTACT_TEL_DETAIL.CONTACT_ID";
         return namedParameterJdbcTemplate.query(sql,new ContactWithDetailExtractor());
     }
@@ -92,6 +91,17 @@ public class JdbcContactDao implements ConatactDao,InitializingBean {
     }
 
     @Override
+    public void insertWithDetail(Contact contact) {
+
+
+    }
+
+    @Override
+    public void insertWithDetail() {
+
+    }
+
+    @Override
     public void update(Contact contact) {
 
     }
@@ -113,42 +123,6 @@ public class JdbcContactDao implements ConatactDao,InitializingBean {
         }
     }
 
-    private static final class ContactWithDetailExtractor implements ResultSetExtractor<List<Contact>>{
 
-        @Override
-        public List<Contact> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
-            ArrayList<Contact> listContacts=new ArrayList<>();
-            Map<Long,Contact> map=new HashMap<>();
-
-            Contact contact=null;
-            while (resultSet.next()){
-                Long id=resultSet.getLong("id");
-                contact=map.get(id);
-                if (contact==null){
-                    contact=new Contact();
-                    contact.setId(resultSet.getLong("id"));
-                    contact.setFirstName(resultSet.getString("first_name"));
-                    contact.setLastName(resultSet.getString("last_name"));
-                    contact.setBirthDate(resultSet.getDate("birth_date"));
-                    contact.setContactTelDetails(new ArrayList<ContactTelDetail>());
-                    map.put(id,contact);
-
-                }
-
-
-                Long contactTelDetailId= resultSet.getLong("CONTACT_TEL_DETAIL.ID");
-                if (contactTelDetailId>0){
-                    ContactTelDetail contactTelDetail=new ContactTelDetail();
-                    contactTelDetail.setId(contactTelDetailId);
-                    contactTelDetail.setContactId(id);
-                    contactTelDetail.setTelType("CONTACT_TEL_DETAIL.TEL_TYPE");
-                    contactTelDetail.setTelNumber("CONTACT_TEL_DETAIL.TEL_NUMBER");
-                    contact.getContactTelDetails().add(contactTelDetail);
-                }
-            }
-
-            return new ArrayList<Contact>(map.values());
-        }
-    }
 
 }

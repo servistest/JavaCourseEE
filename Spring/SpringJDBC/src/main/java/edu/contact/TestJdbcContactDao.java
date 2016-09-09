@@ -25,12 +25,6 @@ public class TestJdbcContactDao {
         log.info("List all contacts with first name Cris  = {}",jdbcContactDao.findByFirstName("Chris"));
         log.info("List all contacts with details  = {}",jdbcContactDao.findAllWithDetail());
 
-        Map<Long,String> list=new HashMap<>();
-        list.put(1L,"Test1");
-        list.put(2L,"Test2");
-        list.put(3L,"Test3");
-        list.put(4L,"Test4");
-        log.info("list Map = {}",list.values());
     }
 
 }
