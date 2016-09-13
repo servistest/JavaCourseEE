@@ -13,6 +13,7 @@ import java.util.Map;
 /**
  * Created by Admin on 09.09.2016.
  */
+
 public final class ContactWithDetailExtractor implements ResultSetExtractor<List<Contact>> {
 
     @Override

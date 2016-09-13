@@ -24,6 +24,7 @@ public class TestJdbcContactDao {
         log.info("List all contacts  = {}",jdbcContactDao.findAll());
         log.info("List all contacts with first name Cris  = {}",jdbcContactDao.findByFirstName("Chris"));
         log.info("List all contacts with details  = {}",jdbcContactDao.findAllWithDetail());
+        log.info("Select First Name By ID with Stored Function = {}",jdbcContactDao.findFirstNameByIdFunction(3L));
 
     }
 

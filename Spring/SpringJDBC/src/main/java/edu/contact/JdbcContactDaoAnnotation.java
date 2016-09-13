@@ -2,6 +2,7 @@ package edu.contact;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
@@ -25,6 +26,7 @@ public class JdbcContactDaoAnnotation implements ContactDao {
     private ContactUpdate contactUpdate;
     private ContactInsert contactInsert;
     private ContactInsertDetail contactInsertDetail;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
 
     @Resource(name="dataSource")
@@ -36,6 +38,7 @@ public class JdbcContactDaoAnnotation implements ContactDao {
         this.contactUpdate=new ContactUpdate(dataSource);
         this.contactInsert=new ContactInsert(dataSource);
         this.contactInsertDetail=new ContactInsertDetail(dataSource);
+        this.namedParameterJdbcTemplate=new NamedParameterJdbcTemplate(dataSource);
     }
 
     public DataSource getDataSource() {
@@ -55,23 +58,37 @@ public class JdbcContactDaoAnnotation implements ContactDao {
     }
 
     @Override
-    public List<Contact> findAllWithDetail() {
-        return null;
+    public List<Contact> findAllWithDetail()
+    {
+        String sql="SELECT CONTACT.ID,FIRST_NAME,LAST_NAME,BIRTH_DATE,CONTACT_TEL_DETAIL.ID as contact_tel_id,CONTACT_TEL_DETAIL.TEL_TYPE,CONTACT_TEL_DETAIL.TEL_NUMBER\n" +
+                "from contact.CONTACT LEFT JOIN contact.CONTACT_TEL_DETAIL ON CONTACT.ID = CONTACT_TEL_DETAIL.CONTACT_ID";
+        return namedParameterJdbcTemplate.query(sql,new ContactWithDetailExtractor());
+
     }
 
     @Override
     public String findLastNameById(Long id) {
-        return null;
+
+        String sql="select last_name from contact.contact where id=:contactId";
+        Map<String,Object> namedParameters=new HashMap<String, Object>();
+        namedParameters.put("contactId",id);
+        return namedParameterJdbcTemplate.queryForObject(sql,namedParameters,String.class);
     }
 
     @Override
     public String findFirstNameById(Long id) {
 
-        Map<String,Object> paramMap=new HashMap<>();
-        paramMap.put("id",id);
-//        return selectFirstNameById.executeByNamedParam(paramMap);
+        String sql="select first_name from contact.contact where id=:contactId";
+        Map<String,Object> namedParameters=new HashMap<String, Object>();
+        namedParameters.put("contactId",id);
+        return namedParameterJdbcTemplate.queryForObject(sql,namedParameters,String.class);
+    }
+
+    @Override
+    public String findFirstNameByIdFunction(Long id) {
         return null;
     }
+
 
     @Override
     public void insert(Contact contact) {

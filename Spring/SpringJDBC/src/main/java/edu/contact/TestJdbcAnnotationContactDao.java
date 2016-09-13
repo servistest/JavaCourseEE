@@ -20,26 +20,26 @@ public class TestJdbcAnnotationContactDao {
         log.info("=========================INSERT CONTACT WITH DETAIL========================");
         Contact contact=new Contact();
         contact.setId(1L);
-        contact.setFirstName("Alekseev4");
-        contact.setLastName("Yurij4");
+        contact.setFirstName("Alekseev5");
+        contact.setLastName("Yurij5");
         contact.setBirthDate(new Date(
                 (new GregorianCalendar(1993,02,01).getTime()).getTime()));
 
         List<ContactTelDetail> listContactTelDetails=new ArrayList<>();
         ContactTelDetail contactTelDetail=new ContactTelDetail();
-        contactTelDetail.setTelType("Home");
-        contactTelDetail.setTelNumber("12345-12345");
+        contactTelDetail.setTelType("Home5");
+        contactTelDetail.setTelNumber("555555555-555555555");
         listContactTelDetails.add(contactTelDetail);
 
         contactTelDetail=new ContactTelDetail();
-        contactTelDetail.setTelType("WORK");
-        contactTelDetail.setTelNumber("256877-102255");
+        contactTelDetail.setTelType("WORK5");
+        contactTelDetail.setTelNumber("55555-55555");
         listContactTelDetails.add(contactTelDetail);
 
         contact.setContactTelDetails(listContactTelDetails);
         contactDao.insertWithDetail(contact);
 
-        log.info("List of contacts = {}",contactDao.findAll());
+        log.info("List of contacts = {}",contactDao.findAllWithDetail());
 
     }
     public static void updateContact(ContactDao contactDao){
@@ -76,10 +76,13 @@ public class TestJdbcAnnotationContactDao {
         log.info("List of contacts = {}",contactDao.findAll());
         log.info("=========================SELECT  CONTACT BY FIRST NAME========================");
         log.info("List of contacts = {}",contactDao.findByFirstName("John"));
-
+        log.info("=========================SELECT  FIRST NAME BY ID========================");
+        log.info("Select  on id = {}  first name= {}" ,1 , contactDao.findFirstNameById(1L) );
+        log.info("=========================SELECT  LAST NAME BY ID========================");
+        log.info("Select  on id = {}  last name = {}" ,1 , contactDao.findFirstNameById(1L) );
 //        insertContact(contactDao);
 //        updateContact(contactDao);
-        insertContactWithDetail(contactDao);
+//        insertContactWithDetail(contactDao);
 
 
     }

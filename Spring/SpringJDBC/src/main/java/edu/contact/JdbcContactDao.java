@@ -23,13 +23,21 @@ public class JdbcContactDao implements ContactDao,InitializingBean {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private StoredFunctionFirstNameById storedFunctionFirstNameById;
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplate=new JdbcTemplate(dataSource);
         this.namedParameterJdbcTemplate=new NamedParameterJdbcTemplate(dataSource);
-
+        this.storedFunctionFirstNameById=new StoredFunctionFirstNameById(dataSource);
     }
+
+    @Override
+    public String findFirstNameByIdFunction(Long id) {
+        List<String> result= storedFunctionFirstNameById.execute(id);
+        return result.get(0);
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         if (dataSource==null){

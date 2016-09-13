@@ -13,6 +13,8 @@
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetSpring" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/Spring01" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringHibernet" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJDBC" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringStoredFunction" charset="UTF-8" />
   </component>
 </project>

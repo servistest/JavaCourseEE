@@ -4,17 +4,11 @@ import edu.spring01.implement.robot.Model1000;
 import edu.spring01.implement.robot.ModelToshiba;
 import edu.spring01.implement.sony.SonyHand;
 import edu.spring01.implement.sony.SonyHead;
-import edu.spring01.implement.sony.SonyLeg;
-import edu.spring01.implement.toshiba.ToshibaHand;
 import edu.spring01.implement.toshiba.ToshibaLeg;
-import edu.spring01.inrefaces.Robot;
-import org.dom4j.rule.Mode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by ALex on 21.08.2016.

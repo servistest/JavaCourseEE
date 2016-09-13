@@ -11,6 +11,7 @@ public interface ContactDao {
     List<Contact> findAllWithDetail();
     String findLastNameById(Long id);
     String findFirstNameById(Long id);
+    String findFirstNameByIdFunction(Long id);
     void insert(Contact contact);
     void insertWithDetail(Contact contact);
     void insertWithDetail();

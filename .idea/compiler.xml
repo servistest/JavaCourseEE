@@ -32,7 +32,9 @@
         <module name="HibernetSpring" />
         <module name="HibernManyToMany" />
         <module name="Spring01" />
+        <module name="SpringHibernet" />
         <module name="SpringJDBC" />
+        <module name="SpringStoredFunction" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -57,10 +59,12 @@
       <module name="JavaCourseEE" target="1.8" />
       <module name="Spring" target="1.8" />
       <module name="Spring01" target="1.8" />
+      <module name="SpringHibernet" target="1.8" />
       <module name="SpringIo" target="1.5" />
       <module name="SpringIO" target="1.5" />
       <module name="SpringIO-1" target="1.5" />
       <module name="SpringJDBC" target="1.8" />
+      <module name="SpringStoredFunction" target="1.8" />
       <module name="test1" target="1.8" />
       <module name="test2" target="1.8" />
       <module name="untitled" target="1.8" />
