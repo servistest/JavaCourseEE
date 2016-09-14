@@ -40,6 +40,7 @@ public class SpringHibernateExample {
     }
 
 
+
     private static void update(ContactDao contactDao){
         Contact contact=contactDao.findById(11L);
         contact.setFirstName("New Name ");
