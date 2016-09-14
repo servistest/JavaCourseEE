@@ -18,6 +18,11 @@ public class ContactTelDetail implements Serializable {
     public ContactTelDetail() {
     }
 
+    public ContactTelDetail(String tel_type, String tel_number) {
+        this.tel_type = tel_type;
+        this.tel_number = tel_number;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

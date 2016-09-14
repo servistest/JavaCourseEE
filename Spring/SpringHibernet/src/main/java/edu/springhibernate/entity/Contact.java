@@ -21,26 +21,30 @@ import java.util.Set;
         )
 })
 public class Contact implements Serializable {
-    private Integer id;
+    private Long id;
     private String firstName;
     private String lastName;
-    private Date birth_date;
+    private Date birthDate;
     private Integer version;
     private Set<ContactTelDetail> contactTelDetails=new HashSet<ContactTelDetail>();
     private Set<Hobby> hobbies=new HashSet<Hobby>();
 
-    public Contact() {
+    public Contact() {    }
 
+    public Contact(String firstName,String lastName,Date birthDate){
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setBirthDate(birthDate);
     }
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,12 +68,12 @@ public class Contact implements Serializable {
 
     @Column(name = "birth_date")
     @Temporal(TemporalType.DATE)
-    public Date getBirth_date() {
-        return birth_date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(Date birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(Date birth_date) {
+        this.birthDate = birth_date;
     }
 
     @OneToMany(mappedBy = "contact",cascade = CascadeType.ALL,orphanRemoval = true)
@@ -99,7 +103,7 @@ public class Contact implements Serializable {
         this.version = version;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "hobby.contact_hobby_detail",
             joinColumns = @JoinColumn(name = "contact_id"),
             inverseJoinColumns = @JoinColumn(name = "hobby_id")
@@ -118,7 +122,7 @@ public class Contact implements Serializable {
         sb.append("id=").append(id);
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", birth_date=").append(birth_date);
+        sb.append(", birth_date=").append(birthDate);
         sb.append(", version=").append(version);
         sb.append('}');
         return sb.toString();
