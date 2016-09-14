@@ -39,6 +39,7 @@ public class SpringHibernateExample {
         contactDao.delete(contact);
     }
 
+
     private static void update(ContactDao contactDao){
         Contact contact=contactDao.findById(11L);
         contact.setFirstName("New Name ");
