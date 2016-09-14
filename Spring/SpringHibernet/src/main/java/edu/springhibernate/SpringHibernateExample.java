@@ -33,7 +33,7 @@ public class SpringHibernateExample {
 }
 
     private static void delete(ContactDao contactDao){
-        Contact contact =contactDao.findById(12L);
+        Contact contact =contactDao.findById(10L);
         contactDao.delete(contact);
     }
 
