@@ -30,11 +30,7 @@ public class SpringHibernateExample {
 //        insert(contactDao);
 //        update(contactDao);
           delete(contactDao);
-
-
-
-
-    }
+}
 
     private static void delete(ContactDao contactDao){
         Contact contact =contactDao.findById(12L);
