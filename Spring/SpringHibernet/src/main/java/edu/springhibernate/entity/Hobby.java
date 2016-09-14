@@ -23,7 +23,7 @@ public class Hobby implements Serializable {
         this.hobbyId = hobbyId;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "hobby.contact_hobby_detail",
             joinColumns =@JoinColumn(name = "hobby_id"),
             inverseJoinColumns = @JoinColumn(name = "contact_id")

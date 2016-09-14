@@ -11,6 +11,15 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "hobby.contact")
+@NamedQueries({
+        @NamedQuery(name = "Contact.findAllWithDetail",
+                query = "select distinct c from Contact c " +
+                        "left join fetch c.contactTelDetails t left join fetch c.hobbies h"),
+        @NamedQuery(name = "Contact.findById",
+                query = "select distinct c from Contact c  " +
+                        "left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id=:id"
+        )
+})
 public class Contact implements Serializable {
     private Integer id;
     private String firstName;
@@ -63,7 +72,7 @@ public class Contact implements Serializable {
         this.birth_date = birth_date;
     }
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "contact",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "contact",cascade = CascadeType.ALL,orphanRemoval = true)
     public Set<ContactTelDetail> getContactTelDetails() {
         return contactTelDetails;
     }

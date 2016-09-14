@@ -21,8 +21,8 @@ public class SpringHibernateExample {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("app-context-annotation.xml");
         ContactDao contactDao=applicationContext.getBean("contactDao",ContactDao.class);
 
-//        log.info("List all contacts = {}",contactDao.findAll());
-        listContactsWithDetail(contactDao.findAll());
+//        listContactsWithDetail(contactDao.findAll());
+        listContactsWithDetail(contactDao.findAllWithDetail());
     }
 
     private static void listContactsWithDetail(List<Contact> contacts){
