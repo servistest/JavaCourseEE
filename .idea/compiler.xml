@@ -34,7 +34,6 @@
         <module name="Spring01" />
         <module name="SpringHibernet" />
         <module name="SpringJDBC" />
-        <module name="SpringStoredFunction" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

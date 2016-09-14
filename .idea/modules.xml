@@ -16,7 +16,6 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring/Spring01/Spring01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringHibernet/SpringHibernet.iml" filepath="$PROJECT_DIR$/Spring/SpringHibernet/SpringHibernet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/Spring/SpringJDBC/SpringJDBC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring/SpringStoredFunction/SpringStoredFunction.iml" filepath="$PROJECT_DIR$/Spring/SpringStoredFunction/SpringStoredFunction.iml" />
     </modules>
   </component>
 </project>

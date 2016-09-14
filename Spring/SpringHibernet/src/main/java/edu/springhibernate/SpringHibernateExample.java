@@ -27,20 +27,20 @@ public class SpringHibernateExample {
 //        listContactsWithDetail(contactDao.findAll());
 //        listContactsWithDetail(contactDao.findAllWithDetail());
 //        log.info("Contact with id =2, {}",contactDao.findById(2L));
-//        insert(contactDao);
-//        update(contactDao);
+          insert(contactDao);
+          update(contactDao);
           delete(contactDao);
 }
 
     private static void delete(ContactDao contactDao){
-        Contact contact =contactDao.findById(10L);
+        Contact contact =contactDao.findById(16L);
         contactDao.delete(contact);
     }
 
 
 
     private static void update(ContactDao contactDao){
-        Contact contact=contactDao.findById(11L);
+        Contact contact=contactDao.findById(16L);
         contact.setFirstName("New Name ");
         Set <ContactTelDetail> contactTelDetails=contact.getContactTelDetails();
         for (ContactTelDetail contactTelDetail:contactTelDetails){
@@ -55,8 +55,8 @@ public class SpringHibernateExample {
 
     private static void insert(ContactDao contactDao){
         Contact contact=new Contact();
-        contact.setFirstName("Roman55");
-        contact.setLastName("Rokosocskij55");
+        contact.setFirstName("Roman77");
+        contact.setLastName("Rokosocskij77");
         contact.setBirthDate(new Date());
         ContactTelDetail contactTelDetail=new ContactTelDetail("Home","5555556666");
         contact.addContactTelDetails(contactTelDetail);
