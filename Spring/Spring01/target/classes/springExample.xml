@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--<context:annotation-config/>-->
+    <context:component-scan base-package="edu.spring01.implement"/>
+    <!--<context:component-scan base-package="edu.spring01.implement.*"/>-->
+    <!--<bean id="a" class="edu.spring01.test.A">-->
+    <!--<bean id="b" class="edu.spring01.test.B"/>-->
+    <!--<bean id="c" class="edu.spring01.test.C"/>-->
+
+
+
+
+
+
+    <!--<tx:annotation-driven transaction-manager="txManager"/>-->
+
+    <!--<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:postgresql://localhost:5432/JavaCourse"/>-->
+        <!--<property name="username" value="postgres"/>-->
+        <!--<property name="password" value="admin"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+    <!--</bean>-->
+
+
+
+   <!--<bean id="model1000" class="edu.spring01.implement.robot.Model1000" lazy-init="true">-->
+
+   <!--</bean>-->
+    <!--<bean id="model2000" class="edu.spring01.implement.robot.Model1000">-->
+        <!--<property name="hand" ref="sonyHand"/>-->
+        <!--<property name="head" ref="toshibaHead"/>-->
+        <!--<property name="leg" ref="sonyLeg"/>-->
+    <!--</bean>-->
+
+
+
+   <!--<bean id="sonyHead" class="edu.spring01.implement.sony.SonyHead"></bean>-->
+    <!--<bean id="sonyHand" class="edu.spring01.implement.sony.SonyHand"></bean>-->
+    <!--<bean id="sonyLeg" class="edu.spring01.implement.sony.SonyLeg"></bean>-->
+    <!--<bean id="toshibaHand" class="edu.spring01.implement.toshiba.ToshibaHand"></bean>-->
+    <!--<bean id="toshibaHead" class="edu.spring01.implement.toshiba.ToshibaHead"></bean>-->
+    <!--<bean id="toshibaLeg" class="edu.spring01.implement.toshiba.ToshibaLeg"></bean>-->
+
+
+
+    <!--<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+    <!--</bean>-->
+
+
+
+</beans>
