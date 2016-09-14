@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by Admin on 13.09.2016.
  */
 @Entity
-@Table(name = "contact.contact_tel_detail")
+@Table(name = "hobby.contact_tel_detail")
 public class ContactTelDetail implements Serializable {
     private Integer id;
     private Contact contact;
@@ -30,7 +30,7 @@ public class ContactTelDetail implements Serializable {
     }
 
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "contact_id")
     public Contact getContact() {
         return this.contact;
@@ -66,5 +66,17 @@ public class ContactTelDetail implements Serializable {
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ContactTelDetail{");
+        sb.append("id=").append(id);
+        sb.append(", contact=").append(contact);
+        sb.append(", tel_type='").append(tel_type).append('\'');
+        sb.append(", tel_number='").append(tel_number).append('\'');
+        sb.append(", version=").append(version);
+        sb.append('}');
+        return sb.toString();
     }
 }

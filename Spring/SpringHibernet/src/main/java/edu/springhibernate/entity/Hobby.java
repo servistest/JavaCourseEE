@@ -8,23 +8,23 @@ import java.util.Set;
  * Created by Admin on 13.09.2016.
  */
 @Entity
-@Table(name = "contact.hobby")
+@Table(name = "hobby.hobby")
 public class Hobby implements Serializable {
-    private Integer hobbyId;
+    private String hobbyId;
     private Set<Contact> contacts;
 
     @Id
     @Column(name = "hobby_id")
-    public Integer getHobbyId() {
+    public String getHobbyId() {
         return hobbyId;
     }
 
-    public void setHobbyId(Integer hobbyId) {
+    public void setHobbyId(String hobbyId) {
         this.hobbyId = hobbyId;
     }
 
-    @ManyToMany
-    @JoinTable(name = "contact.contact_hobby_detail",
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "hobby.contact_hobby_detail",
             joinColumns =@JoinColumn(name = "hobby_id"),
             inverseJoinColumns = @JoinColumn(name = "contact_id")
     )
@@ -38,7 +38,7 @@ public class Hobby implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("edu.springhibernate.entity.Hobby{");
+        final StringBuilder sb = new StringBuilder("Hobby{");
         sb.append("hobbyId=").append(hobbyId);
         sb.append('}');
         return sb.toString();

@@ -35,7 +35,7 @@ public class Contact implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -44,7 +44,7 @@ public class Contact implements Serializable {
         this.firstName = firstName;
     }
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -63,7 +63,7 @@ public class Contact implements Serializable {
         this.birth_date = birth_date;
     }
 
-    @OneToMany(mappedBy = "contact",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "contact",cascade = CascadeType.ALL,orphanRemoval = true)
     public Set<ContactTelDetail> getContactTelDetails() {
         return contactTelDetails;
     }
@@ -90,8 +90,8 @@ public class Contact implements Serializable {
         this.version = version;
     }
 
-    @ManyToMany
-    @JoinTable(name = "contact.contact_hobby_detail",
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "hobby.contact_hobby_detail",
             joinColumns = @JoinColumn(name = "contact_id"),
             inverseJoinColumns = @JoinColumn(name = "hobby_id")
     )
@@ -105,7 +105,7 @@ public class Contact implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("edu.springhibernate.entity.Contact{");
+        final StringBuilder sb = new StringBuilder("Contact{");
         sb.append("id=").append(id);
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
