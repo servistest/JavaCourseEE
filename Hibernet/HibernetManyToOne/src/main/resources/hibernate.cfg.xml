@@ -14,8 +14,8 @@
         <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
         <property name="current_session_context_class">thread</property>
         <property name="hbm2ddl.auto">update</property>
-        <mapping class="edu.manytoone.Book"/>
-        <mapping class="edu.manytoone.Author"/>
+        <mapping class="edu.manytomany.Book"/>
+        <mapping class="edu.manytomany.Author"/>
 
 
 

@@ -16,8 +16,14 @@
     <modules>
        <module>Hibernet01</module>
        <module>HibernetManyToOne</module>
-        <module>HibernetOneToOne</module>
-        <module>HibernetManyToMany</module>
+       <module>HibernetOneToOne</module>
+        <module>HibernManyToMany</module>
+        <module>HibernetInheritanceJoined</module>
+        <module>HibernetInheritanceTablePerClass</module>
+        <module>HibernetSecondLevel</module>
+        <module>HibernetSpring</module>
+
+
     </modules>
 
 

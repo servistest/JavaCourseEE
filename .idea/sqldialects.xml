@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Hibernet/HibernManyToMany/create_BooksManyToMany.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/Hibernet01/create_book_raboraet.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Hibernet/HibernetInheritanceTablePerClass/create_PaymentPerClass.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne/create_BooksManyToOne.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne/create_BooksOneToOne.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Hibernet/HibernetSecondLevel/src/main/resources/hibernate.cfg.xml" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/Spring01/create_Contact.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringHibernet/schema-spring-hibernet.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringJDBC/create_Contact.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringJDBC/src/main/java/edu/contact/SelectContactByFirstName.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringJDBC/stored-function.sql" dialect="PostgreSQL" />
   </component>
 </project>

@@ -24,26 +24,50 @@
         <processorPath useClasspath="true" />
         <module name="Hibernet01" />
         <module name="Hibernet02" />
-        <module name="HibernetManyToMany" />
+        <module name="HibernetInheritanceJoined" />
+        <module name="HibernetInheritanceTablePerClass" />
         <module name="HibernetManyToOne" />
         <module name="HibernetOneToOne" />
+        <module name="HibernetSecondLevel" />
+        <module name="HibernetSpring" />
+        <module name="HibernManyToMany" />
+        <module name="Spring01" />
+        <module name="SpringHibernet" />
+        <module name="SpringJDBC" />
+        <module name="SpringStoredFunction" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dtd" target="1.5" />
+      <module name="HiberManyToMany" target="1.8" />
       <module name="Hibernet" target="1.8" />
       <module name="Hibernet01" target="1.8" />
       <module name="Hibernet02" target="1.8" />
       <module name="Hibernet03" target="1.8" />
+      <module name="HibernetInheritanceJoined" target="1.8" />
+      <module name="HibernetInheritanceTablePerClass" target="1.8" />
       <module name="HibernetManyToMany" target="1.8" />
       <module name="HibernetManyToOne" target="1.8" />
       <module name="HibernetOneToOne" target="1.8" />
+      <module name="HibernetSecondLevel" target="1.8" />
+      <module name="HibernetSpring" target="1.8" />
+      <module name="HibernManyToMany" target="1.8" />
+      <module name="HiberTest" target="1.8" />
+      <module name="HiberTest2" target="1.8" />
+      <module name="HibManyToMany" target="1.8" />
       <module name="integration" target="1.5" />
       <module name="JavaCourseEE" target="1.8" />
-      <module name="Spring" target="1.5" />
+      <module name="Spring" target="1.8" />
+      <module name="Spring01" target="1.8" />
+      <module name="SpringHibernet" target="1.8" />
       <module name="SpringIo" target="1.5" />
       <module name="SpringIO" target="1.5" />
       <module name="SpringIO-1" target="1.5" />
+      <module name="SpringJDBC" target="1.8" />
+      <module name="SpringStoredFunction" target="1.8" />
+      <module name="test1" target="1.8" />
+      <module name="test2" target="1.8" />
+      <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

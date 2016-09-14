@@ -11,13 +11,15 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/Hibernet/Hibernet03/pom.xml" />
-        <option value="$PROJECT_DIR$/Hibernet/HibernnetManyToOne/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/SpringIO/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringIo/pom.xml" />
-        <option value="$PROJECT_DIR$/spring/pom.xml" />
-        <option value="$PROJECT_DIR$/test1/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/HibManyToMany/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/HiberManyToMany/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/HiberTest/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/HiberTest2/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/HibernetManyToMany/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/test1/pom.xml" />
+        <option value="$PROJECT_DIR$/Hibernet/test2/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
       </set>
     </option>
   </component>
@@ -34,4 +36,5 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>
