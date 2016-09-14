@@ -32,6 +32,8 @@ public class SpringHibernateExample {
           delete(contactDao);
 
 
+
+
     }
 
     private static void delete(ContactDao contactDao){
