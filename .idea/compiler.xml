@@ -34,6 +34,7 @@
         <module name="Spring01" />
         <module name="SpringHibernet" />
         <module name="SpringJDBC" />
+        <module name="SpringJPA2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -63,6 +64,7 @@
       <module name="SpringIO" target="1.5" />
       <module name="SpringIO-1" target="1.5" />
       <module name="SpringJDBC" target="1.8" />
+      <module name="SpringJPA2" target="1.8" />
       <module name="SpringStoredFunction" target="1.8" />
       <module name="test1" target="1.8" />
       <module name="test2" target="1.8" />

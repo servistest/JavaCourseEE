@@ -14,9 +14,8 @@
     <modules>
         <module>Spring01</module>
         <module>SpringJDBC</module>
-        <module>SpringStoredFunction</module>
         <module>SpringHibernet</module>
-        <module>SpringJPA</module>
+        <module>SpringJPA2</module>
     </modules>
 
 
