@@ -14,4 +14,5 @@ public interface ContactService {
     void save(Contact contact);
     void delete(Contact contact);
     List<Contact> findAllByNativeQuery();
+
 }
