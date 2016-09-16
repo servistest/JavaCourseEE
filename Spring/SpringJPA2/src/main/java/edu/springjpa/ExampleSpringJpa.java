@@ -53,6 +53,7 @@ public class ExampleSpringJpa {
         contact.setLastName("Fedorov");
         contact.setBirthDate(new Date());
         contactService.save(contact);
+
     }
 
 

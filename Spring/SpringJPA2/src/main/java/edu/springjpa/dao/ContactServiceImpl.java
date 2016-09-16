@@ -59,8 +59,15 @@ public class ContactServiceImpl implements ContactService {
 
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Contact> findAllByNativeQuery() {
         return emf.createNativeQuery(SQL_NATIVE_FIND_ALL,Contact.class).getResultList();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Contact> findByCriteriaQuery(String firstName, String lastName) {
+        return null;
     }
 }
