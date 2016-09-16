@@ -27,7 +27,8 @@ public class ExampleSpringJpa {
         listContactsWithDetail(contactService.findAllWithDetail());
         log.debug("Select contact with id 2  = {}",contactService.findById(2L));
 //        insertContact(contactService);
-        updateContact(contactService);
+//        updateContact(contactService);
+
     }
 
     public static void updateContact(ContactService contactService){

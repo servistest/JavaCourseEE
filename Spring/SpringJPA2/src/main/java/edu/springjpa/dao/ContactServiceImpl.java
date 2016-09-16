@@ -19,7 +19,9 @@ import java.util.List;
 @Repository
 @Transactional
 public class ContactServiceImpl implements ContactService {
-private static final Logger log= LoggerFactory.getLogger(ContactServiceImpl.class);
+    private static final String SQL_NATIVE_FIND_ALL="SELECT * FROM hobby.contact";
+    private static final Logger log= LoggerFactory.getLogger(ContactServiceImpl.class);
+
     @PersistenceContext
     private EntityManager emf;
 
@@ -55,5 +57,10 @@ private static final Logger log= LoggerFactory.getLogger(ContactServiceImpl.clas
     @Override
     public void delete(Contact contact) {
 
+    }
+
+    @Override
+    public List<Contact> findAllByNativeQuery() {
+        return emf.createNativeQuery(SQL_NATIVE_FIND_ALL,Contact.class).getResultList();
     }
 }
