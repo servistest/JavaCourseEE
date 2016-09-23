@@ -24,6 +24,10 @@ import java.util.Set;
                 query = "select c from Contact c"
         )
 })
+@SqlResultSetMapping(
+        name = "contactResult",
+        entities = @EntityResult(entityClass = Contact.class)
+)
 public class Contact implements Serializable {
     private Long id;
     private String firstName;

@@ -16,6 +16,7 @@
         <module>SpringJDBC</module>
         <module>SpringHibernet</module>
         <module>SpringJPA2</module>
+        <module>SpringCh8</module>
     </modules>
 
 

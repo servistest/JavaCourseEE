@@ -1,7 +1,9 @@
 package edu.springjpa;
 
+import edu.springjpa.dao.ContactAuditService;
 import edu.springjpa.dao.ContactService;
 import edu.springjpa.model.Contact;
+import edu.springjpa.model.ContactAudit;
 import edu.springjpa.model.ContactTelDetail;
 import edu.springjpa.model.Hobby;
 import org.slf4j.Logger;
@@ -23,11 +25,18 @@ public class ExampleSpringJpa {
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("app-context-annotation.xml");
         ContactService contactService = applicationContext.getBean("jpaContactService",ContactService.class);
+
         log.debug("List all contacts{}",contactService.findAll());
         listContactsWithDetail(contactService.findAllWithDetail());
         log.debug("Select contact with id 2  = {}",contactService.findById(2L));
 //        insertContact(contactService);
 //        updateContact(contactService);
+        log.debug("List all contacts{}",contactService.findAllByNativeQuery());
+        log.debug("List contact by id 1 = {}",contactService.findById(1L));
+
+    }
+
+    public static void listsContactAudit(){
 
     }
 

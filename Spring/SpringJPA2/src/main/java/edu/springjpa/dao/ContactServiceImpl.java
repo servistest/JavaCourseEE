@@ -1,7 +1,6 @@
 package edu.springjpa.dao;
 
 import edu.springjpa.model.Contact;
-import org.jboss.resteasy.annotations.interception.RedirectPrecedence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -62,7 +61,9 @@ public class ContactServiceImpl implements ContactService {
     @Transactional(readOnly = true)
     @Override
     public List<Contact> findAllByNativeQuery() {
-        return emf.createNativeQuery(SQL_NATIVE_FIND_ALL,Contact.class).getResultList();
+//        return emf.createNativeQuery(SQL_NATIVE_FIND_ALL,Contact.class).getResultList();
+//        or
+        return emf.createNativeQuery(SQL_NATIVE_FIND_ALL,"contactResult").getResultList();
     }
 
     @Transactional(readOnly = true)
