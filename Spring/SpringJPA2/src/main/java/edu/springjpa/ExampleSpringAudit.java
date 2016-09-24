@@ -33,11 +33,11 @@ public class ExampleSpringAudit {
         log.info("Update contact with id 1 {}",contactAudit);
 
 //        save new Contact:
-//        ContactAudit contactAudit1=new ContactAudit();
-//        contactAudit1.setFirstName("Andrew6");
-//        contactAudit1.setLastName("Egorov6");
-//        contactAudit1.setBirthDate(new Date());
-//        contactAuditService.save(contactAudit1);
+        ContactAudit contactAudit1=new ContactAudit();
+        contactAudit1.setFirstName("Andrew5");
+        contactAudit1.setLastName("Egorov");
+        contactAudit1.setBirthDate(new Date());
+        contactAuditService.save(contactAudit1);
         List<ContactAudit> contactAuditList=contactAuditService.findAll();
         log.info("All contact with AUDIT ={}",contactAuditList);
 

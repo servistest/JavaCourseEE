@@ -34,6 +34,8 @@
         <module name="HibernManyToMany" />
         <module name="Spring01" />
         <module name="SpringCh8" />
+        <module name="SpringHib1" />
+        <module name="SpringHibernateEnvers" />
         <module name="SpringHibernet" />
         <module name="SpringJDBC" />
         <module name="SpringJPA2" />
@@ -62,6 +64,8 @@
       <module name="Spring" target="1.8" />
       <module name="Spring01" target="1.8" />
       <module name="SpringCh8" target="1.8" />
+      <module name="SpringHib1" target="1.8" />
+      <module name="SpringHibernateEnvers" target="1.8" />
       <module name="SpringHibernet" target="1.8" />
       <module name="SpringIo" target="1.5" />
       <module name="SpringIO" target="1.5" />
