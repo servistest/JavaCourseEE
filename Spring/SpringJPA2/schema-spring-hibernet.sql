@@ -56,6 +56,11 @@ CREATE TABLE hobby.CONTACT_HOBBY_DETAIL(
   PRIMARY KEY (CONTACT_ID,HOBBY_ID)
 );
 
+
+insert into hobby.CONTACT_AUDIT (first_name, last_name, birth_date) values ('Chris', 'Schaefer', '1981-05-03');
+insert into hobby.CONTACT_AUDIT (first_name, last_name, birth_date) values ('Scott', 'Tiger', '1990-11-02');
+insert into hobby.CONTACT_AUDIT (first_name, last_name, birth_date) values ('John', 'Smith', '1964-02-28');
+
 insert into hobby.contact (first_name, last_name, birth_date) values ('Chris', 'Schaefer', '1981-05-03');
 insert into hobby.contact (first_name, last_name, birth_date) values ('Scott', 'Tiger', '1990-11-02');
 insert into hobby.contact (first_name, last_name, birth_date) values ('John', 'Smith', '1964-02-28');
