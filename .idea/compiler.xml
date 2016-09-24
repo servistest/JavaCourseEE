@@ -33,6 +33,7 @@
         <module name="HibernetSpring" />
         <module name="HibernManyToMany" />
         <module name="Spring01" />
+        <module name="SpringAuditHibernate" />
         <module name="SpringCh8" />
         <module name="SpringHib1" />
         <module name="SpringHibernateEnvers" />
@@ -63,6 +64,7 @@
       <module name="JavaCourseEE" target="1.8" />
       <module name="Spring" target="1.8" />
       <module name="Spring01" target="1.8" />
+      <module name="SpringAuditHibernate" target="1.8" />
       <module name="SpringCh8" target="1.8" />
       <module name="SpringHib1" target="1.8" />
       <module name="SpringHibernateEnvers" target="1.8" />

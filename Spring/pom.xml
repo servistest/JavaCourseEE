@@ -18,6 +18,7 @@
         <module>SpringJPA2</module>
         <module>SpringCh8</module>
         <module>SpringHibernateEnvers</module>
+        <module>SpringAuditHibernate</module>
     </modules>
 
 

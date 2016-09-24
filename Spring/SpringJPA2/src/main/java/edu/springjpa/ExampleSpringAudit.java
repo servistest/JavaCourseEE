@@ -27,17 +27,17 @@ public class ExampleSpringAudit {
     public static void exampleAudit(ContactAuditService contactAuditService ){
         ContactAudit contactAudit=contactAuditService.findById(1L);
         log.info("Contact with id = {} ",contactAudit);
-        contactAudit.setFirstName("AndrewUpdate1");
-        contactAudit.setLastName("SokolovUpdate1");
+        contactAudit.setFirstName("AndrewUpdate2");
+        contactAudit.setLastName("SokolovUpdate2");
         contactAuditService.save(contactAudit);
         log.info("Update contact with id 1 {}",contactAudit);
 
 //        save new Contact:
-        ContactAudit contactAudit1=new ContactAudit();
-        contactAudit1.setFirstName("Andrew5");
-        contactAudit1.setLastName("Egorov");
-        contactAudit1.setBirthDate(new Date());
-        contactAuditService.save(contactAudit1);
+//        ContactAudit contactAudit1=new ContactAudit();
+//        contactAudit1.setFirstName("Andrew7");
+//        contactAudit1.setLastName("Egorov7");
+//        contactAudit1.setBirthDate(new Date());
+//        contactAuditService.save(contactAudit1);
         List<ContactAudit> contactAuditList=contactAuditService.findAll();
         log.info("All contact with AUDIT ={}",contactAuditList);
 

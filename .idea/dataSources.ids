@@ -52,6 +52,9 @@
       <schema id="15" parent="1" name="hobby">
         <object-id>41947</object-id>
       </schema>
+      <schema id="16" parent="1" name="audit">
+        <object-id>42006</object-id>
+      </schema>
     </database-model>
   </data-source>
 </component>
