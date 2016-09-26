@@ -16,6 +16,7 @@ import java.util.List;
 public class ExampleAuditHibernateEnvers {
     private static final Logger log= LoggerFactory.getLogger(ExampleAuditHibernateEnvers.class);
 
+
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring-audit-hibernate-envers.xml");
         ContactAuditService contactAuditService=applicationContext.getBean("contactAuditService",ContactAuditService.class);
