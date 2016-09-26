@@ -33,8 +33,8 @@ public class ExampleAuditHibernateEnvers {
 
 //        save new Contact:
         ContactAudit contactAudit1=new ContactAudit();
-        contactAudit1.setFirstName("Andrew2");
-        contactAudit1.setLastName("Egorov2");
+        contactAudit1.setFirstName("Andrew4");
+        contactAudit1.setLastName("Egorov4");
         contactAudit1.setBirthDate(new Date());
         contactAuditService.save(contactAudit1);
         List<ContactAudit> contactAuditList=contactAuditService.findAll();
