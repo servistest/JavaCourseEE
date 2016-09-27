@@ -23,6 +23,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="BookAudit" />
         <module name="Hibernet01" />
         <module name="Hibernet02" />
         <module name="HibernetInheritanceJoined" />
@@ -43,6 +44,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BookAudit" target="1.8" />
       <module name="dtd" target="1.5" />
       <module name="HiberManyToMany" target="1.8" />
       <module name="Hibernet" target="1.8" />

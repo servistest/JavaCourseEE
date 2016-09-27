@@ -22,5 +22,6 @@ public interface ContactAuditService {
     Page<ContactAudit> findByLastName(String lastName, Pageable pageable);
     List<ContactAudit> findByNameAndSort(String firstNameLike, Sort sort);
     List<ContactAudit> findByFirstNameOrLastName(String firstName, String lastName);;
+    ContactAudit findAuditByRevision(Long id, int revision);
 
 }

@@ -7,7 +7,9 @@
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetManyToOne/create_BooksManyToOne.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne/create_BooksOneToOne.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetSecondLevel/src/main/resources/hibernate.cfg.xml" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/BookAudit/src/main/resources/META-INF/sql/schema.sql" dialect="H2" />
     <file url="file://$PROJECT_DIR$/Spring/Spring01/create_Contact.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringAuditHibernate/sring-hibernet-envers.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringHibernet/schema-spring-hibernet.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJDBC/create_Contact.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJDBC/src/main/java/edu/contact/SelectContactByFirstName.java" dialect="PostgreSQL" />

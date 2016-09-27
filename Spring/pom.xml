@@ -19,6 +19,7 @@
         <module>SpringCh8</module>
         <module>SpringHibernateEnvers</module>
         <module>SpringAuditHibernate</module>
+        <module>BookAudit</module>
     </modules>
 
 

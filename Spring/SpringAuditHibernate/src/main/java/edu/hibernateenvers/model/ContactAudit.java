@@ -15,7 +15,13 @@ import java.util.Date;
  * Created by Admin on 19.09.2016.
  */
 @Entity
-//@Audited
+@Audited
+// При использовании @Audited был ошибка : не найден hibernate_sequence.
+//Пришлос вручнуь создавать  в базе:
+//CREATE SEQUENCE hibernate_sequence INCREMENT BY 1;
+
+//PSQLException: ОШИБКА: нулевое значение в столбце "id" нарушает ограничение NOT NULL - при сохранении нового контаката
+//Такая ошибка при непрвильном диалекте указанном для хибернейта: должно org.hibernate.dialect.PostgreSQL95Dialect
 @Table(name = "audit.contact_audit")
 @EntityListeners({AuditingEntityListener.class})
 public class ContactAudit implements Auditable<String,Long>,Serializable {
@@ -32,6 +38,8 @@ public class ContactAudit implements Auditable<String,Long>,Serializable {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
+//    @SequenceGenerator(name = "sequenceGenerator", sequenceName = "audit.sequenceGenerator")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @Column(name = "id")
     public Long getId() {
         return this.id;
@@ -67,7 +75,10 @@ public class ContactAudit implements Auditable<String,Long>,Serializable {
         this.birthDate = birthDate;
     }
 
-    @Version
+//    @Version
+// -отключаем оптимистическую блокировку (@Version) иначе ошибки по доступу к базе данных
+//    при массовых вставках и обновлениях
+//Row was updated or deleted by another transaction
     @Column(name = "version")
     public Integer getVersion() {
         return version;

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Spring/BookAudit/BookAudit.iml" filepath="$PROJECT_DIR$/Spring/BookAudit/BookAudit.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernManyToMany/HibernManyToMany.iml" filepath="$PROJECT_DIR$/Hibernet/HibernManyToMany/HibernManyToMany.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/Hibernet.iml" filepath="$PROJECT_DIR$/Hibernet/Hibernet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/Hibernet01/Hibernet01.iml" filepath="$PROJECT_DIR$/Hibernet/Hibernet01/Hibernet01.iml" />
