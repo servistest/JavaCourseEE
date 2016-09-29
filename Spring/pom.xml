@@ -20,6 +20,8 @@
         <module>SpringHibernateEnvers</module>
         <module>SpringAuditHibernate</module>
         <module>BookAudit</module>
+        <module>SpringJTA</module>
+        <module>BookGlobalTransaction</module>
     </modules>
 
 

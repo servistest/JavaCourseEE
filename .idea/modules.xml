@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Spring/BookAudit/BookAudit.iml" filepath="$PROJECT_DIR$/Spring/BookAudit/BookAudit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/BookGlobalTransaction.iml" filepath="$PROJECT_DIR$/Spring/BookGlobalTransaction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/HibernManyToMany/HibernManyToMany.iml" filepath="$PROJECT_DIR$/Hibernet/HibernManyToMany/HibernManyToMany.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/Hibernet.iml" filepath="$PROJECT_DIR$/Hibernet/Hibernet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernet/Hibernet01/Hibernet01.iml" filepath="$PROJECT_DIR$/Hibernet/Hibernet01/Hibernet01.iml" />
@@ -21,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringHibernet/SpringHibernet.iml" filepath="$PROJECT_DIR$/Spring/SpringHibernet/SpringHibernet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/Spring/SpringJDBC/SpringJDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJPA2/SpringJPA2.iml" filepath="$PROJECT_DIR$/Spring/SpringJPA2/SpringJPA2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringJTA/SpringJTA.iml" filepath="$PROJECT_DIR$/Spring/SpringJTA/SpringJTA.iml" />
     </modules>
   </component>
 </project>

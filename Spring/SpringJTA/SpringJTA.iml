@@ -4,7 +4,9 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/app-context-annotation.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/context-annotation-jta.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-program-transaction.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-jta-global-transaction.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -16,7 +18,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" generated="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
