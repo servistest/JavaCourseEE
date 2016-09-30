@@ -22,6 +22,7 @@
         <module>BookAudit</module>
         <module>SpringJTA</module>
         <module>BookGlobalTransaction</module>
+        <module>SpringValidation</module>
     </modules>
 
 

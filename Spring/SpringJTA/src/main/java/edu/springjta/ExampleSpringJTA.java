@@ -1,12 +1,11 @@
 package edu.springjta;
 
-import edu.springjta.service.ContactService;
 import edu.springjta.model.Contact;
+import edu.springjta.service.ContactService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 import java.util.Date;
 

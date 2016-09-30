@@ -43,6 +43,7 @@
         <module name="SpringJDBC" />
         <module name="SpringJPA2" />
         <module name="SpringJTA" />
+        <module name="SpringValidation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -81,6 +82,7 @@
       <module name="SpringJPA2" target="1.8" />
       <module name="SpringJTA" target="1.8" />
       <module name="SpringStoredFunction" target="1.8" />
+      <module name="SpringValidation" target="1.8" />
       <module name="test1" target="1.8" />
       <module name="test2" target="1.8" />
       <module name="untitled" target="1.8" />
