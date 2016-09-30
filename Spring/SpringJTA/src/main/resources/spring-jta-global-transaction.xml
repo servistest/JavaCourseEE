@@ -18,7 +18,10 @@
         <property name="xaDataSourceClassName" value="org.postgresql.xa.PGXADataSource"/>
         <property name="xaProperties">
             <props>
+                <prop key="url">jdbc:postgresql://localhost:5432/JtaGlobalA</prop>
+                <prop key="serverName">localhost</prop>
                 <prop key="databaseName">JtaGlobalA</prop>
+                <prop key="portNumber">5432</prop>
                 <prop key="user">postgres</prop>
                 <prop key="password">admin</prop>
             </props>
@@ -29,9 +32,13 @@
     <bean id="dataSourceB" class="com.atomikos.jdbc.AtomikosDataSourceBean" init-method="init" destroy-method="close">
         <property name="uniqueResourceName" value="XADBMSB"/>
         <property name="xaDataSourceClassName" value="org.postgresql.xa.PGXADataSource"/>
+        <!--<property name="url" value="${mysql_url}"/>-->
         <property name="xaProperties">
             <props>
+                <prop key="url">jdbc:postgresql://localhost:5432/JtaGlobalB</prop>
+                <prop key="serverName">localhost</prop>
                 <prop key="databaseName">JtaGlobalB</prop>
+                <prop key="portNumber">5432</prop>
                 <prop key="user">postgres</prop>
                 <prop key="password">admin</prop>
             </props>
@@ -51,12 +58,12 @@
                     org.hibernate.engine.transaction.internal.jta.CMTTransactionFactory</prop>
                 <prop key="hibernate.transaction.manager_lookup_class">
                     com.atomikos.icatch.jta.hibernate3.TransactionManagerLookup</prop>
-                <prop key="hibernate.dialect">
-                    org.hibernate.dialect.PostgreSQL95Dialect</prop>
+                <prop key="hibernate.dialect"> org.hibernate.dialect.PostgreSQL95Dialect</prop>
                 <prop key="hibernate.max_fetch_depth">3</prop>
                 <prop key="hibernate.jdbc.fetch_size">50</prop>
                 <prop key="hibernate.jdbc.batch_size">10</prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <prop key="javax.persistence.transactionType">jta</prop>
             </props>
         </property>
     </bean>
