@@ -14,53 +14,17 @@
 
 
     <context:annotation-config/>
-    <!--<context:component-scan base-package="edu.validation"/>-->
+    <context:component-scan base-package="edu.validation.service.validator"/>
 
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
-
-    <!--<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">-->
-        <!--<property name="entityManagerFactory" ref="emf"/>-->
-    <!--</bean>-->
-
-
-    <!--<jpa:repositories base-package="edu.validation"-->
-                      <!--entity-manager-factory-ref="emf"-->
-                      <!--transaction-manager-ref="transactionManager"/>-->
-
-    <!--<context:property-placeholder location="classpath:jdbc-hibernate.properties"/>-->
-    <!--<bean  id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
-        <!--<property name="driverClassName" value="${jdbc.DriverClassName}"/>-->
-        <!--<property name="url" value="${jdbc.url}"/>-->
-        <!--<property name="username" value="${jdbc.username}"/>-->
-        <!--<property name="password" value="${jdbc.password}"/>-->
-    <!--</bean>-->
-
-
-    <!--<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-        <!--<property name="jpaVendorAdapter">-->
-            <!--<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>-->
-        <!--</property>-->
-        <!--<property name="packagesToScan" value="edu.validation"/>-->
-        <!--<property name="jpaProperties">-->
-            <!--<props>-->
-                <!--<prop key="hibernate.dialect">${hibernate.dialect}</prop>-->
-                <!--<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>-->
-                <!--<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>-->
-                <!--<prop key="hibernate.jdbc.fetch_depth">${hibernate.jdbc.fetch_depth}</prop>-->
-                <!--<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
-
-
+    <!--for SR 349 -->
+    <bean name="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
 
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="edu.validation.service.StringToDateTimeConverter"></bean>
-                <bean class="edu.validation.service.ContactToAnotherContactConvert"></bean>
+                <bean class="edu.validation.service.validator.StringToDateTimeConverter"></bean>
+                <bean class="edu.validation.service.validator.ContactToAnotherContactConvert"></bean>
             </set>
         </property>
     </bean>
@@ -71,8 +35,5 @@
           p:birthDate="1981-05-03"
           p:personalSite="http://www.dtzq.com"/>
 
-   <!--<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-    <!--</bean>-->
 
 </beans>
