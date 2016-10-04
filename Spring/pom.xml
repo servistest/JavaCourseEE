@@ -23,6 +23,8 @@
         <module>SpringJTA</module>
         <module>BookGlobalTransaction</module>
         <module>SpringValidation</module>
+        <module>BookValidationAssert</module>
+        <module>SpringSheduler</module>
     </modules>
 
 

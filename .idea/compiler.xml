@@ -25,6 +25,7 @@
         <processorPath useClasspath="true" />
         <module name="BookAudit" />
         <module name="BookGlobalTransaction" />
+        <module name="BookValidationAssert" />
         <module name="Hibernet01" />
         <module name="Hibernet02" />
         <module name="HibernetInheritanceJoined" />
@@ -43,12 +44,14 @@
         <module name="SpringJDBC" />
         <module name="SpringJPA2" />
         <module name="SpringJTA" />
+        <module name="SpringSheduler" />
         <module name="SpringValidation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BookAudit" target="1.8" />
       <module name="BookGlobalTransaction" target="1.8" />
+      <module name="BookValidationAssert" target="1.8" />
       <module name="dtd" target="1.5" />
       <module name="HiberManyToMany" target="1.8" />
       <module name="Hibernet" target="1.8" />
@@ -81,6 +84,7 @@
       <module name="SpringJDBC" target="1.8" />
       <module name="SpringJPA2" target="1.8" />
       <module name="SpringJTA" target="1.8" />
+      <module name="SpringSheduler" target="1.8" />
       <module name="SpringStoredFunction" target="1.8" />
       <module name="SpringValidation" target="1.8" />
       <module name="test1" target="1.8" />

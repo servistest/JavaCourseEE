@@ -1,8 +1,7 @@
 package edu.validation.individualcheck;
 
-import edu.validation.model.CustomerType;
-import edu.validation.model.Gender;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -10,7 +9,8 @@ import javax.validation.constraints.Size;
 /**
  * Created by ALex on 02.10.2016.
  */
-public class Customer {
+public class CustomerAssert {
+
     @NotNull
     @Size(min = 2,max = 60)
     private String firstName;
@@ -51,7 +51,17 @@ public class Customer {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
-    public Boolean isIndividualCustomer(){
-        return this.customerType.equals(CustomerType.INDIVIDUAL);
+
+    @AssertTrue(message="ERROR! Individual customer should have gender and last name defined")
+    public boolean isIndividualCustomer() {
+        boolean result = true;
+
+        if (getCustomerType() != null &&
+                (this.customerType.equals(CustomerType.INDIVIDUAL) && (gender == null || lastName == null))) {
+            result = false;
+        }
+
+        return result;
     }
+
 }

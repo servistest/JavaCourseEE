@@ -5,36 +5,19 @@
         xmlns:context="http://www.springframework.org/schema/context"
         xmlns="http://www.springframework.org/schema/beans" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
         xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:task="http://www.springframework.org/schema/task"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
             http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
-            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
 
     <context:annotation-config/>
-    <context:component-scan base-package="edu.validation.individualcheck"/>
+    <context:component-scan base-package="validation"/>
 
-    <!--for SR 349 -->
-    <bean name="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
-
-
-
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-        <property name="converters">
-            <set>
-                <bean class="edu.validation.service.validator.StringToDateTimeConverter"></bean>
-                <bean class="edu.validation.service.validator.ContactToAnotherContactConvert"></bean>
-            </set>
-        </property>
-    </bean>
-
-    <bean id="chris" class="edu.validation.model.Contact"
-          p:firstName="Chris"
-          p:lastName="Schaefer"
-          p:birthDate="1981-05-03"
-          p:personalSite="http://www.dtzq.com"/>
-
+    <task:scheduler id="myScheduler" pool-size="10"/>
+   <task:annotation-driven scheduler="myScheduler"/>
 
 </beans>

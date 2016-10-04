@@ -1,8 +1,6 @@
 package edu.validation.individualcheck;
 
 
-import edu.validation.model.Customer;
-import edu.validation.service.validator.MyBeanValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -26,23 +24,23 @@ public class ExampleSpringIndividualCheckSR349 {
     }
     public static void validation(ApplicationContext applicationContext){
         MyBeanValidationService myBeanValidationService=applicationContext.getBean("myBeanValidationService",MyBeanValidationService.class);
-        Customer customer=new Customer();
+        CustomerAssert customer=new CustomerAssert();
         customer.setFirstName("S");
-        customer.setLastName("Oxrimuk");
+        customer.setLastName(null);
         customer.setGender(null);
-        customer.setCustomerType(null);
+        customer.setCustomerType(CustomerType.INDIVIDUAL);
         validationCustomer(customer,myBeanValidationService);
 
     }
-    public static void validationCustomer(Customer customer,MyBeanValidationService myBeanValidationService){
-        Set<ConstraintViolation<Customer>> violations=new HashSet();
+    public static void validationCustomer(CustomerAssert customer,MyBeanValidationService myBeanValidationService){
+        Set<ConstraintViolation<CustomerAssert>> violations=new HashSet();
         violations=myBeanValidationService.validationCustomer(customer);
         listViolations(violations);
     }
-    public static void listViolations(Set<ConstraintViolation<Customer>> violations){
+    public static void listViolations(Set<ConstraintViolation<CustomerAssert>> violations){
         log.info(" Count error value  :  {}",violations.size());
-        for (ConstraintViolation<Customer> violation:violations){
-            log.info("Validation error poperty :  {}",violation.getPropertyPath());
+        for (ConstraintViolation<CustomerAssert> violation:violations){
+            log.info("Validation error property :  {}",violation.getPropertyPath());
             log.info(" value :  {}",violation.getInvalidValue());
             log.info(" error message :  {}",violation.getMessage());
 
