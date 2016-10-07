@@ -1,5 +1,6 @@
 package edu.jms.send;
 
+import edu.jms.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
@@ -23,9 +24,15 @@ public class SimpleMessageSender implements MessageSender {
         jmsTemplate.send(new MessageCreator() {
             @Override
             public Message createMessage(Session session) throws JMSException {
+
                 return session.createTextMessage(message);
             }
         });
+    }
 
+    @Override
+    public void SendPerson(Person person) {
+        System.out.println("Send Message = "+person.toString());
+        jmsTemplate.convertAndSend(person);
     }
 }

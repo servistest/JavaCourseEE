@@ -9,13 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 
 /**
  * Created by Admin on 06.10.2016.
  */
-public class JmsSample {
-    private static final Logger log= LoggerFactory.getLogger(JmsSample.class);
+public class JmsSampleSendText {
+    private static final Logger log= LoggerFactory.getLogger(JmsSampleSendText.class);
 
     public static void main(String[] args) throws Exception {
         GenericXmlApplicationContext applicationContext= new GenericXmlApplicationContext();
