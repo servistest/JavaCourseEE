@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="PostgreSQL - JtaGlobalA@localhost" uuid="cd2ca6cd-003e-456b-85e1-08cf7d91c875">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="PostgreSQL - JtaGlobalB@localhost" uuid="96c82d83-86d4-4713-905e-e49b227e5b45">
+  <data-source name="PostgreSQL - JavaCourse@localhost" uuid="3450cc90-cf31-4746-b9fb-4a6f3ac276b9">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

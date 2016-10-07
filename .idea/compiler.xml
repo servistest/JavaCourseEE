@@ -42,6 +42,7 @@
         <module name="SpringHibernateEnvers" />
         <module name="SpringHibernet" />
         <module name="SpringJDBC" />
+        <module name="SpringJMS1.0" />
         <module name="SpringJPA2" />
         <module name="SpringJTA" />
         <module name="SpringSheduler" />
@@ -78,10 +79,12 @@
       <module name="SpringHib1" target="1.8" />
       <module name="SpringHibernateEnvers" target="1.8" />
       <module name="SpringHibernet" target="1.8" />
+      <module name="SpringHttpActivator" target="1.8" />
       <module name="SpringIo" target="1.5" />
       <module name="SpringIO" target="1.5" />
       <module name="SpringIO-1" target="1.5" />
       <module name="SpringJDBC" target="1.8" />
+      <module name="SpringJMS1.0" target="1.8" />
       <module name="SpringJPA2" target="1.8" />
       <module name="SpringJTA" target="1.8" />
       <module name="SpringSheduler" target="1.8" />

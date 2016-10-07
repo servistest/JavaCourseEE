@@ -14,11 +14,8 @@
         <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
         <property name="current_session_context_class">thread</property>
         <property name="hbm2ddl.auto">update</property>
-        <mapping class="edu.javacourse.hibernate.Region"/>
         <mapping class="edu.javacourse.hibernate.servicebook.Author"/>
         <mapping class="edu.javacourse.hibernate.servicebook.Book"/>
-        <mapping class="edu.javacourse.hibernate.servicebook.onetoone.Author"/>
-        <mapping class="edu.javacourse.hibernate.servicebook.onetoone.Book"/>
 
 
     </session-factory>

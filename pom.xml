@@ -159,6 +159,7 @@
 
 
 
+
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
@@ -178,22 +179,23 @@
 
 
             <!-- Web -->
-            <dependency>
-                <groupId>org.apache.struts</groupId>
-                <artifactId>struts2-core</artifactId>
-                <version>2.5</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.logging.log4j</groupId>
-                        <artifactId>log4j-api</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.struts</groupId>
-                <artifactId>struts2-spring-plugin</artifactId>
-                <version>2.5</version>
-            </dependency>
+
+            <!--<dependency>-->
+                <!--<groupId>org.apache.struts</groupId>-->
+                <!--<artifactId>struts2-core</artifactId>-->
+                <!--<version>2.5</version>-->
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<groupId>org.apache.logging.log4j</groupId>-->
+                        <!--<artifactId>log4j-api</artifactId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.apache.struts</groupId>-->
+                <!--<artifactId>struts2-spring-plugin</artifactId>-->
+                <!--<version>2.5</version>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>org.directwebremoting</groupId>
                 <artifactId>dwr</artifactId>
@@ -326,6 +328,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aspects</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
                 <version>${spring.version}</version>
             </dependency>
 

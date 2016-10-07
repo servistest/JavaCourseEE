@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1480556967">
-    <data-source source="LOCAL" name="PostgreSQL - JtaGlobalA@localhost" uuid="cd2ca6cd-003e-456b-85e1-08cf7d91c875">
+  <component name="DataSourceManagerImpl" format="xml" hash="1567161219">
+    <data-source source="LOCAL" name="PostgreSQL - JavaCourse@localhost" uuid="3450cc90-cf31-4746-b9fb-4a6f3ac276b9">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/JtaGlobalA</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - JtaGlobalB@localhost" uuid="96c82d83-86d4-4713-905e-e49b227e5b45">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/JtaGlobalB</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/JavaCourse</jdbc-url>
     </data-source>
   </component>
 </project>

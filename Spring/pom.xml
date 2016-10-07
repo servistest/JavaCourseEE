@@ -17,7 +17,6 @@
         <module>SpringHibernet</module>
         <module>SpringJPA2</module>
         <module>SpringCh8</module>
-        <module>SpringHibernateEnvers</module>
         <module>SpringAuditHibernate</module>
         <module>BookAudit</module>
         <module>SpringJTA</module>
@@ -25,6 +24,7 @@
         <module>SpringValidation</module>
         <module>BookValidationAssert</module>
         <module>SpringSheduler</module>
+        <module>SpringJMS1.0</module>
     </modules>
 
 

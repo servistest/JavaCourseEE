@@ -8,7 +8,6 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,7 @@ public class JdbcContactDaoAnnotation implements ContactDao {
     private DataSource dataSource;
     private SelectAllContacts selectAllContacts;
     private SelectContactByFirstName selectContactByFirstName;
-    private SelectFirstNameById selectFirstNameById;
+    private SelectFirstNameByID selectFirstNameById;
     private ContactUpdate contactUpdate;
     private ContactInsert contactInsert;
     private ContactInsertDetail contactInsertDetail;
@@ -34,7 +33,7 @@ public class JdbcContactDaoAnnotation implements ContactDao {
         this.dataSource = dataSource;
         this.selectAllContacts=new SelectAllContacts(dataSource);
         this.selectContactByFirstName=new SelectContactByFirstName(dataSource);
-        this.selectFirstNameById=new SelectFirstNameById(dataSource);
+        this.selectFirstNameById=new SelectFirstNameByID(dataSource);
         this.contactUpdate=new ContactUpdate(dataSource);
         this.contactInsert=new ContactInsert(dataSource);
         this.contactInsertDetail=new ContactInsertDetail(dataSource);

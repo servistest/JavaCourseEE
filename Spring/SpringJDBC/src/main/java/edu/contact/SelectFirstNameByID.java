@@ -11,12 +11,12 @@ import java.sql.Types;
 /**
  * Created by Admin on 08.09.2016.
  */
-public class SelectFirstNameById extends MappingSqlQuery<Contact> {
+public class SelectFirstNameByID extends MappingSqlQuery<Contact> {
 
     private static final String SQL_SELECT_FIRST_NAME_BY_ID="SELECT id,first_name,last_name,birth_date " +
             "FROM contact.contact WHERE id=:id";
 
-    public SelectFirstNameById(DataSource dataSource){
+    public SelectFirstNameByID(DataSource dataSource){
         super(dataSource,SQL_SELECT_FIRST_NAME_BY_ID);
         super.declareParameter(new SqlParameter("id", Types.VARCHAR));
     }
