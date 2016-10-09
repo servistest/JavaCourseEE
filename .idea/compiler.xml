@@ -45,6 +45,8 @@
         <module name="SpringJMS1.0" />
         <module name="SpringJPA2" />
         <module name="SpringJTA" />
+        <module name="SpringRestfull" />
+        <module name="SpringRestfull-WS" />
         <module name="SpringSheduler" />
         <module name="SpringValidation" />
       </profile>
@@ -87,6 +89,8 @@
       <module name="SpringJMS1.0" target="1.8" />
       <module name="SpringJPA2" target="1.8" />
       <module name="SpringJTA" target="1.8" />
+      <module name="SpringRestfull" target="1.8" />
+      <module name="SpringRestfull-WS" target="1.8" />
       <module name="SpringSheduler" target="1.8" />
       <module name="SpringStoredFunction" target="1.8" />
       <module name="SpringValidation" target="1.8" />

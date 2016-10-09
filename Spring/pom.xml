@@ -25,6 +25,8 @@
         <module>BookValidationAssert</module>
         <module>SpringSheduler</module>
         <module>SpringJMS1.0</module>
+        <module>SpringRestfull-WS</module>
+        <module>SpringRestfull</module>
     </modules>
 
 

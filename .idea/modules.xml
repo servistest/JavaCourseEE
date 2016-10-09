@@ -19,12 +19,13 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring/Spring01/Spring01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringAuditHibernate/SpringAuditHibernate.iml" filepath="$PROJECT_DIR$/Spring/SpringAuditHibernate/SpringAuditHibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringCh8/SpringCh8.iml" filepath="$PROJECT_DIR$/Spring/SpringCh8/SpringCh8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring/SpringHibernateEnvers/SpringHibernateEnvers.iml" filepath="$PROJECT_DIR$/Spring/SpringHibernateEnvers/SpringHibernateEnvers.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringHibernet/SpringHibernet.iml" filepath="$PROJECT_DIR$/Spring/SpringHibernet/SpringHibernet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/Spring/SpringJDBC/SpringJDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJMS1.0/SpringJMS1.0.iml" filepath="$PROJECT_DIR$/Spring/SpringJMS1.0/SpringJMS1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJPA2/SpringJPA2.iml" filepath="$PROJECT_DIR$/Spring/SpringJPA2/SpringJPA2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJTA/SpringJTA.iml" filepath="$PROJECT_DIR$/Spring/SpringJTA/SpringJTA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestfull/SpringRestfull.iml" filepath="$PROJECT_DIR$/Spring/SpringRestfull/SpringRestfull.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestfull-WS/SpringRestfull-WS.iml" filepath="$PROJECT_DIR$/Spring/SpringRestfull-WS/SpringRestfull-WS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringSheduler/SpringSheduler.iml" filepath="$PROJECT_DIR$/Spring/SpringSheduler/SpringSheduler.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringValidation/SpringValidation.iml" filepath="$PROJECT_DIR$/Spring/SpringValidation/SpringValidation.iml" />
     </modules>
