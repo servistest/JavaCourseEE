@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * Created by Admin on 10.10.2016.
  */
@@ -23,7 +25,7 @@ public class ContactController {
     @ResponseBody
     @RequestMapping(value = "/listData",method = RequestMethod.GET)
     public Contacts listData(){
-        return new Contacts(contactService.findAll());
+        return new Contacts((ArrayList<Contact>) contactService.findAll());
     }
 
     @ResponseBody

@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * Created by ALex on 09.10.2016.
  */
-public class DateTimeFieldHander extends GeneralizedFieldHandler {
+public class DateTimeFieldHandler extends GeneralizedFieldHandler {
     private static String dateFormatPattern;
 
     @Override

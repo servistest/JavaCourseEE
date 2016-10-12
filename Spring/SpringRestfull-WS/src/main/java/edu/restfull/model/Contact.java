@@ -1,5 +1,6 @@
 package edu.restfull.model;
 
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
@@ -28,9 +29,9 @@ public class Contact implements Serializable {
     private DateTime birthDate;
 
 
-    //    @Id
-//    @Column(name = "id")
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
@@ -39,7 +40,7 @@ public class Contact implements Serializable {
         this.id = id;
     }
 
-    //    @Column(name = "first_name")
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -48,7 +49,7 @@ public class Contact implements Serializable {
         this.firstName = firstName;
     }
 
-    //    @Column(name = "last_name")
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -57,8 +58,8 @@ public class Contact implements Serializable {
         this.lastName = lastName;
     }
 
-    //    @Column(name = "birth_date")
-//    @Temporal(TemporalType.DATE)
+    @Column(name = "birth_date")
+   @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     public DateTime getBirthDate() {
         return birthDate;
     }
@@ -66,7 +67,6 @@ public class Contact implements Serializable {
     public void setBirthDate(DateTime birth_date) {
         this.birthDate = birth_date;
     }
-
 
 
     @Override

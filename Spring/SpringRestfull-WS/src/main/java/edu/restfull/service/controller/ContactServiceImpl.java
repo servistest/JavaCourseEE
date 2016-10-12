@@ -28,15 +28,14 @@ public class ContactServiceImpl implements ContactService {
     @Autowired
     private ContactRepository contactRepository;
 
-    @PersistenceContext
-    private EntityManager emf;
+//    @PersistenceContext
+//    private EntityManager emf;
 
     @Transactional(readOnly = true)
     @Override
     public List<Contact> findAll() {
         return  Lists.newArrayList(contactRepository.findAll()) ;
     }
-
 
     @Override
     public Contact findById(Long id) {
@@ -65,6 +64,4 @@ public class ContactServiceImpl implements ContactService {
     public void setContactRepository(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;
     }
-
-
 }

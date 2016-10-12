@@ -1,26 +1,27 @@
 package edu.restfull.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by ALex on 09.10.2016.
  */
 public class Contacts implements Serializable {
-    private List<Contact> contactList;
+    private ArrayList<Contact> contacts;
 
     public Contacts() {
     }
 
-    public Contacts(List<Contact> contactList){
-        this.contactList=contactList;
+    public Contacts(ArrayList<Contact> contactList){
+        this.contacts=contactList;
     }
 
-    public List<Contact> getContactList() {
-        return contactList;
+    public ArrayList<Contact> getContacts() {
+        return contacts;
     }
 
-    public void setContactList(List<Contact> contactList) {
-        this.contactList = contactList;
+    public void setContacts(ArrayList<Contact> contacts) {
+        this.contacts = contacts;
     }
 }
