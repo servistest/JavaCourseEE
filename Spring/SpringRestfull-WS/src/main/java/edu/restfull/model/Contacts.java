@@ -9,6 +9,9 @@ import java.util.List;
 public class Contacts implements Serializable {
     private List<Contact> contactList;
 
+    public Contacts() {
+    }
+
     public Contacts(List<Contact> contactList){
         this.contactList=contactList;
     }

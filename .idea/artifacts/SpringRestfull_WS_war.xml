@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringRestfull-WS:war">
+    <output-path>$PROJECT_DIR$/Spring/SpringRestfull-WS/target</output-path>
+    <root id="archive" name="SpringRestfull-WS.war">
+      <element id="artifact" artifact-name="SpringRestfull-WS:war exploded" />
+    </root>
+  </artifact>
+</component>

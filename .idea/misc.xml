@@ -5,6 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Spring/SpringHttpActivator" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring/SpringRestfull-WS" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

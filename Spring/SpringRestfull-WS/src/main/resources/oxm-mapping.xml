@@ -1,4 +1,6 @@
-<mapping xmlns="http://castor.exolab.org/"  >
+<?xml version="1.0"?>
+
+<mapping >
 
     <class name="edu.restfull.model.Contacts" >
         <field name="contacts" collection="arraylist">
@@ -20,11 +22,13 @@
         <field name="birthDate" type="string" handler="dateHandler">
             <bind-xml name="birthDate" node="element"/>
         </field>
-    </class>
 
-    <field-handler name="dateHandler" class="edu.restfull.service.castor.DateTimeFieldHander">
-        <param name="data-format" value="yyyy-MM-dd"/>
+    </class>
+    <field-handler name="dataHandler" class="edu.restfull.service.castor.DateTimeFieldHander">
+        <param name="date-format" value="yyyy-MM-dd"/>
     </field-handler>
+
+
 
 
 </mapping>

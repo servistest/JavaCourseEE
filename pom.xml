@@ -370,12 +370,12 @@
         </dependencies>
 
 
-    <repositories>
-        <repository>
-            <id>zk repository</id>
-            <url>http://mavensync.zkoss.org/maven2</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>zk repository</id>-->
+            <!--<url>http://mavensync.zkoss.org/maven2</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
     <build>
         <finalName>${project.artifactId}</finalName>
