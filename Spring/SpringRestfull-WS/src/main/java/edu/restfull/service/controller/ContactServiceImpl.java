@@ -59,11 +59,11 @@ public class ContactServiceImpl implements ContactService {
     }
 
 //
-//    @Autowired
-//    private ContactRepository contactRepository;
+    @Autowired
+    private ContactRepository contactRepository;
 //
-////    @PersistenceContext
-////    private EntityManager emf;
+//     @PersistenceContext
+//     private EntityManager emf;
 //
 //    @Transactional(readOnly = true)
 //    @Override

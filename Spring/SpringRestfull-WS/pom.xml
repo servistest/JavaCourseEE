@@ -13,7 +13,7 @@
     <artifactId>SpringRestfull-WS</artifactId>
 
     <dependencies>
-         <!--Зависимость для  Сastor, иначе ошибка при запросе в формате XML:
+         <!--Зависимость для  Сastor, иначе ошибка при маршализации  в формате XML:
           java.lang.ClassNotFoundException: com.sun.org.apache.xml.internal.serialize.XMLSerializer from-->
         <dependency>
             <groupId>com.sun.xml.parsers</groupId>
