@@ -5,11 +5,13 @@ package edu.restfull.service.controller;
 
 import edu.restfull.model.Contact;
 
+import javax.jws.WebService;
 import java.util.List;
 
 /**
  * Created by Admin on 13.09.2016.
  */
+
 public interface ContactService {
     List findAll();
     Contact findById(Long id);

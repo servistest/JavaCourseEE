@@ -26,76 +26,76 @@ import java.util.List;
 @Transactional
 public class ContactServiceImpl implements ContactService {
     private static final Logger log= LoggerFactory.getLogger(ContactServiceImpl.class);
-
-    @Override
-    public List findAll() {
-        ArrayList<Contact> contacts=new ArrayList<>();
-        Contact contact=new Contact();
-        contact.setFirstName("Alex");
-        contact.setLastName("Rogov");
-        contact.setBirthDate(new DateTime());
-        contacts.add(contact);
-        return contacts;
-    }
-
-    @Override
-    public Contact findById(Long id) {
-        return null;
-    }
-
-    @Override
-    public void save(Contact contact) {
-
-    }
-
-    @Override
-    public void delete(Contact contact) {
-
-    }
-
-    @Override
-    public Long countAll() {
-        return null;
-    }
-
 //
-    @Autowired
-    private ContactRepository contactRepository;
-//
-//     @PersistenceContext
-//     private EntityManager emf;
-//
-//    @Transactional(readOnly = true)
 //    @Override
-//    public List<Contact> findAll() {
-//        return  Lists.newArrayList(contactRepository.findAll()) ;
+//    public List findAll() {
+//        ArrayList<Contact> contacts=new ArrayList<>();
+//        Contact contact=new Contact();
+//        contact.setFirstName("Alex");
+//        contact.setLastName("Rogov");
+//        contact.setBirthDate(new DateTime());
+//        contacts.add(contact);
+//        return contacts;
 //    }
 //
 //    @Override
 //    public Contact findById(Long id) {
-//        return contactRepository.findOne(id);
+//        return null;
 //    }
 //
 //    @Override
 //    public void save(Contact contact) {
-//      contactRepository.save(contact);
+//
 //    }
 //
 //    @Override
 //    public void delete(Contact contact) {
-//        contactRepository.delete(contact);
+//
 //    }
 //
 //    @Override
 //    public Long countAll() {
-//        return contactRepository.count();
+//        return null;
 //    }
+
 //
-//    public ContactRepository getContactRepository() {
-//        return contactRepository;
-//    }
-//
-//    public void setContactRepository(ContactRepository contactRepository) {
-//        this.contactRepository = contactRepository;
-//    }
+    @Autowired
+    private ContactRepository contactRepository;
+
+     @PersistenceContext
+     private EntityManager emf;
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Contact> findAll() {
+        return  Lists.newArrayList(contactRepository.findAll()) ;
+    }
+
+    @Override
+    public Contact findById(Long id) {
+        return contactRepository.findOne(id);
+    }
+
+    @Override
+    public void save(Contact contact) {
+      contactRepository.save(contact);
+    }
+
+    @Override
+    public void delete(Contact contact) {
+        contactRepository.delete(contact);
+    }
+
+    @Override
+    public Long countAll() {
+        return contactRepository.count();
+    }
+
+    public ContactRepository getContactRepository() {
+        return contactRepository;
+    }
+
+    public void setContactRepository(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
 }

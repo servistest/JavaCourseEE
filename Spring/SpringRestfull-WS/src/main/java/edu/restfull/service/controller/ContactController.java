@@ -35,7 +35,7 @@ public class ContactController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/",method = RequestMethod.PUT)
+    @RequestMapping(value = "/",method = RequestMethod.POST)
     public Contact create (@RequestBody Contact contact){
         log.info("Create contact " , contact);
         contactService.save(contact);
