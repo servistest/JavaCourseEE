@@ -15,7 +15,7 @@ public class ExampleSpringRest {
     private static final Logger log= LoggerFactory.getLogger(ExampleSpringRest.class);
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("context.xml");
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
         ContactService contactService = applicationContext.getBean("contactService",ContactService.class);
 
 //        insertContacts(contactService);

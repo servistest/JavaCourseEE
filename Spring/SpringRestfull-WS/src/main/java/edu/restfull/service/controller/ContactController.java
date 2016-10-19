@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Admin on 10.10.2016.
@@ -41,6 +42,19 @@ public class ContactController {
         contactService.save(contact);
         log.info("Contact create successfully with info{}", contact );
         return contact;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/createContacts",method = RequestMethod.POST)
+    public Contacts createListContacts(@RequestBody Contacts  contacts){
+        ArrayList<Contact> contactArrayList=contacts.getContacts();
+        for (Contact contact:contactArrayList){
+            log.info("Create contact " , contact);
+            contactService.save(contact);
+            log.info("Contact create successfully with info{}", contact );
+        }
+        return contacts;
+
     }
 
     @ResponseBody
