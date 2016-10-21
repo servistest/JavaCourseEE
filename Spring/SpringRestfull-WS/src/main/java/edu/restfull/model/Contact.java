@@ -24,7 +24,7 @@ import java.util.Date;
 
 public class Contact implements Serializable {
     private Long id;
-    private String firstName;
+        private String firstName;
     private String lastName;
     private DateTime birthDate;
 
