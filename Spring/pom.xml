@@ -16,7 +16,6 @@
         <module>SpringJDBC</module>
         <module>SpringHibernet</module>
         <module>SpringJPA2</module>
-        <module>SpringCh8</module>
         <module>SpringAuditHibernate</module>
         <module>BookAudit</module>
         <module>SpringJTA</module>
