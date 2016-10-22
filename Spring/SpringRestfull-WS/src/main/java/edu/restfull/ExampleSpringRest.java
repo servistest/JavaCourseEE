@@ -23,6 +23,7 @@ public class ExampleSpringRest {
     }
 
 
+
     public static void insertContacts(ContactService contactService){
 
 
