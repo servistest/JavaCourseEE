@@ -21,6 +21,7 @@ public class ExampleSpringRest {
 //        insertContacts(contactService);
         log.debug("Count all contacts = {}",contactService.countAll());
     }
+
     public static void insertContacts(ContactService contactService){
 
         Contact contact=new Contact();
