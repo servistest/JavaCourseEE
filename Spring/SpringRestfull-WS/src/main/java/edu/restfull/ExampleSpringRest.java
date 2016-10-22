@@ -24,6 +24,7 @@ public class ExampleSpringRest {
 
     public static void insertContacts(ContactService contactService){
 
+
         Contact contact=new Contact();
         contact.setFirstName("Alex");
         contact.setLastName("Rogov");
