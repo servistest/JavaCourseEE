@@ -23,6 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJMS1.0/SpringJMS1.0.iml" filepath="$PROJECT_DIR$/Spring/SpringJMS1.0/SpringJMS1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJPA2/SpringJPA2.iml" filepath="$PROJECT_DIR$/Spring/SpringJPA2/SpringJPA2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringJTA/SpringJTA.iml" filepath="$PROJECT_DIR$/Spring/SpringJTA/SpringJTA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestTemplate/SpringRestTemplate.iml" filepath="$PROJECT_DIR$/Spring/SpringRestTemplate/SpringRestTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestfull/SpringRestfull.iml" filepath="$PROJECT_DIR$/Spring/SpringRestfull/SpringRestfull.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestfull-WS/SpringRestfull-WS.iml" filepath="$PROJECT_DIR$/Spring/SpringRestfull-WS/SpringRestfull-WS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringSheduler/SpringSheduler.iml" filepath="$PROJECT_DIR$/Spring/SpringSheduler/SpringSheduler.iml" />

@@ -1,7 +1,7 @@
-package edu.restfull;
+package edu.resttemplate;
 
-import edu.restfull.model.Contact;
-import edu.restfull.service.controller.ContactService;
+import edu.resttemplate.model.Contact;
+import edu.resttemplate.service.controller.ContactService;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

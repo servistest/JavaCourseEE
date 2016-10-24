@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringRestTemplate:war">
+    <output-path>$PROJECT_DIR$/Spring/SpringRestTemplate/target</output-path>
+    <root id="archive" name="SpringRestTemplate.war">
+      <element id="artifact" artifact-name="SpringRestTemplate:war exploded" />
+    </root>
+  </artifact>
+</component>

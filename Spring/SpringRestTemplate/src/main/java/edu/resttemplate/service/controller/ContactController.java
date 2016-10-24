@@ -1,7 +1,7 @@
-package edu.restfull.service.controller;
+package edu.resttemplate.service.controller;
 
-import edu.restfull.model.Contact;
-import edu.restfull.model.Contacts;
+import edu.resttemplate.model.Contact;
+import edu.resttemplate.model.Contacts;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Admin on 10.10.2016.

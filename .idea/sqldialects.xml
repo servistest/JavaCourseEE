@@ -17,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/Spring/SpringJPA2/schema-spring-hibernet.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJTA/schema-global-transaction.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJTA/schema-spring-hibernate-jta.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringRestTemplate/schema-spring-restfull.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringRestfull-WS/schema-spring-restfull.sql" dialect="PostgreSQL" />
   </component>
 </project>

@@ -1,18 +1,16 @@
-package edu.restfull.model;
+package edu.resttemplate.model;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.net.URL;
-import java.util.Date;
 
 /**
  * Created by Admin on 13.09.2016.
  */
 @Entity
-@Table(name = "restfull.contact")
+@Table(name = "resttemplate.contact")
 //@NamedQueries({
 ////        @NamedQuery(name = "Contact.findAll",
 ////                query = "select c from Contact c"

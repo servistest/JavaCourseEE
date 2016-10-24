@@ -1,4 +1,4 @@
-package edu.restfull.service.castor;
+package edu.resttemplate.service.castor;
 
 import org.exolab.castor.mapping.GeneralizedFieldHandler;
 import org.exolab.castor.mapping.ValidityException;

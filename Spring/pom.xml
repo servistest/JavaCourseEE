@@ -26,6 +26,7 @@
         <module>SpringJMS1.0</module>
         <module>SpringRestfull-WS</module>
         <module>SpringRestfull</module>
+        <module>SpringRestTemplate</module>
     </modules>
 
 

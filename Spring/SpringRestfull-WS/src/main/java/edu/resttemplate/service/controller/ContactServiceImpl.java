@@ -1,21 +1,18 @@
-package edu.restfull.service.controller;
+package edu.resttemplate.service.controller;
 
 import com.google.common.collect.Lists;
 
-import edu.restfull.dao.ContactRepository;
-import edu.restfull.model.Contact;
-import org.joda.time.DateTime;
+import edu.resttemplate.dao.ContactRepository;
+import edu.resttemplate.model.Contact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

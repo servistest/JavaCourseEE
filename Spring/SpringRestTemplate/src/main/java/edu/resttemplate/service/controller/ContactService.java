@@ -1,11 +1,10 @@
-package edu.restfull.service.controller;
+package edu.resttemplate.service.controller;
 
 
 
 
-import edu.restfull.model.Contact;
+import edu.resttemplate.model.Contact;
 
-import javax.jws.WebService;
 import java.util.List;
 
 /**
