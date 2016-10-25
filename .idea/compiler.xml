@@ -46,6 +46,7 @@
         <module name="SpringJTA" />
         <module name="SpringRestfull" />
         <module name="SpringRestfull-WS" />
+        <module name="SpringRestSecurity" />
         <module name="SpringRestTemplate" />
         <module name="SpringSheduler" />
         <module name="SpringValidation" />
@@ -91,6 +92,7 @@
       <module name="SpringJTA" target="1.8" />
       <module name="SpringRestfull" target="1.8" />
       <module name="SpringRestfull-WS" target="1.8" />
+      <module name="SpringRestSecurity" target="1.8" />
       <module name="SpringRestTemplate" target="1.8" />
       <module name="SpringSheduler" target="1.8" />
       <module name="SpringStoredFunction" target="1.8" />

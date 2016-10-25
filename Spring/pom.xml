@@ -27,6 +27,7 @@
         <module>SpringRestfull-WS</module>
         <module>SpringRestfull</module>
         <module>SpringRestTemplate</module>
+        <module>SpringRestSecurity</module>
     </modules>
 
 
