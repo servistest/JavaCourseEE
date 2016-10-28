@@ -17,7 +17,7 @@
 
     <name>JavaCourse EE Examples</name>
     <properties>
-        <maven.test.skip>true</maven.test.skip>
+        <maven.test.skip>false</maven.test.skip>
         <source-code.version>1.8</source-code.version>
         <source-code.encoding>UTF-8</source-code.encoding>
         <ee.version>7.0</ee.version>
@@ -187,7 +187,7 @@
             <!--</dependency>-->
             <!--<dependency>-->
                 <!--<groupId>org.apache.struts</groupId>-->
-                <!--<artifactId>struts2-spring-plugin</artifactId>-->
+                <!--<artifactId>struts2-springtest-plugin</artifactId>-->
                 <!--<version>2.5</version>-->
             <!--</dependency>-->
             <dependency>
@@ -302,7 +302,7 @@
             </dependency>
             <!--<dependency>-->
                 <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-hibernate3</artifactId>-->
+                <!--<artifactId>springtest-hibernate3</artifactId>-->
                 <!--<version>2.0.8</version>-->
             <!--</dependency>-->
             <dependency>
@@ -364,6 +364,24 @@
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-web</artifactId>
                 <version>${spring.security}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.security}</version>
+            </dependency>
+
+        <!--Testing-->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>2.2.7</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
             </dependency>
 
 

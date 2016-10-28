@@ -9,7 +9,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class SpringJPASample {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:META-INF/spring/app-context-annotation.xml");
+        ctx.load("classpath:META-INF/springtest/app-context-annotation.xml");
         ctx.refresh();
 
         ContactAuditService contactService = ctx.getBean(

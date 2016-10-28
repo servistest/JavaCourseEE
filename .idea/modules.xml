@@ -28,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestfull/SpringRestfull.iml" filepath="$PROJECT_DIR$/Spring/SpringRestfull/SpringRestfull.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringRestfull-WS/SpringRestfull-WS.iml" filepath="$PROJECT_DIR$/Spring/SpringRestfull-WS/SpringRestfull-WS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringSheduler/SpringSheduler.iml" filepath="$PROJECT_DIR$/Spring/SpringSheduler/SpringSheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringTest/SpringTest.iml" filepath="$PROJECT_DIR$/Spring/SpringTest/SpringTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringValidation/SpringValidation.iml" filepath="$PROJECT_DIR$/Spring/SpringValidation/SpringValidation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringWebTest/SpringWebTest.iml" filepath="$PROJECT_DIR$/Spring/SpringWebTest/SpringWebTest.iml" />
     </modules>

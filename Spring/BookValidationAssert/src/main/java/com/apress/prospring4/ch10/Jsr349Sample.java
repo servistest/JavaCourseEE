@@ -10,7 +10,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class Jsr349Sample {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:META-INF/spring/jsr349-app-context.xml");
+        ctx.load("classpath:META-INF/springtest/jsr349-app-context.xml");
         ctx.refresh();
 
         MyBeanValidationService myBeanValidationService =

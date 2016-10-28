@@ -28,6 +28,8 @@
         <module>SpringRestfull</module>
         <module>SpringRestTemplate</module>
         <module>SpringRestSecurity</module>
+        <module>SpringTest</module>
+
     </modules>
 
 
