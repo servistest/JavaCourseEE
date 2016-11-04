@@ -7,11 +7,10 @@ import edu.springtest.service.controller.ContactService;
 import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Matchers;
+import org.mockito.*;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.ui.ExtendedModelMap;
 
-import javax.validation.constraints.AssertTrue;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -28,6 +27,16 @@ import static org.mockito.Mockito.*;
  */
 public class ContactControllerTest {
     private  final List<Contact> contacts=new ArrayList<Contact>();
+//    @InjectMocks
+//    ContactService contactService;
+//    @Mock
+//    Iterator iterator;
+    @Spy
+    List<String> spyList=new ArrayList<>();
+
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
 
     @Before
     public void initContacts(){
@@ -37,6 +46,23 @@ public class ContactControllerTest {
         contact.setBirthDate(new DateTime());
         contacts.add(contact);
     }
+
+    @Test
+    public void spyListTest(){
+        List<String> spyList=Mockito.spy(new ArrayList<String>());
+        spyList.add("One");
+        spyList.add("One");
+        spyList.add("Two");
+        assertEquals(3,spyList.size());
+
+        when(spyList.size()).thenReturn(20);
+        assertEquals(20,spyList.size());
+
+        verify(spyList,times(2)).add("One");
+        verify(spyList,times(1)).add("Two");
+        assertEquals(20,spyList.size());
+    }
+
 
     @Test
     public void testListData(){
@@ -85,6 +111,5 @@ public class ContactControllerTest {
 //        вызывался не более 3 раз
         verify(contactService,atMost(3)).findAll();
     }
-
 
 }
