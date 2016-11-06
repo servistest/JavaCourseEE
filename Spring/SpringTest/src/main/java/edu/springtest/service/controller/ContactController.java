@@ -26,7 +26,6 @@ public class ContactController {
     @ResponseBody
     @RequestMapping(value = "/listData",method = RequestMethod.GET)
     public Contacts listData(){
-//            sfsdf
         return new Contacts((ArrayList<Contact>) contactService.findAll());
     }
 

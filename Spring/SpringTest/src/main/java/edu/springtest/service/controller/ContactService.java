@@ -12,7 +12,7 @@ import java.util.List;
 public interface ContactService {
     List findAll();
     Contact findById(Long id);
-    void save(Contact contact);
+    Contact save(Contact contact);
     void delete(Contact contact);
     Long countAll();
 }
