@@ -1,5 +1,6 @@
 package edu.springtest.exampletest.calculator;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,20 +22,23 @@ import static org.mockito.Mockito.when;
 //    org.mockito.exceptions.misusing.NotAMockException:
 //            Argument passed to when() is not a mock!
 @RunWith(MockitoJUnitRunner.class)
-public class MathApplicationWithSpyTest {
+public class MathApplicationWithSpyWithoutAnnotationTest {
+    private MathApplication mathApplication;
+    private CalculatorService spyCalculator;
 
-    //создание spy-объекта. @Spy заменяет CalculatorService calculatorService= spy(new Calculator());
-    @Spy
-    CalculatorService spyCalculator=new Calculator();
-    // Создание и внедрение экземпляра класса, который будем  тестировать плюс внедрение  в него spy spyCalculator. @InjectMocks заменяет команды:
-//    MathApplication mathApplication=new MathApplication();
-//    mathApplication.setCalculatorService(spyCalculator);
-    @InjectMocks
-    MathApplication mathApplication;
+
+    @Before
+    public void setUp(){
+        mathApplication=new MathApplication();
+        Calculator calculator=new Calculator();
+        //spy   только для экземпляров объектов, а mock для классов и интерфейсов.
+        // spy-объект вызывает только реальные методы!!!
+        spyCalculator=spy(calculator);
+        mathApplication.setCalculatorService(spyCalculator);
+    }
 
     @Test
     public void Add_VariousNumber_ReturnTrue(){
-
-        assertEquals(30d,mathApplication.add(10,20),1e-10);
+        assertEquals(30,mathApplication.add(10,20),1e-10);
     }
 }

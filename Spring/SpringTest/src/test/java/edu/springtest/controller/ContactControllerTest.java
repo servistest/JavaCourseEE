@@ -47,21 +47,7 @@ public class ContactControllerTest {
         contacts.add(contact);
     }
 
-    @Test
-    public void spyListTest(){
-        List<String> spyList=Mockito.spy(new ArrayList<String>());
-        spyList.add("One");
-        spyList.add("One");
-        spyList.add("Two");
-        assertEquals(3,spyList.size());
 
-        when(spyList.size()).thenReturn(20);
-        assertEquals(20,spyList.size());
-
-        verify(spyList,times(2)).add("One");
-        verify(spyList,times(1)).add("Two");
-        assertEquals(20,spyList.size());
-    }
 
 
     @Test
@@ -76,28 +62,6 @@ public class ContactControllerTest {
         assertEquals(1,listContacts.getContacts().size());
     }
 
-    @Test
-    public void iteratorTest(){
-        Iterator iterator=mock(Iterator.class);
-        when(iterator.next()).thenReturn("Yoo").thenReturn("Hoo!");
-        String result =iterator.next()+" " +iterator.next();
-        assertEquals(result,"Yoo Hoo!");
-    }
-
-     @Test
-    public void anyValueArgs(){
-         Comparable comparable=mock(Comparable.class);
-         when(comparable.compareTo(anyInt())).thenReturn(-29);
-         assertEquals(comparable.compareTo(10),-29);
-     }
-
-    @Test(expected = IOException.class)
-    public void testThrowException() throws IOException{
-        OutputStream outputStream=mock(OutputStream.class);
-        OutputStreamWriter outputStreamWriter=new OutputStreamWriter(outputStream);
-        doThrow(new IOException()).when(outputStream).close();
-        outputStreamWriter.close();
-    }
 
     @Test
     public void testVerify(){

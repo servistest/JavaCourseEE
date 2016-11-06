@@ -14,6 +14,10 @@ import static org.mockito.Mockito.*;
 /**
  * Created by Admin on 04.11.2016.
  */
+//обязательно прописывать рунера - иначе тест не использует аннотации для  инжекта @Spy, @Mock  и т.д.
+//  ошибка будет :
+//    org.mockito.exceptions.misusing.NotAMockException:
+//            Argument passed to when() is not a mock!
 @RunWith(MockitoJUnitRunner.class)
 public class MathApplicationWithInjectMockitoTest {
 
@@ -21,11 +25,10 @@ public class MathApplicationWithInjectMockitoTest {
     @Mock
     CalculatorService calculatorService;
 
-    // внедрение экземпляра класса, который будем  тестировать плюс внедрение  в него mock calculatorService. @InjectMocks заменяет команды:
+    // Создание и внедрение экземпляра класса, который будем  тестировать плюс внедрение  в него mock calculatorService. @InjectMocks заменяет команды:
 //    MathApplication mathApplication=new MathApplication();
 //    mathApplication.setCalculatorService(calculatorService);
-
-
+    @InjectMocks
     MathApplication mathApplication;
 
 

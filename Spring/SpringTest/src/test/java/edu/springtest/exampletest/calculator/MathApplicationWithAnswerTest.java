@@ -15,6 +15,10 @@ import static org.mockito.Mockito.when;
 /**
  * Created by Admin on 04.11.2016.
  */
+//обязательно прописывать рунера - иначе тест не использует аннотации для  инжекта @Spy, @Mock  и т.д.
+//  ошибка будет :
+//    org.mockito.exceptions.misusing.NotAMockException:
+//            Argument passed to when() is not a mock!
 @RunWith(MockitoJUnitRunner.class)
 public class MathApplicationWithAnswerTest {
 

@@ -2,6 +2,8 @@ package edu.springtest.exampletest.calculator;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -9,6 +11,11 @@ import static org.mockito.Mockito.*;
 /**
  * Created by Admin on 04.11.2016.
  */
+//обязательно прописывать рунера - иначе тест не использует аннотации для  инжекта @Spy, @Mock  и т.д.
+//  ошибка будет :
+//    org.mockito.exceptions.misusing.NotAMockException:
+//            Argument passed to when() is not a mock!
+@RunWith(MockitoJUnitRunner.class)
 public class MathApplicationWithoutInjectMockitoTest {
     private  MathApplication mathApplication;
     private  CalculatorService calculatorService;

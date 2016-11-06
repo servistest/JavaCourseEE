@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetOneToOne/create_BooksOneToOne.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Hibernet/HibernetSecondLevel/src/main/resources/hibernate.cfg.xml" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/BookAudit/src/main/resources/META-INF/sql/schema.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/Spring/BookGlobalTransaction/src/main/resources/META-INF/config/schema.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Spring/Spring01/create_Contact.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringAuditHibernate/sring-hibernet-envers.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringHibernet/schema-spring-hibernet.sql" dialect="PostgreSQL" />
@@ -18,7 +19,6 @@
     <file url="file://$PROJECT_DIR$/Spring/SpringJTA/schema-global-transaction.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJTA/schema-spring-hibernate-jta.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringRestSecurity/schema-spring-restfull.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/Spring/SpringRestTemplate/schema-spring-restfull.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringRestfull-WS/schema-spring-restfull.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Spring/SpringTest/schema-spring-restfull.sql" dialect="PostgreSQL" />
   </component>
