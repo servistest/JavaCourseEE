@@ -71,6 +71,26 @@ public class ContactControllerWithAnnotationTest {
         assertEquals("Titov",returnContact.getLastName());
         assertEquals(2,contacts.size());
     }
+    @Test
+    public void shouldReturnErrorCreatedContact(){
+        Contact contact=new Contact();
+        contact.setId(1999L);
+        contact.setFirstName("Igor");
+        contact.setLastName("Titov");
+        when(contactService.save(contact)).then(new Answer<Contact>() {
+
+            @Override
+            public Contact answer(InvocationOnMock invocationOnMock) throws Throwable {
+                contacts.add(contact);
+                return contact;
+            }
+        });
+        Contact returnContact=contactController.create(contact);
+        assertEquals(Long.valueOf(1999),returnContact.getId());
+        assertEquals("Igor",returnContact.getFirstName());
+        assertEquals("Titov",returnContact.getLastName());
+        assertEquals(2,contacts.size());
+    }
 
     @After
     public void cleatInit(){
