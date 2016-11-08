@@ -98,6 +98,7 @@
       <module name="SpringSheduler" target="1.8" />
       <module name="SpringStoredFunction" target="1.8" />
       <module name="SpringTest" target="1.8" />
+      <module name="SpringTestIteraction" target="1.8" />
       <module name="SpringValidation" target="1.8" />
       <module name="test1" target="1.8" />
       <module name="test2" target="1.8" />

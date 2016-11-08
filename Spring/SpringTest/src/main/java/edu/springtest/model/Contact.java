@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Created by Admin on 13.09.2016.
  */
 @Entity
-@Table(name = "resttest.contact")
+@Table(name = "contact")
 //@NamedQueries({
 ////        @NamedQuery(name = "Contact.findAll",
 ////                query = "select c from Contact c"

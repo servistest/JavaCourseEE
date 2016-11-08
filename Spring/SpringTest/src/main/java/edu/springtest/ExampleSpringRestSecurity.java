@@ -22,7 +22,7 @@ public class ExampleSpringRestSecurity {
 
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("rest-client-app-context.xml");
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/rest-client-app-context.xml");
 
         Contacts contacts;
         log.info("Testing retrieve all contacts:");
