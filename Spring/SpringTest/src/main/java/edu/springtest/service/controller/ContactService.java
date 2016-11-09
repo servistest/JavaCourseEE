@@ -12,6 +12,8 @@ import java.util.List;
 public interface ContactService {
     List findAll();
     Contact findById(Long id);
+    Contact findByFirstNameAndLastName(String firstName,String lastName);
+    Contact findByFirstName(String firstName);
     Contact save(Contact contact);
     void delete(Contact contact);
     Long countAll();

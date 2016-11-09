@@ -10,16 +10,16 @@ import java.io.Serializable;
  * Created by Admin on 13.09.2016.
  */
 @Entity
+//@Table(name = "resttest.contact")
 @Table(name = "contact")
-//@NamedQueries({
-////        @NamedQuery(name = "Contact.findAll",
-////                query = "select c from Contact c"
-////        ),
-//        @NamedQuery(name="Contact.countAll",
-//                query = "select count (c) from Contact c"
-//        )
-//})
-
+//@NamedQuery(
+//        name="Contact.findByFirstName",
+//        query="SELECT c FROM Contact c WHERE c.firstName LIKE 'Chris' "
+//)
+@NamedQuery(
+        name="Contact.findByFirstName",
+        query="SELECT c FROM Contact c WHERE c.firstName LIKE :firstName "
+)
 public class Contact implements Serializable {
     private Long id;
         private String firstName;

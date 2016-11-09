@@ -35,14 +35,12 @@ public class ServiceTestExecutionListener implements TestExecutionListener {
             databaseTester.setDataSet(dataSet);
             databaseTester.onSetup();
         }
-
     }
 
     @Override
     public void afterTestMethod(TestContext testContext) throws Exception {
         // clear database
-        databaseTester.onTearDown();
-
+//        databaseTester.onTearDown();
     }
 
     @Override

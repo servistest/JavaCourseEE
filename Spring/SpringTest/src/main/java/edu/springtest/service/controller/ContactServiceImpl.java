@@ -15,6 +15,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+import static edu.springtest.model.Contact_.firstName;
+
 /**
  * Created by Admin on 15.09.2016.
  */
@@ -23,39 +25,9 @@ import java.util.List;
 @Transactional
 public class ContactServiceImpl implements ContactService {
     private static final Logger log= LoggerFactory.getLogger(ContactServiceImpl.class);
-//
-//    @Override
-//    public List findAll() {
-//        ArrayList<Contact> contacts=new ArrayList<>();
-//        Contact contact=new Contact();
-//        contact.setFirstName("Alex");
-//        contact.setLastName("Rogov");
-//        contact.setBirthDate(new DateTime());
-//        contacts.add(contact);
-//        return contacts;
-//    }
-//
-//    @Override
-//    public Contact findById(Long id) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void save(Contact contact) {
-//
-//    }
-//
-//    @Override
-//    public void delete(Contact contact) {
-//
-//    }
-//
-//    @Override
-//    public Long countAll() {
-//        return null;
-//    }
+    private static final String SQL_NATIVE_FIND_ALL="SELECT * FROM contact";
+    private static final String SQL_NATIVE_FIND_BY_FIRST_NAME_AND_LAST_NAME="SELECT c FROM Contact c WHERE c.firstName = :firstName and c.lastName =:lastName";
 
-//
     @Autowired
     private ContactRepository contactRepository;
 
@@ -70,7 +42,35 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public Contact findById(Long id) {
-        return contactRepository.findOne(id);
+
+      return contactRepository.findOne(id);
+    }
+
+    @Override
+    public Contact findByFirstName(String firstName) {
+        return emf.createNamedQuery("Contact.findByFirstName",Contact.class)
+                                              .setParameter("firstName",firstName)
+                                               .getResultList()
+                                               .stream()
+                                               .findFirst()
+                                               .orElse(null);
+
+//        or so ...
+//        return  (Contact)emf.createQuery("SELECT c FROM Contact c WHERE c.firstName = :firstName")
+//                                        .setParameter("firstName",firstName)
+//                                        .getSingleResult();
+    }
+
+    @Override
+    public Contact findByFirstNameAndLastName(String firstName, String lastName) {
+          return   emf.createQuery(SQL_NATIVE_FIND_BY_FIRST_NAME_AND_LAST_NAME,Contact.class)
+                  .setParameter("firstName",firstName)
+                  .setParameter("lastName",lastName)
+                  .getResultList()
+                  .stream()
+                  .findFirst()
+                  .orElse(null);
+
     }
 
     @Override
