@@ -22,7 +22,10 @@ public class ServiceTestConfig {
 
     @Bean(name = "dataSource")
     public DataSource dataSource(){
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("classpath:config/schema.sql").build();
+        return new EmbeddedDatabaseBuilder()
+                .setType(EmbeddedDatabaseType.H2)
+                .addScript("classpath:config/schema.sql")
+                .build();
     }
 
     @Bean(name = "databaseTester")
@@ -35,7 +38,5 @@ public class ServiceTestConfig {
     public XlsDataFileLoader xlsDataFileLoader(){
         return new XlsDataFileLoader();
     }
-
-
 
 }

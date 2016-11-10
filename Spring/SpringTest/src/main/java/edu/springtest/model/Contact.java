@@ -10,12 +10,9 @@ import java.io.Serializable;
  * Created by Admin on 13.09.2016.
  */
 @Entity
-//@Table(name = "resttest.contact")
-@Table(name = "contact")
-//@NamedQuery(
-//        name="Contact.findByFirstName",
-//        query="SELECT c FROM Contact c WHERE c.firstName LIKE 'Chris' "
-//)
+@Table(name = "resttest.contact")
+//for Test
+//@Table(name = "contact")
 @NamedQuery(
         name="Contact.findByFirstName",
         query="SELECT c FROM Contact c WHERE c.firstName LIKE :firstName "
