@@ -29,6 +29,7 @@
         <module>SpringRestTemplate</module>
         <module>SpringRestSecurity</module>
         <module>SpringTest</module>
+        <module>SpringContactsMVC</module>
 
     </modules>
 

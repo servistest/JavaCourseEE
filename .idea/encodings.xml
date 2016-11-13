@@ -17,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/Spring/BookValidationAssert" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/Spring01" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringAuditHibernate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring/SpringContactsMVC" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringHibernet" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJDBC" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringJMS1.0" charset="UTF-8" />
@@ -28,7 +29,6 @@
     <file url="file://$PROJECT_DIR$/Spring/SpringRestfull-WS" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringSheduler" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringTest" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Spring/SpringTestIteraction" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring/SpringValidation" charset="UTF-8" />
   </component>
 </project>
