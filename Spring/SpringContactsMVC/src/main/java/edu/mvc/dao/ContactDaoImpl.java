@@ -21,6 +21,7 @@ import java.util.Map;
  */
 public class ContactDaoImpl implements ContactDao,InitializingBean {
     private static final String SQL_FIND_CONTACT_BY_ID="SELECT * FROM mvc.Contact WHERE id =:id";
+    private static final String SQL_FIND_FIRST_NAME_BY_ID="SELECT first_name FROM mvc.Contact WHERE id =:id";
     private static final String SQL_FIRST_NAME_AND_LAST_NAME_BY_ID="SELECT first_name,last_name FROM mvc.Contact WHERE id =:id";
     private static final String SQL_FIND_ALL_CONTACTS="SELECT * FROM mvc.Contact ";
     private static final String SQL_SAVE_CONTACT="INSERT into mvc.Contact(first_name,last_name,birth_date,description,photo) " +
@@ -40,6 +41,18 @@ public class ContactDaoImpl implements ContactDao,InitializingBean {
        jdbcTemplate=new JdbcTemplate(dataSource);
        namedParameterJdbcTemplate=new NamedParameterJdbcTemplate(dataSource);
    }
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if (dataSource==null){
+            throw  new BeanCreationException("Must set dataSource !!!");
+        }
+        if (jdbcTemplate==null){
+            throw new BeanCreationException("jdbcTemplate is null!!!");
+        }
+        if (namedParameterJdbcTemplate==null){
+            throw new BeanCreationException("namedParameterJdbcTemplate is null!!!");
+        }
+    }
 
     @Override
     public Contact findContactById(Long id) {
@@ -48,14 +61,6 @@ public class ContactDaoImpl implements ContactDao,InitializingBean {
         return namedParameterJdbcTemplate.queryForObject(SQL_FIND_CONTACT_BY_ID,namedParameters,new ContactRowMapper());
     }
 
-
-//    public String findFirstNameAndLastNameById(Long id) {
-//        Map<String,Object> parameters=new HashMap<>();
-//        parameters.put("id",id);
-//        return null;
-////                namedParameterJdbcTemplate.queryForObject(SQL_FIRST_NAME_AND_LAST_NAME_BY_ID,parameters,new ContactRowMapper());
-//
-//    }
     @Override
     public List<Map<String,Object>> findFirstNameAndLastNameById(Long id) {
         Map<String,Object> parameters=new HashMap<>();
@@ -66,7 +71,9 @@ public class ContactDaoImpl implements ContactDao,InitializingBean {
 
     @Override
     public String findFirstNameById(Long id) {
-        return null;
+        Map<String,Object> parameters=new HashMap<>();
+        parameters.put("id",id);
+        return namedParameterJdbcTemplate.queryForObject(SQL_FIND_FIRST_NAME_BY_ID,parameters,String.class);
     }
 
     @Override
@@ -89,15 +96,7 @@ public class ContactDaoImpl implements ContactDao,InitializingBean {
 
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-            if (dataSource==null){
-                throw  new BeanCreationException("Must set dataSource !!!");
-            }
-            if (jdbcTemplate==null){
-                throw new BeanCreationException("Null  jdbcTemplate !!!");
-            }
-    }
+
 
     private static final class ContactRowMapper implements RowMapper<Contact>{
         @Override
@@ -113,18 +112,5 @@ public class ContactDaoImpl implements ContactDao,InitializingBean {
         }
     }
 
-    private static final class FirstAnsLastNameRowMapper implements RowMapper<Contact>{
-        @Override
-        public Contact mapRow(ResultSet resultSet, int i) throws SQLException {
-            Contact contact=new Contact();
-            contact.setId(resultSet.getLong("id"));
-            contact.setFirstName(resultSet.getString("first_name"));
-            contact.setLastName(resultSet.getString("last_Name"));
-            contact.setDescription(resultSet.getString("description"));
-            contact.setBirthDate(resultSet.getTimestamp("birth_date"));
-            contact.setPhoto(resultSet.getBytes("photo"));
-            return contact;
-        }
-    }
 
 }

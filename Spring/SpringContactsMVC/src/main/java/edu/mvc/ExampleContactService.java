@@ -29,6 +29,8 @@ private static final Logger log= LoggerFactory.getLogger(ExampleContactService.c
         List<Map<String, Object>> firstAndLastName=  contactService.findFirstNameAndLastNameById(1L);
         System.out.println("");
         log.info("Return contact by id={},First Name={}, Last Name={} ",1L,firstAndLastName.get(0).get("first_name"),firstAndLastName.get(0).get("last_name"));
+        String firstName=contactService.findFirstNameById(1L);
+        log.info("Return by id={} First Name ={}",1L,firstName);
 
 
     }
