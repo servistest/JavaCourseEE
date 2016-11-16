@@ -11,6 +11,7 @@ import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -31,9 +32,32 @@ private static final Logger log= LoggerFactory.getLogger(ExampleContactService.c
         log.info("Return contact by id={},First Name={}, Last Name={} ",1L,firstAndLastName.get(0).get("first_name"),firstAndLastName.get(0).get("last_name"));
         String firstName=contactService.findFirstNameById(1L);
         log.info("Return by id={} First Name ={}",1L,firstName);
+        List<Contact> contacts=contactService.findAllContacts();
+        log.info("Return all contacts {}",contacts);
+        Contact contact4=new Contact();
+        contact4.setFirstName("Vladimir23");
+        contact4.setLastName("Novik23");
+        contact4.setBirthDate(new Date());
+        log.info("Save contact with id ={}",contactService.save(contact4));
+
+        Contact contact5=new Contact();
+        contact5.setFirstName("Vladimir24");
+        contact5.setLastName("Novik24");
+        log.info("Save contact with id ={}",contactService.save(contact5));
+        contact5.setLastName("Novik24");
+        contactService.delete(1L);
+        log.info("Delete contact with id ={}",1L);
+
+        contact5=contactService.findContactById(3L);
+        contact5.setFirstName("New First Name");
+        contact5.setDescription("About contact");
+        contactService.update(contact5);
+        log.info("Update contact= {} ",contact5);
+
 
 
     }
+
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/data-source-postgres-tx.xml");
         ContactService contactService=(ContactService) applicationContext.getBean("contactService");

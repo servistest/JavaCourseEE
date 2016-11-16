@@ -13,8 +13,8 @@ public interface ContactDao {
     public List<Map<String,Object>>  findFirstNameAndLastNameById(Long id);
     public String findFirstNameById(Long id);
     public List<Contact> findAllContacts();
-    public void save (Contact contact);
-    public void delete(Contact contact);
+    public Long save (Contact contact);
+    public void delete(Long id);
     public void update(Contact contact);
 
 }
