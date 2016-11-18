@@ -12,6 +12,15 @@
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"
           p:jndiName="java:/PostgresDS"/>
 
+    <!--lookup dataSource in JNDI-->
+    <!--<jee:jndi-lookup id="dataSource" jndi-name="java:/PostgresDS"/>-->
 
+    <bean id="contactDao" class="edu.mvc.dao.ContactDaoImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="contactService" class="edu.mvc.service.ContactServiceImpl">
+        <constructor-arg ref="contactDao"/>
+    </bean>
 
 </beans>

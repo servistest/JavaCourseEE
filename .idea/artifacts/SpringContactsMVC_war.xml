@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringContactsMVC:war">
+    <output-path>$PROJECT_DIR$/Spring/SpringContactsMVC/target</output-path>
+    <root id="archive" name="SpringContactsMVC.war">
+      <element id="artifact" artifact-name="SpringContactsMVC:war exploded" />
+    </root>
+  </artifact>
+</component>

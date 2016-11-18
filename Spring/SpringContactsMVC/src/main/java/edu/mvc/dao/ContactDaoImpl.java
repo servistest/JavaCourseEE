@@ -29,10 +29,11 @@ public class ContactDaoImpl implements ContactDao,InitializingBean {
     private static final String SQL_FIND_CONTACT_BY_ID="SELECT * FROM mvc.Contact WHERE id =:id";
     private static final String SQL_FIND_FIRST_NAME_BY_ID="SELECT first_name FROM mvc.Contact WHERE id =:id";
     private static final String SQL_FIRST_NAME_AND_LAST_NAME_BY_ID="SELECT first_name,last_name FROM mvc.Contact WHERE id =:id";
-    private static final String SQL_FIND_ALL_CONTACTS="SELECT * FROM mvc.Contact ";
+    private static final String SQL_FIND_ALL_CONTACTS="SELECT * FROM mvc.Contact";
     private static final String SQL_SAVE_CONTACT="INSERT into mvc.Contact(first_name,last_name,birth_date,description,photo) " +
-            "VALUES (:firstName,:lastName,:birthDate,:description,:photo)";
-    private static final String SQL_UPDATE_CONTACT="UPDATE mvc.Contact SET first_name=:firstName,last_name=:lastName,description=:description,birth_date=:birthDate, photo=:photo WHERE id=:id ";
+                                "VALUES (:firstName,:lastName,:birthDate,:description,:photo)";
+    private static final String SQL_UPDATE_CONTACT="UPDATE mvc.Contact SET first_name=:firstName,last_name=:lastName," +
+                                "description=:description,birth_date=:birthDate, photo=:photo WHERE id=:id ";
     private static final String SQL_DELETE_CONTACT="DELETE FROM  mvc.Contact WHERE id =:id";
 
     private static final Logger log= LoggerFactory.getLogger(ContactDaoImpl.class);

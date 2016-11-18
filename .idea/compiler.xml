@@ -38,6 +38,7 @@
         <module name="Spring01" />
         <module name="SpringAuditHibernate" />
         <module name="SpringContactsMVC" />
+        <module name="SpringContactsMvcAnnotation" />
         <module name="SpringHib1" />
         <module name="SpringHibernateEnvers" />
         <module name="SpringHibernet" />
@@ -82,6 +83,7 @@
       <module name="SpringAuditHibernate" target="1.8" />
       <module name="SpringCh8" target="1.8" />
       <module name="SpringContactsMVC" target="1.8" />
+      <module name="SpringContactsMvcAnnotation" target="1.8" />
       <module name="SpringHib1" target="1.8" />
       <module name="SpringHibernateEnvers" target="1.8" />
       <module name="SpringHibernet" target="1.8" />

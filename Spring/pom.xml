@@ -30,6 +30,7 @@
         <module>SpringRestSecurity</module>
         <module>SpringTest</module>
         <module>SpringContactsMVC</module>
+        <module>SpringContactsMvcAnnotation</module>
 
     </modules>
 

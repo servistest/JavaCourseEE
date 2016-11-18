@@ -9,7 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <packaging>war</packaging>
+
     <artifactId>SpringContactsMVC</artifactId>
+
+    <dependencies>
+        <!--Зависимость для  Сastor, иначе ошибка при маршализации  в формате XML:
+         java.lang.ClassNotFoundException: com.sun.org.apache.xml.internal.serialize.XMLSerializer from-->
+        <dependency>
+            <groupId>com.sun.xml.parsers</groupId>
+            <artifactId>jaxp-ri</artifactId>
+            <version>1.4.5</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 
 import javax.sql.DataSource;
+import java.lang.reflect.Constructor;
 import java.sql.ResultSet;
 import java.util.Date;
 import java.util.List;
@@ -54,14 +55,45 @@ private static final Logger log= LoggerFactory.getLogger(ExampleContactService.c
         contactService.update(contact5);
         log.info("Update contact= {} ",contact5);
 
-
-
     }
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/data-source-postgres-tx.xml");
-        ContactService contactService=(ContactService) applicationContext.getBean("contactService");
-        testData(contactService);
+
+        Constructor[] constructor=String.class.getDeclaredConstructors();
+        log.debug("constructor = {}",constructor);
+        System.out.println();
+        Date date=new Date();
+        Class cls=date.getClass();
+        System.out.println("Class of date = "+cls);
+        try {
+            Object o=cls.newInstance();
+            System.out.println("Instance object o = "+o);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println("return class = "+  String.class.getClass() );
+            Object o=String.class.getClass().newInstance();
+            System.out.println("String o = "+o);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+//       Object o= Question.TypeUser.Admin;
+//        Question.TypeUser type=Question.TypeUser
+//
+//        System.out.println("object = "+o);
+
+
+
+
+//        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/data-source-postgres-tx.xml");
+//        ContactService contactService=(ContactService) applicationContext.getBean("contactService");
+//        testData(contactService);
 
 //        @Bean
 //        public DataSource getDataSource() {

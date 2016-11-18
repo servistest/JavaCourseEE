@@ -29,28 +29,21 @@ public class Contact implements Serializable {
         this.id = id;
     }
 
-
-
     public String getFirstName() {
         return firstName;
     }
-
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-
     public String getLastName() {
         return lastName;
     }
 
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-
 
     public Date getBirthDate() {
         return birthDate;
@@ -60,7 +53,6 @@ public class Contact implements Serializable {
         this.birthDate = birthDate;
     }
 
-
     public String getDescription() {
         return description;
     }
@@ -68,7 +60,6 @@ public class Contact implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public byte[] getPhoto() {
         return photo;

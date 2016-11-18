@@ -8,54 +8,54 @@
     <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.5">
       <database id="1" name="JavaCourse"/>
       <schema id="2" parent="1" name="mvc">
-        <object-id>76847</object-id>
-        <introspection-state-number>103470</introspection-state-number>
-        <introspection-timestamp>2016-11-16.14:42:56.876</introspection-timestamp>
+        <object-id>77471</object-id>
+        <introspection-state-number>104437</introspection-state-number>
+        <introspection-timestamp>2016-11-17.15:29:41.269</introspection-timestamp>
       </schema>
       <sequence id="3" parent="2" name="contact_id_seq">
-        <object-id>76848</object-id>
-        <state-number>103470</state-number>
+        <object-id>77472</object-id>
+        <state-number>104437</state-number>
       </sequence>
       <table id="4" parent="2" name="contact">
-        <object-id>76850</object-id>
-        <state-number>103470</state-number>
+        <object-id>77474</object-id>
+        <state-number>104437</state-number>
       </table>
       <column id="5" parent="4" name="id">
-        <state-number>103470</state-number>
+        <state-number>104437</state-number>
         <mandatory>1</mandatory>
         <data-type>bigint</data-type>
         <default-expression>nextval(&apos;mvc.contact_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="6" parent="4" name="first_name">
-        <state-number>103470</state-number>
+        <state-number>104437</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(60)</data-type>
       </column>
       <column id="7" parent="4" name="last_name">
-        <state-number>103470</state-number>
+        <state-number>104437</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(40)</data-type>
       </column>
       <column id="8" parent="4" name="birth_date">
-        <state-number>103470</state-number>
+        <state-number>104437</state-number>
         <data-type>date</data-type>
       </column>
       <column id="9" parent="4" name="description">
-        <state-number>103470</state-number>
+        <state-number>104437</state-number>
         <data-type>varchar(2000)</data-type>
       </column>
       <column id="10" parent="4" name="photo">
-        <state-number>103470</state-number>
+        <state-number>104437</state-number>
         <data-type>bytea</data-type>
       </column>
       <index id="11" parent="4" name="contact_pkey">
-        <object-id>76857</object-id>
+        <object-id>77481</object-id>
         <columns>id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
       <index id="12" parent="4" name="contact_first_name_last_name_key">
-        <object-id>76859</object-id>
+        <object-id>77483</object-id>
         <columns>first_name
 last_name</columns>
         <desc-columns></desc-columns>
