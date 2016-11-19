@@ -8,6 +8,19 @@
         xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
+   <!--Если приложению требуется только поддержка DI, то с контейнером DI в Spring-->
+   <!--можно взаимодействовать через интерфейс BeanFactory. В этом случае приложение-->
+   <!--должно создать экземпляр класса, реализующего интерфейс BeanFactory,-->
+   <!--и сконфиrурировать его в соответствие с информацией о бине и зависимостях.-->
+   <!--После того, как это сделано, приложение может получать доступ к бинам через-->
+   <!--BeanFactory и пользоваться их обработкой.-->
+   <!--В ряде случаев вся настройка подобного-->
+   <!--рода производится автоматически (например, в веб-приложении экземпляр-->
+   <!--ApplicationContext будет загружаться веб-контейнером во время начальной загрузки-->
+   <!--приложения с помощью класса ContextLoaderListener, предоставляемого-->
+   <!--Spring, который объявлен в файле дескрипторов web. xml). Но во многих случаях-->
+   <!--кодировать настройку приходится самостоятельно. Все примеры, приведенные в-->
+   <!--этой главе, требуют ручной настройки реализации BeanFactory.-->
    <import resource="rest-context.xml"/>
    <context:component-scan base-package="edu.mvc"/>
 
@@ -37,9 +50,6 @@
       <property name="username" value="${jdbc.username}"/>
       <property name="password" value="${jdbc.password}"/>
    </bean>
-
-
-
 
 
 </beans>

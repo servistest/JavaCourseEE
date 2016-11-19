@@ -5,10 +5,14 @@ package edu.mvc;
  */
 public  class Question {
 
-
-
     public   static enum TypeUser{Admin,User,Manager};
-    private TypeUser typeUser;
+    public static class Summa{
+        int getSumma(int a,int b){
+            return a +b;
+        }
+    };
+
+    private static TypeUser typeUser;
 
     public TypeUser getTypeUser() {
         return typeUser;
