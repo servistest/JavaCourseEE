@@ -36,6 +36,7 @@
         <module name="HibernetSpring" />
         <module name="HibernManyToMany" />
         <module name="Spring01" />
+        <module name="SpringAop" />
         <module name="SpringAuditHibernate" />
         <module name="SpringContactsMVC" />
         <module name="SpringContactsMvcAnnotation" />
@@ -80,6 +81,7 @@
       <module name="JavaCourseEE" target="1.8" />
       <module name="Spring" target="1.8" />
       <module name="Spring01" target="1.8" />
+      <module name="SpringAop" target="1.8" />
       <module name="SpringAuditHibernate" target="1.8" />
       <module name="SpringCh8" target="1.8" />
       <module name="SpringContactsMVC" target="1.8" />

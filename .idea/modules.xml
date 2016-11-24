@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/JavaCourseEE.iml" filepath="$PROJECT_DIR$/JavaCourseEE.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/Spring.iml" filepath="$PROJECT_DIR$/Spring/Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring/Spring01/Spring01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringAop/SpringAop.iml" filepath="$PROJECT_DIR$/Spring/SpringAop/SpringAop.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringAuditHibernate/SpringAuditHibernate.iml" filepath="$PROJECT_DIR$/Spring/SpringAuditHibernate/SpringAuditHibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringContactsMVC/SpringContactsMVC.iml" filepath="$PROJECT_DIR$/Spring/SpringContactsMVC/SpringContactsMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringContactsMvcAnnotation/SpringContactsMvcAnnotation.iml" filepath="$PROJECT_DIR$/Spring/SpringContactsMvcAnnotation/SpringContactsMvcAnnotation.iml" />

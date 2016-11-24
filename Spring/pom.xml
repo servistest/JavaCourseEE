@@ -31,6 +31,7 @@
         <module>SpringTest</module>
         <module>SpringContactsMVC</module>
         <module>SpringContactsMvcAnnotation</module>
+        <module>SpringAop</module>
 
     </modules>
 

@@ -24,6 +24,7 @@ public class ExampleContactService {
 private static final Logger log= LoggerFactory.getLogger(ExampleContactService.class);
    public ContactService contactService;
 
+
     public static void testData(ContactService contactService){
         Contact contact=contactService.findContactById(1L);
         log.info("Return contact by id  {}",contact);
