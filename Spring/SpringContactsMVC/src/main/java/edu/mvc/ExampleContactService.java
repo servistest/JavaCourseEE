@@ -6,13 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 
-import javax.sql.DataSource;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import java.sql.ResultSet;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +33,7 @@ private static final Logger log= LoggerFactory.getLogger(ExampleContactService.c
         log.info("Return all contacts {}",contacts);
         Contact contact4=new Contact();
         contact4.setFirstName("Vladimir23");
-        contact4.setLastName("Novik23");
+        contact4.setLastName("");
         contact4.setBirthDate(new Date());
         log.info("Save contact with id ={}",contactService.save(contact4));
 
@@ -61,7 +55,7 @@ private static final Logger log= LoggerFactory.getLogger(ExampleContactService.c
 
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/data-source-postgres-tx.xml");
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("WEB-INF/spring/servlet-context.xml");
         ContactService contactService=(ContactService) applicationContext.getBean("contactService");
         testData(contactService);
 

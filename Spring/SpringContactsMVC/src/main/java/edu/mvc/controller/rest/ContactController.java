@@ -20,7 +20,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/contacts")
 public class ContactController {
-
+    @Autowired
     ContactService contactService;
 
     @RequestMapping(value = "/",method = RequestMethod.GET)

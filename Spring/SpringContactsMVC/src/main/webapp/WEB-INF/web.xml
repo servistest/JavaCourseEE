@@ -9,7 +9,7 @@
     <!--Если приложению требуется только поддержка DI, то с контейнером DI в Spring-->
     <!--можно взаимодействовать через интерфейс BeanFactory. В этом случае приложение-->
     <!--должно создать экземпляр класса, реализующего интерфейс BeanFactory,-->
-    <!--и сконфиrурировать его в соответствие с информацией о бине и зависимостях.-->
+    <!--и сконфигурировать его в соответствие с информацией о бине и зависимостях.-->
     <!--После того, как это сделано, приложение может получать доступ к бинам через-->
     <!--BeanFactory и пользоваться их обработкой.-->
     <!--В ряде случаев вся настройка подобного-->
@@ -22,23 +22,84 @@
     <!--Bootstrap listener to start up and shut down Spring's root WebApplicationContext-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-
     </listener>
+
+    <!--по умолчанию ContextLoaderListener ищет свой контекст (/WEB-INF/applicationContext.xml), который является общим  для всех сервлетов и фильтров-->
+    <!--В дескрипторе <context-param> указан параметр contextConfigLocation, который определяет местоположение корневого файла конфигурации-->
+    <!--WebApplicationContext для Spring-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring/root-context.xml</param-value>
+    </context-param>
 
     <!--Далее, загруженный Front Controller (org.springframework.web.servlet.DispatcherServlet),-->
     <!--„поднимает“ контекст приложения, после чего все компоненты, описанные в файле конфигурации,-->
     <!--опять-таки статновятся доступны, но теперь уже из web приложения.-->
-    <!--<servlet>-->
-        <!--<servlet-name>mvcrest</servlet-name>-->
-        <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
-        <!--<init-param>-->
-            <!--<param-name>contextConfigLocation</param-name>-->
-            <!--<param-value>/WEB-INF/spring/applicationContext.xml</param-value>-->
-        <!--</init-param>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>mvcrest</servlet-name>-->
-        <!--<url-pattern>/mvcrest/*</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <!--Определен один сервлет диспетчера (по имени appServlet)-->
+    <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <!--CharacterEncodingFilter, который позволяет указать кодировку для запроса.-->
+    <!--Это полезно, поскольку современные браузеры, как правило, не устанавливают кодировка символов,-->
+    <!--даже если таковая указана на HTML-странице или форме.-->
+    <!--Этот фильтр может либо применить кодировку по умолчанию, если в запросе не указана кодировка, -->
+    <!--либо обеспечить кодирование запроса в нужную кодировку вне зависимости от того, установлена -->
+    <!--она в запросе или нет ("forceEncoding"="true").-->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--Этот фильтр предоставляет поддержку для НТТРметодов,-->
+    <!--отличных от GET и POST (например, PUT)-->
+    <filter>
+        <filter-name>HttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--Этот фильтр связывает диспетчер сущностей JPA (EntityManager) с потоком для полной обработки-->
+    <!--запроса. Он может помочь в восстановлении  того же диспетчера сущностей для последующих-->
+    <!--запросов, поступающих от того же самого пользователя,  что позволит функционировать таким-->
+    <!--средствам JPA, как ленивая выборка-->
+    <!--Для работы фильтра нужно , что бы в контексте был опредлен EntityManagerFactory , иначе Exception-->
+    <!--<filter>-->
+        <!--<filter-name>Spring OpenEntityManagerinViewFilter</filter-name>-->
+        <!--<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>Spring OpenEntityManagerinViewFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+    <!--Определено несколько фильтров сервлетов, предоставляемых Spring МУС, и-->
+    <!--все фильтры отображены на URL корневого контекста ("/*") веб-приложения-->
+
 
 </web-app>

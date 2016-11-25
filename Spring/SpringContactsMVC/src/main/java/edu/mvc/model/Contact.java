@@ -4,6 +4,9 @@ package edu.mvc.model;
 
 
 import org.joda.time.DateTime;
+
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,9 +16,19 @@ import java.util.Date;
  */
 
 public class Contact implements Serializable {
+    @AssertTrue(message = "should by First Name and Last name")
+    public boolean isShouldFirstNameAndLastName(){
+        Boolean result=true;
+        if(firstName==null || lastName==null){
+            result=false;
+        }
+        return result;
+    }
     private static final String DATE_FORMAT="yyyy-MM-dd";
     private Long id;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
     private Date birthDate;
     private String description;

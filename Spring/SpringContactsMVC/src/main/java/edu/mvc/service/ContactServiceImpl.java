@@ -4,6 +4,7 @@ import edu.mvc.dao.ContactDao;
 import edu.mvc.model.Contact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import javax.validation.constraints.AssertTrue;
@@ -13,6 +14,7 @@ import java.util.Map;
 /**
  * Created by ALex on 13.11.2016.
  */
+@Service(value = "contactService")
 public class ContactServiceImpl implements ContactService {
     private static final Logger log= LoggerFactory.getLogger(ContactServiceImpl.class);
     private ContactDao contactDao;
