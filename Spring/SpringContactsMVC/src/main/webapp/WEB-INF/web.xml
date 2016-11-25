@@ -43,6 +43,7 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
         </init-param>
+        <!--<load-on-startup> указывает на порядок загрузки сервлетов. Сначало загружаются с меньшими номерами -->
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
