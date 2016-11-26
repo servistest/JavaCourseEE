@@ -15,7 +15,6 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/rest-context.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring/data-source-postgres-tx.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/spring/root-context.xml</file>
         </fileset>
       </configuration>
     </facet>

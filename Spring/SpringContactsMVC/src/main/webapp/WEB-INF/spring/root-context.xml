@@ -15,6 +15,6 @@
     <!--&lt;!&ndash;кодировать настройку приходится самостоятельно. -->
 
    <import resource="classpath:spring/data-source-postgres-tx.xml"/>
-   <import resource="rest-context.xml"/>
+   <!--<import resource="rest-context.xml"/>-->
    <context:component-scan base-package="edu.mvc"/>
 </beans>

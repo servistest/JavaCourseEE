@@ -1,38 +1,48 @@
 package edu.mvc.controller.rest;
 
 import edu.mvc.model.Contact;
-import edu.mvc.model.Contacts;
 import edu.mvc.service.ContactService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.annotation.RequestScope;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Admin on 17.11.2016.
  */
+//К ContactController применена аннотация @Controller, которая указывает, что это контроллер Spring MVC.
 @Controller
+//Аннотация @RequestMapping на уровне класса задает корневой URL, который будет обрабатываться контроллером
+//В этом случае все URL с префиксом /SpringContactsMVC/contacts будут направляться данному  контроллеру
 @RequestMapping(value = "/contacts")
 public class ContactController {
-    @Autowired
+    Logger log= LoggerFactory.getLogger(ContactController.class);
+
     ContactService contactService;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    @ResponseBody
-    public String HelloWorld(){
-        return "Hello World!";
+//    Внутри метода list () извлекается список контактов, который сохраняется в интерфейсе
+//    Model, экземпляр реализации которого передается методу средой Spring МVС.
+    @RequestMapping(method = RequestMethod.GET)
+    public String  list(Model uiModel){
+        log.info("Listing contacts");
+        List<Contact> contacts=contactService.findAllContacts();
+        uiModel.addAttribute("contacts",contacts);
+        log.info("No. of contacts = {}",contacts.size());
+//        возвращается логическое имя представления contacts/list
+        return "contacts/list";
+//        В конфигурации сервлета диспетчера в качестве распознавателя представлений указан
+//        InternalResourceViewResolver, а файл имеет префикс /WEB-INF/views/ и суффикс .jspx.
+//        В результате Spring МVС выберет для представления файл /WEB-INF/views/contacts/list-old.jspx.
     }
-    @RequestMapping(value = "/listData",method = RequestMethod.GET)
-    @ResponseBody
-    public Contacts listData(){
 
-        List<Contact> contactList=contactService.findAllContacts();
-        return new Contacts((ArrayList<Contact>) contactList);
+    @Autowired
+    public void setContactService(ContactService contactService){
+        this.contactService=contactService;
     }
 }

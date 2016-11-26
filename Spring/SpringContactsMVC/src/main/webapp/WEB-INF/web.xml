@@ -48,7 +48,10 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>appServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <!--именно url-паттерн  БЕЗ Звездочки!!! "/*"   - неправильно, иначе:-->
+        <!--Did not find handler method for [/WEB-INF/views/contacts/list-old.jspx]-->
+        <!--No handler mapping found for [/WEB-INF/views/contacts/list-old.jspx]-->
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <!--CharacterEncodingFilter, который позволяет указать кодировку для запроса.-->
