@@ -12,34 +12,47 @@
           <jsp:directive.page contentType="text/html;charset=UTF-8"/>
           <jsp:output omit-xml-declaration="yes"/>
 
-
-    <c:forEach items="${contacts}" var="contact">
+<c:if test="">
+    <table>
+        <thead>
         <tr>
-            <td>${contact.firstName}</td>
-            <td>$(contact.lastName}</td>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <!--<th>Birth Date</th>-->
         </tr>
-
-    </c:forEach>
-    <c:if test="$(not empty contacts}">
-        <table>
-            <thead>
+        </thead>
+        <tbody>
+        <c:forEach items="${contacts}" var="contact">
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <!--<th>Birth Date</th>-->
+                <td>${contact.firstName}</td>
+                <td>$(contact.lastName}</td>
+                <!--<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>-->
             </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${contacts}" var="contact">
-                <tr>
-                    <td>${contact.firstName}</td>
-                    <td>$(contact.lastName}</td>
-                    <!--<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>-->
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-    </c:if>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
+
+    <!--<c:if test="$(not empty contacts}">-->
+        <!--<table>-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th>First Name</th>-->
+                <!--<th>Last Name</th>-->
+                <!--&lt;!&ndash;<th>Birth Date</th>&ndash;&gt;-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<c:forEach items="${contacts}" var="contact">-->
+                <!--<tr>-->
+                    <!--<td>${contact.firstName}</td>-->
+                    <!--<td>$(contact.lastName}</td>-->
+                    <!--&lt;!&ndash;<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>&ndash;&gt;-->
+                <!--</tr>-->
+            <!--</c:forEach>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</c:if>-->
 
 
 
