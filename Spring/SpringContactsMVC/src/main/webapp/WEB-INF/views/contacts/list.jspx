@@ -11,16 +11,23 @@
 
           <jsp:directive.page contentType="text/html;charset=UTF-8"/>
           <jsp:output omit-xml-declaration="yes"/>
+    <c:if test="${not empty contacts}">
 
 
-        <c:forEach items="${contacts}" var="contact">
-            <tr>
-                <td>${contact.firstName}</td>
-                <td>$(contact.lastName}</td>
-                <!--<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>-->
-            </tr>
-        </c:forEach>
-
+        <table>
+            <thead>
+                <tr>First Name </tr>
+                <tr>Last Name </tr>
+            </thead>
+            <c:forEach items="${contacts}" var="contact">
+                    <tr>
+                        <td>${contact.firstName}</td>
+                        <td>${contact.lastName}</td>
+                        <!--<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>-->
+                    </tr>
+            </c:forEach>
+        </table>
+    </c:if>
 
     <!--<c:if test="$(not empty contacts}">-->
         <!--<table>-->
