@@ -146,6 +146,13 @@
                 <artifactId>joda-time</artifactId>
                 <version>2.9.4</version>
             </dependency>
+            <!--Библиотека дескрипторов JSP,которая поддерживает форматирование-->
+            <!--типов Joda-Time в представлениях-->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time-jsptags</artifactId>
+                <version>1.1.1</version>
+            </dependency>
             <dependency>
                 <groupId>org.jadira.usertype</groupId>
                 <artifactId>usertype.core</artifactId>
@@ -261,6 +268,11 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>4.4</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
             </dependency>
 
 

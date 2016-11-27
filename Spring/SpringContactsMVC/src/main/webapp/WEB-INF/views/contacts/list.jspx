@@ -7,22 +7,29 @@
 -->
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns:c="http://java.sun.com/jsp/jstl/core"
-          xmlns="http://www.w3.org/1999/xhtml" version="2.0">
-
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:joda="http://www.joda.org/joda/time/tags"
+          version="2.0">
           <jsp:directive.page contentType="text/html;charset=UTF-8"/>
           <jsp:output omit-xml-declaration="yes"/>
+
     <c:if test="${not empty contacts}">
         <table>
             <thead>
                 <tr>First Name </tr>
                 <tr>Last Name </tr>
+                <tr>Birth Date</tr>
             </thead>
 
             <c:forEach items="${contacts}" var="contact">
                     <tr>
                         <td>${contact.firstName}</td>
                         <td>${contact.lastName}</td>
-                        <!--<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>-->
+                        <!--<td>${contact.birthDate}</td>-->
+                        <td><fmt:formatDate pattern="yyyy-MM-dd" value="${contact.birthDate}" /></td>
+                        <!--<fmt:formatDate value="${ojbect.date}" pattern="dd/MM/yyyy" />-->
+                        <!--<td><joda:format value="$(contact.birthDate}" pattern="yyyy-MM-dd"/></td>-->
                     </tr>
             </c:forEach>
 

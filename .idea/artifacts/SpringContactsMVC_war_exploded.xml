@@ -41,6 +41,7 @@
           <element id="library" level="project" name="Maven: com.atomikos:transactions:4.0.4" />
           <element id="library" level="project" name="Maven: com.atomikos:atomikos-util:4.0.4" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.9.4" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time-jsptags:1.1.1" />
           <element id="library" level="project" name="Maven: org.jadira.usertype:usertype.core:6.0.0.GA" />
           <element id="library" level="project" name="Maven: org.jadira.usertype:usertype.spi:6.0.0.GA" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
@@ -82,6 +83,7 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.4" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.0.RELEASE" />

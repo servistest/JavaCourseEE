@@ -26,9 +26,7 @@ public class Contact implements Serializable {
     }
     private static final String DATE_FORMAT="yyyy-MM-dd";
     private Long id;
-    @NotNull
     private String firstName;
-    @NotNull
     private String lastName;
     private Date birthDate;
     private String description;
