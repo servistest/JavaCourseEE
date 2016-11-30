@@ -49,8 +49,8 @@
     <servlet-mapping>
         <servlet-name>appServlet</servlet-name>
         <!--именно url-паттерн  БЕЗ Звездочки!!! "/*"   - неправильно, иначе:-->
-        <!--Did not find handler method for [/WEB-INF/views/contacts/list-old.jspx]-->
-        <!--No handler mapping found for [/WEB-INF/views/contacts/list-old.jspx]-->
+        <!--Did not find handler method for [/WEB-INF/views/contacts/list.jspx]-->
+        <!--No handler mapping found for [/WEB-INF/views/contacts/list.jspx]-->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 

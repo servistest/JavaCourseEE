@@ -10,20 +10,32 @@
           xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
           xmlns="http://www.w3.org/1999/xhtml"
           xmlns:joda="http://www.joda.org/joda/time/tags"
+          xmlns:spring="http://www.springframework.org/tags"
           version="2.0">
           <jsp:directive.page contentType="text/html;charset=UTF-8"/>
           <jsp:output omit-xml-declaration="no"/>
 
+    <spring:message code="label_contact_list" var="labelContactList"/>
+    <spring:message code="label_contact_first_name" var="labelContactFirstName"/>
+    <spring:message code="label_contact_last_name" var="labelContactLastName"/>
+    <spring:message code="label_contact_birth_date" var="labelContactBirtDate"/>
+    <spring:url value="/contacts" var="showContactUrl"/>
+
+    <h1>${labelContactList}</h1>
+
     <c:if test="${not empty contacts}">
         <table>
             <thead>
-                <tr>First Name </tr>
-                <tr>Last Name </tr>
-                <tr>Birth Date</tr>
+                <tr>
+                    <th>${labelContactFirstName}</th>
+                    <th>${labelContactLastName}</th>
+                    <th>${labelContactBirtDate}</th>
+                </tr>
             </thead>
             <tbody>
             <c:forEach items="${contacts}" var="contact">
                     <tr>
+                        <td><a href="${showContactUrl}/${contact.id}">${contact.firstName}</a> </td>
                         <td>${contact.firstName}</td>
                         <td>${contact.lastName}</td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${contact.birthDate}" /></td>
@@ -32,28 +44,5 @@
             </tbody>
         </table>
     </c:if>
-
-    <!--<c:if test="$(not empty contacts}">-->
-        <!--<table>-->
-            <!--<thead>-->
-            <!--<tr>-->
-                <!--<th>First Name</th>-->
-                <!--<th>Last Name</th>-->
-                <!--&lt;!&ndash;<th>Birth Date</th>&ndash;&gt;-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--<c:forEach items="${contacts}" var="contact">-->
-                <!--<tr>-->
-                    <!--<td>${contact.firstName}</td>-->
-                    <!--<td>$(contact.lastName}</td>-->
-                    <!--&lt;!&ndash;<td><joda:format value="$(contact.ЬirthDate}" pattern="yyyy-MM-dd"/></td>&ndash;&gt;-->
-                <!--</tr>-->
-            <!--</c:forEach>-->
-            <!--</tbody>-->
-        <!--</table>-->
-    <!--</c:if>-->
-
-
 
 </jsp:root>

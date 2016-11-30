@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -38,7 +39,15 @@ public class ContactController {
         return "contacts/list";
 //        В конфигурации сервлета диспетчера в качестве распознавателя представлений указан
 //        InternalResourceViewResolver, а файл имеет префикс /WEB-INF/views/ и суффикс .jspx.
-//        В результате Spring МVС выберет для представления файл /WEB-INF/views/contacts/list-old.jspx.
+//        В результате Spring МVС выберет для представления файл /WEB-INF/views/contacts/list.jspx.
+    }
+    @RequestMapping(value = "/contacts/{id}")
+//    Аннотация @PathVariable, которая заставляет Spring MVC извлекать id из URL и помещать  его в этот аргумент.
+    public String show(@PathVariable("id") Long id, Model uiModel){
+        log.info("Show contact");
+        Contact contact=contactService.findContactById(id);
+        uiModel.addAttribute("contact",contact);
+        return "/contacts/show";
     }
 
     @Autowired
