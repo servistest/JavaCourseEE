@@ -38,7 +38,7 @@
        </tr>
         <tr>
             <td>${labelContactLastName}</td>
-            <td>${coontact.lastName}</td>
+            <td>${contact.lastName}</td>
         </tr>
         <tr>
             <td>${labelContactBirthDate}</td>

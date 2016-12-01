@@ -13,7 +13,7 @@
     <!-- all, trace, debug, info, warn, error, fatal, off -->
 
     <root>
-        <level value="debug" />
+        <level value="trace" />
         <appender-ref ref="consoleLog" />
     </root>
 

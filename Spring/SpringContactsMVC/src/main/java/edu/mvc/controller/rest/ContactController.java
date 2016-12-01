@@ -18,9 +18,10 @@ import java.util.List;
  * Created by Admin on 17.11.2016.
  */
 //К ContactController применена аннотация @Controller, которая указывает, что это контроллер Spring MVC.
-@Controller
+
 //Аннотация @RequestMapping на уровне класса задает корневой URL, который будет обрабатываться контроллером
 //В этом случае все URL с префиксом /SpringContactsMVC/contacts будут направляться данному  контроллеру
+@Controller
 @RequestMapping(value = "/contacts")
 public class ContactController {
     Logger log= LoggerFactory.getLogger(ContactController.class);
@@ -41,13 +42,13 @@ public class ContactController {
 //        InternalResourceViewResolver, а файл имеет префикс /WEB-INF/views/ и суффикс .jspx.
 //        В результате Spring МVС выберет для представления файл /WEB-INF/views/contacts/list.jspx.
     }
-    @RequestMapping(value = "/contacts/{id}")
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET )
 //    Аннотация @PathVariable, которая заставляет Spring MVC извлекать id из URL и помещать  его в этот аргумент.
     public String show(@PathVariable("id") Long id, Model uiModel){
         log.info("Show contact");
         Contact contact=contactService.findContactById(id);
         uiModel.addAttribute("contact",contact);
-        return "/contacts/show";
+        return "contacts/show";
     }
 
     @Autowired
