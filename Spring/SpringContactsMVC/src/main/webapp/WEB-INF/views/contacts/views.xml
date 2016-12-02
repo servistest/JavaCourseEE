@@ -10,4 +10,7 @@
   <definition extends="default" name="contacts/show">
       <put-attribute name="body" value="/WEB-INF/views/contacts/show.jspx"/>
   </definition>
+    <definition extends="default" name="contacts/updateForm">
+        <put-attribute name="body" value="/WEB-INF/views/contacts/edit.jspx"/>
+    </definition>
 </tiles-definitions>

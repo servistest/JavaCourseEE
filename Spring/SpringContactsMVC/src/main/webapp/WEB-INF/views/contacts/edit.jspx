@@ -31,11 +31,19 @@
         <div id="message" class="${message.type}">${message.message}</div>
     </c:if>
 
+    <form action="updateContact">
+        ${labelContactFirstName}:<input type="text" value="${contact.firstName}"/><br></br>
+        ${labelContactLastName}:<input type="text" value="${contact.lastName}"/><br></br>
+        ${labelContactBirthDate}:<input type="text" value="${contact.birthDate}"/><br></br>
+        ${labelContactDescription}:<input type="text" value="${contact.description}"/><br></br>
+        <spring:message code="date_format_pattern" var="dateFormatPattern"/>
+        <input type="button" value="Сохранить"/>
+    </form>
+
     <table>
        <tr>
            <td>${labelContactFirstName}</td>
            <td>${contact.firstName}</td>
-           <!--<td contenteditable="true">${contact.firstName}</td>-->
        </tr>
         <tr>
             <td>${labelContactLastName}</td>

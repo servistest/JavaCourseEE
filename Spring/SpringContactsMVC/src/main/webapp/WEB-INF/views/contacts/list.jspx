@@ -19,6 +19,8 @@
     <spring:message code="label_contact_first_name" var="labelContactFirstName"/>
     <spring:message code="label_contact_last_name" var="labelContactLastName"/>
     <spring:message code="label_contact_birth_date" var="labelContactBirtDate"/>
+    <spring:message code="label_contact_description" var="labelContactDescription"/>
+    <spring:message code="date_format_pattern" var="dateFormatPattern"/>
     <spring:url value="/contacts" var="showContactUrl"/>
 
     <h1>${labelContactList}</h1>
@@ -30,15 +32,16 @@
                     <th>${labelContactFirstName}</th>
                     <th>${labelContactLastName}</th>
                     <th>${labelContactBirtDate}</th>
+                    <th>${labelContactDescription}</th>
                 </tr>
             </thead>
             <tbody>
             <c:forEach items="${contacts}" var="contact">
                     <tr>
                         <td><a href="${showContactUrl}/${contact.id}">${contact.firstName}</a> </td>
-                        <td>${contact.firstName}</td>
                         <td>${contact.lastName}</td>
-                        <td><fmt:formatDate pattern="yyyy-MM-dd" value="${contact.birthDate}" /></td>
+                        <td><fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" /></td>
+                        <td>${contact.description}</td>
                     </tr>
             </c:forEach>
             </tbody>
