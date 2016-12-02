@@ -66,6 +66,7 @@ public class ContactController {
     public String updateForm(@PathVariable("id")Long id, ModelAndView uiModel){
         log.info("Search contact by id");
         Contact contact=contactService.findContactById(id);
+
         return "contacts/updateForm";
     }
 
