@@ -10,6 +10,7 @@
           xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
           xmlns="http://www.w3.org/1999/xhtml"
           xmlns:joda="http://www.joda.org/joda/time/tags"
+          xmlns:form="http://www.springframework.org/tags/form"
           xmlns:spring="http://www.springframework.org/tags"
           version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
@@ -20,45 +21,59 @@
     <spring:message code="label_contact_last_name" var="labelContactLastName"/>
     <spring:message code="label_contact_birth_date" var="labelContactBirthDate"/>
     <spring:message code="label_contact_description" var="labelContactDescription"/>
-    <spring:message code="label_contact_update" var="labelContactUpdate"/>
+    <spring:message code="label_contact_photo" var="labelContactPhoto"/>
     <spring:message code="date_format_pattern" var="dateFormatPattern"/>
+    <spring:message code="label_contact_update" var="labelContactUpdate"/>
+    <spring:message code="label_contact_new" var="labelContactNew"/>
     <spring:url value="/contacts" var="editContactUrl"/>
 
+    <!--Если contact.id равно значению null. Если это так, значит, создается новый-->
+    <!--контакт, а если нет, то обновляется существующий контакт. -->
+    <spring:eval expression="contact.id==null ? labelContactNew:labelContactUpdate" var="formTitle"/>
 
-    <h1>${labelContactList}</h1>
+    <!--Будет отображен соответствующий заголовок формы-->
+    <h1>${formTitle}</h1>
 
-    <c:if test="${not empty messsage}">
-        <div id="message" class="${message.type}">${message.message}</div>
-    </c:if>
+    <div id="contactUpdate">
+        <form:form modelAttribute="contact" id="contactUpdateForm" method="post">
+           <c:if test="${ not empty message}">
+               <div id="message" class="${message.type}">${message.message}</div>
+           </c:if>
 
-    <form action="updateContact">
-        ${labelContactFirstName}:<input type="text" value="${contact.firstName}"/><br></br>
-        ${labelContactLastName}:<input type="text" value="${contact.lastName}"/><br></br>
-        ${labelContactBirthDate}:<input type="text" value="${contact.birthDate}"/><br></br>
-        ${labelContactDescription}:<input type="text" value="${contact.description}"/><br></br>
-        <spring:message code="date_format_pattern" var="dateFormatPattern"/>
-        <input type="button" value="Сохранить"/>
-    </form>
+            <form:label path="firstName">${labelContactFirstName}*</form:label>
+            <form:input path="firstName"  />
+            <div>
+                <form:errors path="firstName" cssClass="errors"/>
+            </div>
+            <p/>
 
-    <table>
-       <tr>
-           <td>${labelContactFirstName}</td>
-           <td>${contact.firstName}</td>
-       </tr>
-        <tr>
-            <td>${labelContactLastName}</td>
-            <td>${contact.lastName}</td>
-        </tr>
-        <tr>
-            <td>${labelContactBirthDate}</td>
-            <td><fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" /></td>
-        </tr>
-        <tr>
-            <td>${labelContactDescription}</td>
-            <td>${contact.description}</td>
-        </tr>
-    </table>
-    <a href ="${editContactUrl}/${contact.id}?form">${labelContactUpdate} </a>
+            <form:label path="lastName">${labelContactLastName}*</form:label>
+            <form:input path="lastName"/>
+            <div>
+                <form:errors path="lastName" cssClass="error"/>
+            </div>
+            <p/>
+            
+            <form:label path="birthDate">${labelContactBirthDate}</form:label>
+            <fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" var="formatBirthDate"/>
+            <form:input path="birthDate" value="${formatBirthDate}"/>
+            <div>
+                <form:errors path="birthDate" cssClass="errors"/>
+            </div>
+            <p/>
+
+            <form:label path="description">${labelContactDescription}</form:label>
+            <form:textarea cols="60" rows="8" path="description" id="contactDescription"/>
+            <div>
+                <form:errors path="description" cssClass="errors"/>
+            </div>
+            <p/>
+
+            <button type="submit">Save</button>
+            <button type="reset">Reset</button>
+
+        </form:form>
+    </div>
 
 
 </jsp:root>

@@ -1,11 +1,16 @@
 package edu.mvc.controller.rest;
 
+import edu.mvc.controller.message.Message;
+import edu.mvc.controller.message.UrlUtil;
 import edu.mvc.model.Contact;
 import edu.mvc.service.ContactService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.security.web.util.UrlUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,7 +36,9 @@ import java.util.Locale;
 public class ContactController {
     Logger log= LoggerFactory.getLogger(ContactController.class);
 
-    ContactService contactService;
+    private ContactService contactService;
+    private MessageSource messageSource;
+
 
 //    Внутри метода list () извлекается список контактов, который сохраняется в интерфейсе
 //    Model, экземпляр реализации которого передается методу средой Spring МVС.
@@ -56,22 +63,50 @@ public class ContactController {
         return "contacts/show";
     }
 
-    public String update(Contact contact, ModelAndView uiModel, BindingResult bindingResult,
+//    Spring MVC попытается связать отправленные  данные с объектом предметной области Contact и автоматически выполнит
+//    преобразование типов и форматирование.
+    @RequestMapping(value = "/{id}",params = "form",method = RequestMethod.POST)
+    public String update(Contact contact, Model uiModel, BindingResult bindingResult,
                          HttpServletRequest httpServletRequest, RedirectAttributes redirectAttributes,Locale locale){
-
-        return "contact/update";
+        log.info("Updating contact");
+//        В случае обнаружения ошибок привязки (например, дата рождения была введена в неверном формате)
+//        эти ошибки будут сохранены в интерфейсе BindingResult (из пакета org. springframework.validation),
+//        а сообщения об ошибках - в модели, приводя к повторному отображению представления редактирования
+        if(bindingResult.hasErrors()){
+            uiModel.addAttribute("message",new Message("error",
+                    messageSource.getMessage("contact_save_fail", new Object[]{} ,locale)));
+            uiModel.addAttribute("contact",contact);
+            return "contacts/update";
+        }
+//        clear model
+        uiModel.asMap().clear();
+//        Если привязка прошла успешно, данные сохраняются, и возвращается логическое
+//        имя представления просмотра контакта с указанием redirect: в качестве префикса.
+//        Нам нужно отобразить сообщение после перенаправления,поэтому мы должны использовать
+//        метод RedirectAttributes.addFlashAttribute () для отображения
+//        сообщения об успехе в представлении просмотра контакта.  Flаsh-атрибуты в Spring MVC
+//        временно сохраняются  перед перенаправлением (обычно в сеансе) и будут доступны запросу после
+//        перенаправления, а затем они немеменно удаляются
+        redirectAttributes.addFlashAttribute("message",
+                new Message("success",messageSource.getMessage("contact_save_success",new Object[]{},locale)));
+        contactService.update(contact);
+        return "redirect:/contacts"+ UrlUtil.encodeUrlPathSegment(contact.getId().toString(),httpServletRequest);
     }
 
     @RequestMapping(value = "/{id}",params = "form",method = RequestMethod.GET)
-    public String updateForm(@PathVariable("id")Long id, ModelAndView uiModel){
+    public String updateForm(@PathVariable("id")Long id, Model uiModel){
         log.info("Search contact by id");
-        Contact contact=contactService.findContactById(id);
-
+        uiModel.addAttribute("contact",contactService.findContactById(id));
         return "contacts/updateForm";
     }
 
     @Autowired
     public void setContactService(ContactService contactService){
         this.contactService=contactService;
+    }
+
+    @Autowired
+    public void setMessageSource(MessageSource messageSource){
+        this.messageSource=messageSource;
     }
 }
