@@ -90,14 +90,36 @@ public class ContactController {
         redirectAttributes.addFlashAttribute("message",
                 new Message("success",messageSource.getMessage("contact_save_success",new Object[]{},locale)));
         contactService.update(contact);
-        return "redirect:/contacts"+ UrlUtil.encodeUrlPathSegment(contact.getId().toString(),httpServletRequest);
+        return "redirect:/contacts/"+ UrlUtil.encodeUrlPathSegment(contact.getId().toString(),httpServletRequest);
     }
 
     @RequestMapping(value = "/{id}",params = "form",method = RequestMethod.GET)
     public String updateForm(@PathVariable("id")Long id, Model uiModel){
-        log.info("Search contact by id");
+        log.info("Search contact by id for update form");
         uiModel.addAttribute("contact",contactService.findContactById(id));
-        return "contacts/updateForm";
+        return "contacts/update";
+    }
+
+    @RequestMapping(params = "form",method = RequestMethod.POST)
+    public String create(Contact contact, Model uiModel,BindingResult bindingResult,
+                         Locale locale,HttpServletRequest httpServletRequest,RedirectAttributes redirectAttributes){
+        log.info("Create new contact");
+        if(bindingResult.hasErrors()){
+            uiModel.addAttribute("message",new Message("error",messageSource.getMessage("contact_save_fail",new Object[]{},locale)));
+            uiModel.addAttribute("contact",contact);
+            return "contacts/create";
+        }
+        uiModel.asMap().clear();
+        redirectAttributes.addFlashAttribute("message",new Message("success",messageSource.getMessage("contact_save_success",new Object[] {},locale)));
+        uiModel.addAttribute("contact",contactService.save(contact));
+        return "redirect:/contacts/"+UrlUtil.encodeUrlPathSegment(contact.getId().toString(),httpServletRequest);
+    }
+
+    @RequestMapping(params = "form",method = RequestMethod.GET)
+    public String createForm(Model uiModel){
+        Contact contact=new Contact();
+        uiModel.addAttribute("contact",contact);
+        return "contacts/create";
     }
 
     @Autowired

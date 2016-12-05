@@ -4,6 +4,7 @@ package edu.mvc.model;
 
 
 import org.joda.time.DateTime;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
@@ -28,6 +29,8 @@ public class Contact implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+    //conversion String to  java.util.Date
+    @DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
     private Date birthDate;
     private String description;
     byte[] photo;
