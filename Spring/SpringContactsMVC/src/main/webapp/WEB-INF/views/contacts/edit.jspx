@@ -50,7 +50,7 @@
             <form:label path="lastName">${labelContactLastName}*</form:label>
             <form:input path="lastName"/>
             <div>
-                <form:errors path="lastName" cssClass="error"/>
+                <form:errors path="lastName" cssClass="errors"/>
             </div>
             <p/>
             
