@@ -3,11 +3,14 @@ package edu.mvc.model;
 
 
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,8 +32,6 @@ public class Contact implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
-    //conversion String to  java.util.Date
-    @DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
     private Date birthDate;
     private String description;
     byte[] photo;
@@ -43,6 +44,11 @@ public class Contact implements Serializable {
         this.id = id;
     }
 
+
+    // message = "{validation.firstname.NotEmpty.message} - приводит к извлечению  сообщений из пакета ресурсов
+    // для интернализации сообщений
+    @NotEmpty(message="{NotEmpty.contact.firstName}")
+    @Size(min = 3,max = 60,message = "{Size.contact.firstName}")
     public String getFirstName() {
         return firstName;
     }
@@ -51,6 +57,8 @@ public class Contact implements Serializable {
         this.firstName = firstName;
     }
 
+    @NotEmpty(message = "{NotEmpty.contact.lastName}")
+    @Size(min = 2,max = 40,message = "{Size.contact.lastName}")
     public String getLastName() {
         return lastName;
     }
@@ -59,6 +67,8 @@ public class Contact implements Serializable {
         this.lastName = lastName;
     }
 
+    //conversion String to  java.util.Date
+    @DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
     public Date getBirthDate() {
         return birthDate;
     }

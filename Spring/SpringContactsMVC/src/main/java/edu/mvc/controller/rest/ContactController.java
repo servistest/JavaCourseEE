@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
 
@@ -65,9 +66,14 @@ public class ContactController {
 
 //    Spring MVC попытается связать отправленные  данные с объектом предметной области Contact и автоматически выполнит
 //    преобразование типов и форматирование.
+//    Чтобы включить проверку достоверности JSR-349 во время процесса привязки данных, нужно просто применить
+//    аннотацию @Valid к аргументу метода
+//    "BindingResult bindingResult" в параметрах !!!ДОЛЖЕН!! идти сразу после объекта (@Valid Contact contact) с
+//    которым мы связываем результаты привязки, иначе на экран не выводятся ссобщения об ошибках, а выдается в логе exception:
+//    validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
     @RequestMapping(value = "/{id}",params = "form",method = RequestMethod.POST)
-    public String update(Contact contact, Model uiModel, BindingResult bindingResult,
-                         HttpServletRequest httpServletRequest, RedirectAttributes redirectAttributes,Locale locale){
+    public String update(@Valid Contact contact, BindingResult bindingResult,Model uiModel,
+                         HttpServletRequest httpServletRequest, RedirectAttributes redirectAttributes, Locale locale){
         log.info("Updating contact");
 //        В случае обнаружения ошибок привязки (например, дата рождения была введена в неверном формате)
 //        эти ошибки будут сохранены в интерфейсе BindingResult (из пакета org. springframework.validation),
@@ -100,9 +106,15 @@ public class ContactController {
         return "contacts/update";
     }
 
+    //    Чтобы включить проверку достоверности JSR-349 во время процесса привязки данных, нужно  применить
+    //    аннотацию @Valid к аргументу метода.
+//    BindingResult bindingResult в параметрах !!!ДОЛЖЕН!! идти сразу после объекта (@Valid Contact contact) с
+//    которым мы связываем результаты привязки, иначе на экран не выводятся ссобщения об ошибках, а выдается в логе exception:
+//    validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
     @RequestMapping(params = "form",method = RequestMethod.POST)
-    public String create(Contact contact, Model uiModel,BindingResult bindingResult,
-                         Locale locale,HttpServletRequest httpServletRequest,RedirectAttributes redirectAttributes){
+    public String create(@Valid Contact contact,BindingResult bindingResult,Model uiModel,
+                         HttpServletRequest httpServletRequest,
+                         RedirectAttributes redirectAttributes,Locale locale){
         log.info("Create new contact");
         if(bindingResult.hasErrors()){
             uiModel.addAttribute("message",new Message("error",messageSource.getMessage("contact_save_fail",new Object[]{},locale)));

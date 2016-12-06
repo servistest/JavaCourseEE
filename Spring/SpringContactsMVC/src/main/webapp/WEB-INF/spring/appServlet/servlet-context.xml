@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans:beans
-        xmlns="http://www.springframework.org/schema/mvc"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:beans="http://www.springframework.org/schema/beans"
-        xmlns:p="http://www.springframework.org/schema/p"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xmlns:security="http://www.springframework.org/schema/security"
-        xmlns:mvc="http://www.springframework.org/schema/tool"
-
-        xsi:schemaLocation="http://www.springframework.org/schema/mvc
-              http://www.springframework.org/schema/mvc/spring-mvc.xsd
-              http://www.springframework.org/schema/beans
-              http://www.springframework.org/schema/beans/spring-beans.xsd
-              http://www.springframework.org/schema/context
-              http://www.springframework.org/schema/context/spring-context.xsd
-              http://www.springframework.org/schema/security
-              http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd">
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:p="http://www.springframework.org/schema/p"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:security="http://www.springframework.org/schema/security"
+             xmlns:mvc="http://www.springframework.org/schema/mvc"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd">
 
     <!--Дескриптор <annotation-driven> включает поддержку конфигурирования посредством аннотаций для контроллеров Spring MVC,-->
     <!--а также поддержку преобразования типов и форматирования Spring.-->
@@ -31,7 +29,7 @@
     <!--Атрибут mapping определяет URL для отображения на статические ресурсы; в  качестве примера для URL вида -->
     <!--http: //localhost:8080/SpringContactsMVC/resources/styles/standard.css модуль Spring MVC будет извлекать -->
     <!--файл  standard.css из папки /src/main/webapp/styles.-->
-    <resources mapping="/resources/**" location="/"/>
+    <mvc:resources mapping="/resources/**" location="/"/>
 
     <!--Дескриптор <default-servlet-handler/> разрешает отображение сервлета диспетчера на URL корневого контекста веб-приложения,-->
     <!--по-прежнему позволяя  запросам статических ресурсов обрабатываться сервлетом, который установлен в-->
@@ -108,6 +106,7 @@
                 p:basenames="WEB-INF/i18n/application,WEB-INF/i18n/messages"
                 p:fallbackToSystemLocale="false"/>
 
+
     <!--Этот класс поддерживает хранение и извлечение параметров локали из сооkiе-набора  пользовательского браузера-->
     <!--Spring МVС будет сохранять параметр лакали в сооkiе-наборе браузера (с именем locale) и по умолчанию сооkiе-набор будет сохраняться-->
     <!--для сеанса пользователя. Если вы хотите удерживать сооkiе-набор на протяжении более длительного периода времени,-->
@@ -117,5 +116,14 @@
                 id="localeResolver"
                 p:cookieName="locale"/>
 
+
+    <!--Для поддержки JSR-349 определяется бин validator с классом Local ValidatorFactoryBean validationMessageSource для ссылки-->
+    <!--на определенный бин messageSource,  который обеспечивает поиск при проверке JSR-349 сообщений по кодам из бина  messageSource.-->
+    <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <beans:property name="validationMessageSource" ref="messageSource"/>
+    </beans:bean>
+
+    <!--в дескрипторе <annotation-driven> атрибут validator   явно ссылается на ранее определенный бин validator-->
+    <mvc:annotation-driven validator="validator"/>
 
 </beans:beans>
