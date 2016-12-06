@@ -68,6 +68,7 @@ public class Contact implements Serializable {
         this.lastName = lastName;
     }
 
+
     //conversion String to  java.util.Date
     @DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
     public Date getBirthDate() {
