@@ -53,6 +53,7 @@ public class Contact implements Serializable {
         return firstName;
     }
 
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
