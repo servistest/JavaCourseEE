@@ -27,12 +27,29 @@
     <spring:message code="label_contact_new" var="labelContactNew"/>
     <spring:url value="/contacts" var="editContactUrl"/>
 
+
     <!--Если contact.id равно значению null. Если это так, значит, создается новый-->
     <!--контакт, а если нет, то обновляется существующий контакт. -->
     <spring:eval expression="contact.id==null ? labelContactNew:labelContactUpdate" var="formTitle"/>
 
     <!--Будет отображен соответствующий заголовок формы-->
     <h1>${formTitle}</h1>
+
+    <script type="text/javascript">
+        $(function(){
+            $('#birthDate').datepicker({
+                dateFormat: 'yy-mm-dd',//'${dateFormatPattern}',  //'yyyy-MM-dd'//???dateFormatPattern - применить нужный формат!!!
+                changeYear: true
+            });
+
+            $("#contactDescription").ckeditor(
+                    {
+                        toolbar : 'Basic',
+                        uiColor : '#CCCCCC'
+                    }
+            );
+        });
+    </script>
 
     <div id="contactUpdate">
         <form:form modelAttribute="contact" id="contactUpdateForm" method="post">
@@ -55,8 +72,9 @@
             <p/>
 
             <form:label path="birthDate">${labelContactBirthDate}</form:label>
-            <fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" var="formatBirthDate"/>
-            <form:input path="birthDate" value="${formatBirthDate}"/>
+            <!--<fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" var="formatBirthDate"/>-->
+            <!--<form:input path="birthDate" value="${formatBirthDate}"/>-->
+            <form:input path="birthDate"/>
             <div>
                 <form:errors path="birthDate" cssClass="errors"/>
             </div>
@@ -69,8 +87,12 @@
             </div>
             <p/>
 
-            <button type="submit">Save</button>
-            <button type="reset">Reset</button>
+            <button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                <span class="ui-button-text">Save</span>
+            </button>
+            <button type="reset" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                <span class="ui-button-text">Reset</span>
+            </button>
 
         </form:form>
     </div>
