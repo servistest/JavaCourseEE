@@ -12,7 +12,7 @@
           xmlns:spring="http://www.springframework.org/tags"
           version="2.0">
 
-    <jsp:directive.page contentType="text/html; ISO-8859-1"/>
+    <jsp:directive.page contentType="text/html; charset=UTF-8"/>
     <jsp:directive.page pageEncoding="UTF-8"/>
     <jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat"/>
     <html>
@@ -23,7 +23,7 @@
     <!--быть использованы для совершенствования информации, выдаваемой обычными заголовками. Теги такой формы могут дать такой -->
     <!--же эффект, что и HTTP-заголовки, и на некоторых серверах автоматически могут быть переведены в настоящие HTTP-заголовки.-->
     <head>
-        <meta http-equiv="Content-Type" content="text/html; ISO-8859-1"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=8"/>
 
         <!--Дескриптор <spring: theme> используется  для извлечения из пакета ресурсов темы свойства styleSheet, которое-->
@@ -35,7 +35,17 @@
         <!--В отличие от тега <a>, тег <link> размещается всегда внутри контейнера <head> и не создает ссылку.-->
         <!--type  -   MIME-тип данных подключаемого файла.-->
         <!--media   Определяет устройство, для которого следует применять стилевое оформление.-->
-        <link rel="styleSheet" type="text/css" media="screen"  href="${app_css_url}"  />
+        <link rel="styleSheet" type="text/css" media="screen" href="${app_css_url}"/>
+
+        <!--jQuery and jQuery UI-->
+        <spring:url value="/resources/scripts/jquery-1.11.1.js" var="jquery_url"/>
+        <spring:url value="/resources/scripts/jquery-ui-1.10.4.custom.min.js" var="jquery_min_url"/>
+        <spring:url value="/resources/styles/custom-theme/jquery-ui-1.10.4.custom.css" var="jquery_ui_theme_css"/>
+
+        <link rel="styleSheet" type="text/css" media="screen" href="${jquery_ui_theme_css}"/>
+        <!--<script></script>-->
+
+
 
         <!--Извлечь пользовательскую локаль из контекста страницы-->
         <!--(она была установлена распознавателем локалей Spring MVC)-->
@@ -45,20 +55,20 @@
         </c:set>
 
         <spring:message code="application_name" var="app_name" htmlEscape="false"/>
-        <title><spring:message code="welcome_h3" arguments="${app_name}" /></title>
+        <title><spring:message code="welcome_h3" arguments="${app_name}"/></title>
     </head>
 
     <body class="tundra spring">
-        <div id="headerWrapper">
-            <tiles:insertAttribute name="header" ignore="true"/>
+    <div id="headerWrapper">
+        <tiles:insertAttribute name="header" ignore="true"/>
+    </div>
+    <div id="wrapper">
+        <tiles:insertAttribute name="menu" ignore="true"/>
+        <div id="main">
+            <tiles:insertAttribute name="body"/>
+            <tiles:insertAttribute name="footer" ignore="true"/>
         </div>
-        <div id="wrapper">
-            <tiles:insertAttribute name="menu" ignore="true"/>
-            <div id="main">
-                <tiles:insertAttribute name="body"/>
-                <tiles:insertAttribute name="footer" ignore="true"/>
-            </div>
-        </div>
+    </div>
     </body>
     </html>
 </jsp:root>
