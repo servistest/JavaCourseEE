@@ -36,7 +36,6 @@ import java.util.Locale;
 @RequestMapping(value = "/contacts")
 public class ContactController {
     Logger log= LoggerFactory.getLogger(ContactController.class);
-
     private ContactService contactService;
     private MessageSource messageSource;
 
@@ -49,7 +48,7 @@ public class ContactController {
         List<Contact> contacts=contactService.findAllContacts();
         uiModel.addAttribute("contacts",contacts);
         log.info("No. of contacts = {}",contacts.size());
-//        возвращается логическое имя представления contacts/list
+//            возвращаем имя представления , в данном случае /WEB-INF/views/contacts/list.jspx
         return "contacts/list";
 //        В конфигурации сервлета диспетчера в качестве распознавателя представлений указан
 //        InternalResourceViewResolver, а файл имеет префикс /WEB-INF/views/ и суффикс .jspx.
@@ -61,6 +60,7 @@ public class ContactController {
         log.info("Show contact");
         Contact contact=contactService.findContactById(id);
         uiModel.addAttribute("contact",contact);
+//            возвращаем имя представления , в данном случае /WEB-INF/views/contacts/show.jspx
         return "contacts/show";
     }
 
@@ -82,6 +82,7 @@ public class ContactController {
             uiModel.addAttribute("message",new Message("error",
                     messageSource.getMessage("contact_save_fail", new Object[]{} ,locale)));
             uiModel.addAttribute("contact",contact);
+//            возвращаем имя представления , в данном случае /WEB-INF/views/contacts/update.jspx
             return "contacts/update";
         }
 //        clear model
@@ -106,8 +107,23 @@ public class ContactController {
         return "contacts/update";
     }
 
-    //    Чтобы включить проверку достоверности JSR-349 во время процесса привязки данных, нужно  применить
-    //    аннотацию @Valid к аргументу метода.
+    @RequestMapping(value = "/{id}",params = "formDelete",method = RequestMethod.DELETE)
+    public String delete(@PathVariable("id") Long id, Model uiModel){
+        log.info("Delete contact ... ");
+        contactService.delete(id);
+
+//        uiModel.
+        return "redirect:/contacts/";
+    }
+    @RequestMapping(value = "/{id}",params = "formDelete",method = RequestMethod.GET)
+    public String deleteForm(@PathVariable("id")  Long id, Model uiModel){
+        uiModel.addAttribute("contact",contactService.findContactById(id));
+//            возвращаем имя представления , в данном случае /WEB-INF/views/contacts/delete.jspx
+        return "contacts/delete";
+    }
+
+//    Чтобы включить проверку достоверности JSR-349 во время процесса привязки данных, нужно  применить
+//    аннотацию @Valid к аргументу метода.
 //    BindingResult bindingResult в параметрах !!!ДОЛЖЕН!! идти сразу после объекта (@Valid Contact contact) с
 //    которым мы связываем результаты привязки, иначе на экран не выводятся ссобщения об ошибках, а выдается в логе exception:
 //    validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
@@ -133,6 +149,7 @@ public class ContactController {
         uiModel.addAttribute("contact",contact);
         return "contacts/create";
     }
+
 
     @Autowired
     public void setContactService(ContactService contactService){

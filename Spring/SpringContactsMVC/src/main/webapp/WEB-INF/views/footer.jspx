@@ -10,6 +10,7 @@
     <spring:message code="label_ru_RU" var="labelRuRU"/>
     <spring:url value="/contacts" var="homeUrl"/>
 
+    <br/>
     <a href ="${homeUrl}">${homeText}</a>
     <a href ="${homeUrl}?lang=en_US">${labelEnUs}</a>
     <a href ="${homeUrl}?lang=ru_RU">${labelRuRU}</a>

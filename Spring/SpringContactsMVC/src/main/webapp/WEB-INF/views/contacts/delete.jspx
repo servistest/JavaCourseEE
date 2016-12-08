@@ -1,0 +1,101 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: ALex
+  Date: 26.11.2016
+  Time: 17:31
+  To change this template use File | Settings | File Templates.
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:joda="http://www.joda.org/joda/time/tags"
+          xmlns:form="http://www.springframework.org/tags/form"
+          xmlns:spring="http://www.springframework.org/tags"
+          version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="no"/>
+
+    <spring:message code="label_contact_info" var="labelContactInfo"/>
+    <spring:message code="label_contact_first_name" var="labelContactFirstName"/>
+    <spring:message code="label_contact_last_name" var="labelContactLastName"/>
+    <spring:message code="label_contact_birth_date" var="labelContactBirthDate"/>
+    <spring:message code="label_contact_description" var="labelContactDescription"/>
+    <spring:message code="label_contact_photo" var="labelContactPhoto"/>
+    <spring:message code="date_format_pattern" var="dateFormatPattern"/>
+    <spring:message code="label_contact_update" var="labelContactUpdate"/>
+    <spring:message code="label_contact_delete" var="labelContactDelete"/>
+    <spring:message code="label_contact_new" var="labelContactNew"/>
+    <spring:url value="/contacts" var="editContactUrl"/>
+
+    <!--Будет отображен соответствующий заголовок формы-->
+    <h1>${labelContactDelete}</h1>
+    <!--<div id="contactDelete">-->
+        <!--<form:form modelAttribute="contact" id="contactDeleteForm" method="delete">-->
+            <!--<c:if test="${ not empty message}">-->
+                <!--<div id="message" class="${message.type}">${message.message}</div>-->
+            <!--</c:if>-->
+
+            <!--<form:label path="firstName">${labelContactFirstName}*</form:label>-->
+            <!--<form:input path="firstName"  />-->
+            <!--<div>-->
+                <!--<form:errors path="firstName" cssClass="errors"/>-->
+            <!--</div>-->
+            <!--<p/>-->
+
+            <!--<form:label path="lastName">${labelContactLastName}*</form:label>-->
+            <!--<form:input path="lastName"/>-->
+            <!--<div>-->
+                <!--<form:errors path="lastName" cssClass="errors"/>-->
+            <!--</div>-->
+            <!--<p/>-->
+
+            <!--<form:label path="birthDate">${labelContactBirthDate}</form:label>-->
+            <!--<fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" var="formatBirthDate"/>-->
+            <!--<form:input path="birthDate" value="${formatBirthDate}"/>-->
+            <!--<div>-->
+                <!--<form:errors path="birthDate" cssClass="errors"/>-->
+            <!--</div>-->
+            <!--<p/>-->
+
+            <!--<form:label path="description">${labelContactDescription}</form:label>-->
+            <!--<form:textarea cols="60" rows="8" path="description" id="contactDescription"/>-->
+            <!--<div>-->
+                <!--<form:errors path="description" cssClass="errors"/>-->
+            <!--</div>-->
+            <!--<p/>-->
+
+            <!--<button type="submit" >Save</button>-->
+            <!--<button type="reset">Reset</button>-->
+
+        <!--</form:form>-->
+    <!--</div>-->
+
+    <div id="contactDelete">
+        <form:form modelAttribute="contact" id="contactDeleteForm" method="delete">
+            <table>
+                <tr>
+                    <td>${labelContactFirstName}</td>
+                    <td>${contact.firstName}</td>
+                </tr>
+                <tr>
+                    <td>${labelContactLastName}</td>
+                    <td>${contact.lastName}</td>
+                </tr>
+                <tr>
+                    <td>${labelContactBirthDate}</td>
+                    <td><fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}"/></td>
+                </tr>
+                <tr>
+                    <td>${labelContactDescription}</td>
+                    <td>${contact.description}</td>
+                </tr>
+            </table>
+            <br/>
+            <p style="text-align: center">
+                <button type="submit">Delete</button>
+                <button type="submit" formmethod="get" value="list">Cancel</button>
+            </p>
+        </form:form>
+    </div>
+</jsp:root>
