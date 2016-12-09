@@ -150,6 +150,8 @@ public class ContactController {
     public String createForm(Model uiModel){
         Contact contact=new Contact();
         uiModel.addAttribute("contact",contact);
+
+
         return "contacts/create";
     }
 
