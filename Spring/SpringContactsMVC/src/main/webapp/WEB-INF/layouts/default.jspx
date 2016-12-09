@@ -57,8 +57,18 @@
         <spring:url value="/resources/ckeditor/adapters/jquery.js" var="ckeditor_jquery_url" />
         <script type="text/javascript" src="${ckeditor_url}"><jsp:text/></script>
         <script type="text/javascript" src="${ckeditor_jquery_url}"><jsp:text/></script>
-        //
-        //
+
+        <!-- jqGrid -->
+        <!--Применяться встроенная в jqGrid поддержка разбиения на  страницы Ajax, которая инициирует-->
+        <!--запрос XMLHttpRequest для каждой страницы  и принимает формат JSON для данных на странице-->
+        <spring:url value="/resources/jqgrid/css/ui.jqgrid.css" var="jqgrid_css" />
+        <!--сценарий локали (в данном случае используется английский        язык)-->
+        <spring:url value="/resources/jqgrid/js/i18n/grid.locale-en.js" var="jqgrid_locale_url" />
+        <!--библиотека ядpa jqGrid-->
+        <spring:url value="/resources/jqgrid/js/jquery.jqGrid.min.js" var="jqgrid_url" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${jqgrid_css}" />
+        <script type="text/javascript" src="${jqgrid_locale_url}"><jsp:text/></script>
+        <script type="text/javascript" src="${jqgrid_url}"><jsp:text/></script>
 
         <!--Извлечь пользовательскую локаль из контекста страницы-->
         <!--(она была установлена распознавателем локалей Spring MVC)-->

@@ -23,29 +23,64 @@
     <spring:message code="date_format_pattern" var="dateFormatPattern"/>
     <spring:url value="/contacts" var="showContactUrl"/>
 
-    <h1>${labelContactList}</h1>
+    <script type="text/javascript">
+        $(function () {
+            $("#list").jgrid({
+//                Атрибут url указывает ссылку для отправки запроса XMLHttpRequest, который получает данные для текущей страницы
+                url:'${showContactUrl}/listgrid',
+//                Атрибут datatype указывает формат данных, которым в этом случае является
+//                JSON. Компонент jqGrid также поддерживает формат XML.
+                datatype:'json',
+//                mtype определяет используемый НТТР-метод
+                mtype:'GET',
+                colNames:['${labelContactFirstName}','${labelContactLastName}}','${labelContactBirtDate}}'],
+//                атрибут colModel устанавливает детали лля    каждой строки данных
+                colModel:[
+                    {name:'firstName',index:'firstName',width:150},
+                    {name:'lastName',index:'lastName',width:100},
+                    {name:'birthDateString',index:'birthDateString',width:100},
 
-    <c:if test="${not empty contacts}">
-        <table>
-            <thead>
-                <tr>
-                    <th>${labelContactFirstName}</th>
-                    <th>${labelContactLastName}</th>
-                    <th>${labelContactBirtDate}</th>
-                    <th>${labelContactDescription}</th>
-                </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${contacts}" var="contact">
-                    <tr>
-                        <td><a href="${showContactUrl}/${contact.id}">${contact.firstName}</a> </td>
-                        <td>${contact.lastName}</td>
-                        <td><fmt:formatDate pattern="${dateFormatPattern}" value="${contact.birthDate}" /></td>
-                        <td>${contact.description}</td>
-                    </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+                ],
+//                Атрибут jsonReader определяет формат данных JSON, который будет возвращаться  сервером
+                jsonReader:{
+                    root:"contactData",
+                    page:"currentPage",
+                    total:"totalPage",
+                    records:"totalrecords",
+                    repeatitems:false,
+                    id:"id"
+
+                },
+//                Атрибут pager включает поддержку разбиения на страницы.
+                pager:'#pager',
+                rowNum:10,
+                rowList:[10,20,30],
+                sortname:"firstName",
+                sortorder:'asc',
+                viewrecords:true,
+                gridview:true,
+                height:250,
+                width:500,
+                caption:'${labelContactList}',
+//                Атрибут onSelectRow определяет действие, которое должно выполняться при выборе строки. В этом случае мы направляем
+//                пользователя на представление, отображающее контакт с заданным идентификатором
+                onSelectRow:function (id) {
+                    document.location.href="${showContactUrl}/"+id;
+                }
+            });
+        });
+    </script>
+
+    <h2>${labelContactList}</h2>
+
+    <c:if test="${ not empty message}">
+        <div id="message" class="${message.type}">${message.message}</div>
     </c:if>
+    <!--Для отображения данных сетки мы объявляем дескриптор <tаЫе> с идентификатором    list.-->
+    <div>
+        <table id="list"><tr><td/></tr></table>
+    </div>
+    <!--Определен раздел <div> с идентификатором pager,  который представляет собой часть jqGrid, отвечающую за разбиение на страницы.-->
+    <div id="pager"></div>
 
 </jsp:root>
