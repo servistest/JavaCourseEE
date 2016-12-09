@@ -1,8 +1,10 @@
 package edu.mvc.controller.rest;
 
+import com.google.common.collect.Lists;
 import edu.mvc.controller.message.Message;
 import edu.mvc.controller.message.UrlUtil;
 import edu.mvc.model.Contact;
+import edu.mvc.model.ContactGrid;
 import edu.mvc.service.ContactService;
 
 import org.slf4j.Logger;
@@ -10,13 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.web.util.UrlUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -150,6 +153,50 @@ public class ContactController {
         return "contacts/create";
     }
 
+//    Метод listGrid () метод обрабатывает запрос Ajax, читает параметры (номер страницы, количество записей на страницу,
+//    поле, по которому производится    сортировка, порядок сортировки) из запроса (имена параметров в примере кода соответствуют
+//    принятым по умолчанию в jqGrid), конструирует экземпляр класса  PageRequest, реализующий интерфейс Раgеаblе, и затем вызывает
+//    метод  ContactService. findAllByPage () для получения  страничных данных. После этого создается экземпляр класса ContactGrid,
+//    который возвращает компонент   jqGrid в формате JSON.
+    @RequestMapping(value = "/listgrid",method = RequestMethod.GET,produces = "application/json")
+    @ResponseBody
+    public ContactGrid listGrid(@RequestParam(value = "page",required = false) Integer page,
+                                @RequestParam(value = "rows",required = false) Integer rows,
+                                @RequestParam(value = "sidx",required = false) String sortBy,
+                                @RequestParam(value = "sord",required = false) String order){
+        log.info("Listing contacts for grid with page:{},rows: {}",page,rows);
+        log.info("Listing contacts for grid with sort:{},order:{} ");
+        //Обработать поле по которому идет сортировка
+        Sort sort=null;
+        String orderBy=sortBy;
+        if(orderBy!=null && orderBy.equals("birthDateString")) orderBy="birthDate";
+        if (orderBy!=null && order!=null){
+            if(order.equals("desc")){
+                sort=new Sort(Sort.Direction.DESC,orderBy);
+            }else {
+                sort=new Sort(Sort.Direction.ASC,orderBy);
+            }
+        }
+        // Сконструировать страничный запрос для текущей страницы. Нумерация страниц для Spring Data JPA начинается с О,
+        // тогда как в jqGrid - с 1
+        PageRequest pageRequest = null;
+        if (sort != null) {
+            pageRequest = new PageRequest(page - 1, rows, sort);
+        } else {
+            pageRequest = new PageRequest(page - 1, rows);
+        }
+        Page<Contact> contactPage = contactService.findAllByPage(pageRequest);
+
+        // Сконструировать сетку, которая вернет данные в формате JSON
+        ContactGrid contactGrid = new ContactGrid();
+
+        contactGrid.setCurrentPage(contactPage.getNumber() + 1);
+        contactGrid.setTotalPages(contactPage.getTotalPages());
+        contactGrid.setTotalRecords(contactPage.getTotalElements());
+        contactGrid.setContactData(Lists.newArrayList(contactPage.iterator()));
+        return contactGrid;
+
+    }
 
     @Autowired
     public void setContactService(ContactService contactService){

@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -18,7 +20,7 @@ import java.util.Date;
 /**
  * Created by ALex on 13.11.2016.
  */
-
+@Entity
 public class Contact implements Serializable {
     @AssertTrue(message = "should by First Name and Last name")
     public boolean isShouldFirstNameAndLastName(){
@@ -29,6 +31,7 @@ public class Contact implements Serializable {
         return result;
     }
     private static final String DATE_FORMAT="yyyy-MM-dd";
+    @Id
     private Long id;
     private String firstName;
     private String lastName;
