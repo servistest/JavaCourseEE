@@ -179,6 +179,7 @@ public class ContactController {
                 sort=new Sort(Sort.Direction.ASC,orderBy);
             }
         }
+
         // Сконструировать страничный запрос для текущей страницы. Нумерация страниц для Spring Data JPA начинается с О,
         // тогда как в jqGrid - с 1
         PageRequest pageRequest = null;
